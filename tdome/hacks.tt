@@ -2,3 +2,14 @@
 
 /* Avoid broken lines due to fragmented packets.  See FAQ. */
 #config {packet patch} {0.1}
+
+/* Split command line, map, and output areas. */
+/* 
+  split's five fields are heights of areas:
+    top
+    bottom (default 1)
+    left
+    right
+    input (below "bottom") (default 1)
+*/
+#split 0 1 0 16 1;

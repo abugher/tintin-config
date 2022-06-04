@@ -6,3 +6,4 @@
 #read {tdome/hacks.tt}
 #read {tdome/aliases.tt}
 #read {tdome/actions.tt}
+#read {tdome/map.tt}
