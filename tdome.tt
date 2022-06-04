@@ -6,4 +6,3 @@
 #read {config/tdome/hacks.tt}
 #read {config/tdome/aliases.tt}
 #read {config/tdome/actions.tt}
-#read {config/tdome/map.tt}

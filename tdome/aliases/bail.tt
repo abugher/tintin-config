@@ -6,7 +6,7 @@
 }
 #alias {bail} {
   #send flee;
-  home
+  home;
   #send flee;
   #send flee;
 }

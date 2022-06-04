@@ -9,5 +9,6 @@
 #event {SESSION CONNECTED} {
   #send $user;
   #send $pass[1];
+  #read {config/tdome/map.tt}
 }
 
