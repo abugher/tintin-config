@@ -1,4 +1,4 @@
 #nop Include this line in every file to set the command character.
 
-/* Avoid broken lines due to fragmented packets. */
-#config {packet patch} {0.2}
+/* Avoid broken lines due to fragmented packets.  See FAQ. */
+#config {packet patch} {0.1}
