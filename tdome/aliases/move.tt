@@ -1,0 +1,35 @@
+#nop Include this line in every file to set the command character.
+
+#alias {temple_to_sin} {
+  #foreach {e;s;s;s;s;s;w;s} {dir} {
+    #send $dir;
+  }
+}
+#alias {tts} {
+  temple_to_sin
+}
+#alias {sin_to_temple} {
+  #foreach {n;e;n;n;n;n;n;w} {dir} {
+    #send $dir;
+  }
+}
+#alias {stt} {
+  sin_to_temple
+}
+#alias {home} {
+  #send t curebot summon;
+  #send t curebot confirm summon;
+}
+#alias {bail} {
+  #send t curebot summon;
+  #send recall;
+  #send t curebot confirm summon;
+  #send flee;
+  #send flee;
+  #send flee;
+}
+#alias {nobail} {
+  #send t curebot cancel summon;
+}
+
+
