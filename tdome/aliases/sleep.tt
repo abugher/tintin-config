@@ -1,0 +1,9 @@
+#nop Include this line in every file to set the command character.
+
+#alias {wa} {
+  #send wake;
+  #send stand;
+  #send score;
+  #send look;
+  #send exits;
+}

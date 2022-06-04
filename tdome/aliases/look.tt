@@ -1,0 +1,14 @@
+#nop Include this line in every file to set the command character.
+
+#alias {lx} {
+  #send look;
+  #send exits;
+}
+#alias {x} {
+  #send exits;
+}
+#alias {ie} {
+  #send inventory;
+  #send equipment;
+}
+

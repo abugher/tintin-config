@@ -1,0 +1,4 @@
+#nop Include this line in every file to set the command character.
+
+#var {server} {tdome.net};
+#var {port} {5555};

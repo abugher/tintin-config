@@ -1,0 +1,80 @@
+#nop Include this line in every file to set the command character.
+
+#alias {contain} {
+  #var items %0;
+  #replace items { } {;};
+  #var first_iteration 1;
+  #foreach {$items} {item} {
+    #if {1 != $first_iteration} {
+      #send put $item in %1;
+    }
+    #var first_iteration 0;
+  }
+}
+#alias {uncontain} {
+  #var items %0;
+  #replace items { } {;};
+  #var first_iteration 1;
+  #foreach {$items} {item} {
+    #if {1 != $first_iteration} {
+      #send get $item from %1;
+    }
+    #var first_iteration 0;
+  }
+}
+
+#alias {ll} {
+  #send look in locker;
+}
+#alias {locker} {
+  contain locker %0;
+}
+#alias {lo} {
+  locker %0
+}
+#alias {unlocker} {
+  uncontain locker %0;
+}
+#alias {ul} {
+  unlocker %0;
+}
+#alias {lb} {
+  #send look in bag;
+}
+#alias {bag} {
+  contain bag %0;
+}
+#alias {unbag} {
+  uncontain bag %0;
+}
+#alias {ls} {
+  #send look in sack;
+}
+#alias {sack} {
+  contain sack %0;
+}
+#alias {unsack} {
+  uncontain sack %0;
+}
+#alias {lcart} {
+  #send look in cart;
+}
+#alias {lc} {
+  lcan %1;
+}
+#alias {cart} {
+  contain cart %0;
+}
+#alias {uncart} {
+  uncontain cart %0;
+}
+#alias {lcan} {
+  #send look in can;
+}
+#alias {can} {
+  contain can %0;
+}
+#alias {uncan} {
+  uncontain can %0;
+}
+

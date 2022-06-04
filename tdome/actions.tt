@@ -1,0 +1,5 @@
+#nop Include this line in every file to set the command character.
+
+#action {up for sale, min bid 1 } {
+  #send bid 1;
+}

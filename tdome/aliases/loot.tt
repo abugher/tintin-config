@@ -1,0 +1,21 @@
+#nop Include this line in every file to set the command character.
+
+#alias {ga} {
+  #send get all from all.remains;
+  #send get all from all.corpse;
+  #send get all;
+}
+#alias {ta} {
+  ga
+}
+#alias {gc} {
+  #send get all.credit from all.remains;
+  #send get all.credits from all.remains;
+  #send get all.credit from all.corpse;
+  #send get all.credits from all.corpse;
+  #send get all.credit;
+  #send get all.credits;
+}
+#alias {tc} {
+  gc
+}

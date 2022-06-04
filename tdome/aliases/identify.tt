@@ -1,0 +1,19 @@
+#nop Include this line in every file to set the command character.
+
+#alias {identify} {
+  #send give %1 to idbot;
+  #send t idbot identify %1;
+}
+#alias {id} {
+  identify %1
+}
+#alias {enchant_thing} {
+  #send give %2 to idbot;
+  #send t idbot enchant %1 %2;
+}
+#alias {ea} {
+  enchant_thing armor %1
+}
+#alias {ew} {
+  enchant_thing weapon %1
+}
