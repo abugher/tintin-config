@@ -1,12 +1,12 @@
 #nop Include this line in every file to set the command character.
 
-#read {tdome/aliases/pack.tt}
-#read {tdome/aliases/look.tt}
-#read {tdome/aliases/contain.tt}
-#read {tdome/aliases/identify.tt}
-#read {tdome/aliases/move.tt}
-#read {tdome/aliases/bail.tt}
-#read {tdome/aliases/fight.tt}
-#read {tdome/aliases/loot.tt}
-#read {tdome/aliases/sleep.tt}
-#read {tdome/aliases/bell.tt}
+#read {config/tdome/aliases/pack.tt}
+#read {config/tdome/aliases/look.tt}
+#read {config/tdome/aliases/contain.tt}
+#read {config/tdome/aliases/identify.tt}
+#read {config/tdome/aliases/move.tt}
+#read {config/tdome/aliases/bail.tt}
+#read {config/tdome/aliases/fight.tt}
+#read {config/tdome/aliases/loot.tt}
+#read {config/tdome/aliases/sleep.tt}
+#read {config/tdome/aliases/bell.tt}

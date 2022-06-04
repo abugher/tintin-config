@@ -1,15 +1,20 @@
 #nop Include this line in every file to set the command character.
 
 /* Avoid broken lines due to fragmented packets.  See FAQ. */
-#config {packet patch} {0.1}
+#config {packet patch} {0.15}
 
 /* Split command line, map, and output areas. */
 /* 
-  split's five fields are heights of areas:
+  split's five fields are numeric heights or widths:
     top
     bottom (default 1)
     left
     right
     input (below "bottom") (default 1)
+
+  If a negative number is specified for right width, tht absolute value of that
+  number is used as the width of the "scrolling area" (the main box in the
+  middle) and the remainder is devoted to the right box.
 */
-#split 0 1 0 16 1;
+/* Put map on the right. */
+#split 0 1 0 -80 1;
