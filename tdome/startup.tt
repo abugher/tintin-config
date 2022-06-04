@@ -4,7 +4,6 @@
   #session session1 $server $port;
 }
 #event {PROGRAM START} {
-  #split;
   tdome;
 }
 #event {SESSION CONNECTED} {

@@ -1,0 +1,49 @@
+#nop Include this line in every file to set the command character.
+
+
+#alias mapon{} {
+  #map read {maps/ta};
+  #map flag vtmap on;
+  #map flag AsciiGraphics off;
+  #map flag unicode on;
+  #map offset {0} {81} {-2} {-0};
+}
+#alias mo{} {
+  mapon;
+}
+
+#alias mapshow{} {
+  mapon;
+  #map goto {1};
+  #delay {1} {#map leave;};
+}
+#alias ms{} {
+  mapshow;
+}
+
+#alias mapstart{} {
+  mapon;
+  #map goto 1;
+}
+#alias M1{} {
+  mapstart;
+  #alias M{} {
+    M2;
+  }
+}
+#alias M2{} {
+  mapleave;
+  #alias M{} {
+    M1
+  }
+}
+#alias M{} {
+  M1;
+}
+
+#alias mapleave{} {
+  #map leave;
+}
+#alias ml{} {
+  mapleave;
+}

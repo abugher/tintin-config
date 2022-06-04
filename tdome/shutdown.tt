@@ -1,0 +1,6 @@
+#nop Include this line in every file to set the command character.
+
+#event {SESSION DISCONNECTED} {
+  #map write maps/ta
+}
+
