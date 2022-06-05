@@ -2,3 +2,7 @@
 
 #var {user} {NeoMercevi}
 #script {pass} {bash -c 'pass show aaron/tdome.net/$user'}
+
+#var {wield} {survival}
+#var {dual} {switchblade}
+#var {container} {cart}

@@ -2,14 +2,10 @@
 
 #alias {pack} {
   #send remove all;
-  #foreach {sword;utility;butterfly;survival;switchblade;knife} {weapon} {
-    #send wield $weapon;
-    #send dual $weapon;
-  }
+  #send wield $wield;
+  #send dual $dual;
   #send wear all;
-  #send put all in cart;
-  #send put all in sack;
-  #send put all in bag;
+  #send put all in $container;
 }
 
 

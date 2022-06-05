@@ -1,6 +1,6 @@
 #nop Include this line in every file to set the command character.
 
-#read {config/tdome/credentials.tt}
+#read {config/tdome/variables.tt}
 #read {config/tdome/server.tt}
 #read {config/tdome/startup.tt}
 #read {config/tdome/hacks.tt}
