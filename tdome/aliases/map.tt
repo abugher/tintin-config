@@ -1,6 +1,5 @@
 #nop Include this line in every file to set the command character.
 
-
 #alias mapon{} {
   #map read {maps/ta};
   #map flag vtmap on;
@@ -11,39 +10,28 @@
 #alias mo{} {
   mapon;
 }
-
 #alias mapshow{} {
   mapon;
   #map goto {1};
   #delay {1} {#map leave;};
 }
-#alias ms{} {
-  mapshow;
-}
-
 #alias mapstart{} {
   mapon;
   #map goto 1;
 }
-#alias M1{} {
-  mapstart;
-  #alias M{} {
-    M2;
-  }
-}
-#alias M2{} {
-  mapleave;
-  #alias M{} {
-    M1
-  }
-}
-#alias M{} {
-  M1;
-}
-
 #alias mapleave{} {
   #map leave;
 }
-#alias ml{} {
-  mapleave;
+#alias M{} {
+  #if {$toggle == 1} {
+    mapleave;
+    #echo {mapping:  off};
+    #var {toggle} {0};
+  };
+  #else {
+    mapstart;
+    #echo {mapping:  on};
+    #var {toggle} {1};
+  };
 }
+
