@@ -1,21 +1,14 @@
 #nop Include this line in every file to set the command character.
 
 #alias mapon{} {
-  #map read {maps/ta};
+  #map read {maps/$map};
   #map flag vtmap on;
   #map flag AsciiGraphics off;
   #map flag unicode on;
   #map offset {0} {81} {-2} {-0};
 }
-#alias mo{} {
-  mapon;
-}
-#alias mapshow{} {
-  mapon;
-  #map goto {1};
-  #delay {1} {#map leave;};
-}
 #alias mapstart{} {
+  #map write {maps/$map};
   mapon;
   #map goto 1;
 }
@@ -23,15 +16,29 @@
   #map leave;
 }
 #alias M{} {
-  #if {$toggle == 1} {
+  #if {$mapping == 1} {
     mapleave;
     #echo {mapping:  off};
-    #var {toggle} {0};
+    #var {mapping} {0};
   };
   #else {
     mapstart;
     #echo {mapping:  on};
-    #var {toggle} {1};
+    #var {mapping} {1};
   };
 }
+#alias mw{} {
+  #map write {maps/$map};
+  #echo {map written}
+}
 
+/* Don't map imaginary rooms when walking into walls.
+ * Dream rooms are still an issue.  "In your dreams, or what?" shows up in
+ * response to movement as well as other actions.
+ */
+#action {cannot move that way} {
+  #map undo;
+}
+#action {can't go that way} {
+  #map undo;
+}

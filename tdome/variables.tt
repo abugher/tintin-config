@@ -6,3 +6,5 @@
 #var {wield} {survival}
 #var {dual} {switchblade}
 #var {container} {cart}
+
+#var {map} {ta}
