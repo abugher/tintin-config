@@ -60,7 +60,7 @@
   #send look in cart;
 }
 #alias {lc} {
-  lcan %1;
+  lcart %1;
 }
 #alias {cart} {
   contain cart %0;
