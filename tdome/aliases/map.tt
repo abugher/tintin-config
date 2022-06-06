@@ -30,18 +30,6 @@
     #var {mapping} {1};
   };
 }
-#alias m{} {
-  #if {$mapping == 1} {
-    mapleave;
-    #echo {mapping:  off};
-    #var {mapping} {0};
-  };
-  #else {
-    mapstart;
-    #echo {mapping:  on};
-    #var {mapping} {1};
-  };
-}
 #alias mw{} {
   #map write {maps/$map};
   #echo {map written}
