@@ -8,13 +8,14 @@
 #alias {tts} {
   temple_to_sin
 }
-#alias {sin_to_temple} {
-  #foreach {n;e;n;n;n;n;n;w} {dir} {
-    #send $dir;
-  }
+#alias {igor} {
+  #map run 25;
 }
-#alias {stt} {
-  sin_to_temple
+#alias {sin} {
+  #map run 1;
+}
+#alias {tot} {
+  #map run 33;
 }
 #alias {home} {
   #send t curebot summon;
