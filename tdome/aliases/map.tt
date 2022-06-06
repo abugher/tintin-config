@@ -1,21 +1,36 @@
 #nop Include this line in every file to set the command character.
 
-#alias mapon{} {
+#alias mapstart{} {
   #map read {maps/$map};
+  #map offset {0} {81} {-2} {-0};
   #map flag vtmap on;
   #map flag AsciiGraphics off;
   #map flag unicode on;
-  #map offset {0} {81} {-2} {-0};
 }
-#alias mapstart{} {
-  #map write {maps/$map};
-  mapon;
-  #map goto 1;
+#alias mapnear{} {
+  #map flag unicode on;
+}
+#alias mapfar{} {
+  #map flag unicode off;
 }
 #alias mapleave{} {
+  #map write {maps/$map};
   #map leave;
 }
 #alias M{} {
+  #if {$mapping == 1} {
+    mapleave;
+    #echo {mapping:  off};
+    #var {mapping} {0};
+  };
+  #else {
+    mapstart;
+    #map goto 1;
+    #echo {mapping:  on};
+    #var {mapping} {1};
+  };
+}
+#alias m{} {
   #if {$mapping == 1} {
     mapleave;
     #echo {mapping:  off};
@@ -33,12 +48,46 @@
 }
 
 /* Don't map imaginary rooms when walking into walls.
- * Dream rooms are still an issue.  "In your dreams, or what?" shows up in
+ * Dream rooms are still an issue.   shows up in
  * response to movement as well as other actions.
  */
 #action {cannot move that way} {
-  #map undo;
+  #if {$mapping == 1} {
+    #map undo;
+  }
+}
+#action {cannot go that way} {
+  #if {$mapping == 1} {
+    #map undo;
+  }
 }
 #action {can't go that way} {
-  #map undo;
+  #if {$mapping == 1} {
+    #map undo;
+  }
 }
+#action {The door seems to be closed.} {
+  #if {$mapping == 1} {
+    #map undo;
+  }
+}
+#action {need a boat to go} {
+  #if {$mapping == 1} {
+    #map undo;
+  }
+}
+
+
+/* These would be nice to catch, but the message is can occur for non-movement actions, which would cause overcorrection. */
+/*
+#action {No way!  You're fighting for your life!} {
+  #if {$mapping == 1} {
+    #map undo;
+  }
+}
+#action {"In your dreams, or what?"} {
+  #if {$mapping == 1} {
+    #map undo;
+  }
+}
+*/
