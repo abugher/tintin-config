@@ -91,3 +91,9 @@
   }
 }
 */
+
+#alias {sin} {#map run sin;}
+#alias {tot} {#map run tot;}
+#alias {zero} {#map run zero;}
+#alias {pawn} {#map run pawn;}
+#alias {subway} {#map run ta_subway;}

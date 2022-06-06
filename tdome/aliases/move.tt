@@ -1,22 +1,5 @@
 #nop Include this line in every file to set the command character.
 
-#alias {temple_to_sin} {
-  #foreach {e;s;s;s;s;s;w;s} {dir} {
-    #send $dir;
-  }
-}
-#alias {tts} {
-  temple_to_sin
-}
-#alias {igor} {
-  #map run 25;
-}
-#alias {sin} {
-  #map run 1;
-}
-#alias {tot} {
-  #map run 33;
-}
 #alias {home} {
   #send t curebot summon;
   #send t curebot confirm summon;
