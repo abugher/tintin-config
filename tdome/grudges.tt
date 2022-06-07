@@ -1,5 +1,7 @@
 #nop Include this line in every file to set the command character.
-/* Automatic attacks.  Dangerous.  Might help with leveling grind.  Be specific; don't trigger on every hit message. */
+/* Automatic attacks.  Dangerous.  Might help with leveling grind.  Be specific;
+ * don't trigger on every hit message.
+ */
 
 #alias {grudges_on} {
   #var {grudges} {1};
@@ -20,19 +22,35 @@
 grudges_on;
 
 
-#action {A pickpocket gets looks for a mark.} {
-  #if {$grudges} {
+#action {A pickpocket gets looks for a mark} {
+  #if {1 == $grudges} {
     jump pickpocket;
   }
 }
 #action {pickpocket arrives from} {
-  #if {$grudges} {
+  #if {1 == $grudges} {
     jump pickpocket;
   }
 }
 #action {pickpocket moves into view from} {
-  #if {$grudges} {
+  #if {1 == $grudges} {
     jump pickpocket;
+  }
+}
+
+#action {pimp struts past you.} {
+  #if {1 == $grudges} {
+    jump pimp;
+  }
+}
+#action {pimp arrives from} {
+  #if {1 == $grudges} {
+    jump pimp;
+  }
+}
+#action {pimp moves into view from} {
+  #if {1 == $grudges} {
+    jump pimp;
   }
 }
 
