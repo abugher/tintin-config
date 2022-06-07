@@ -17,3 +17,8 @@
 #alias {ew} {
   enchant_thing weapon %1
 }
+#alias {fix} {
+  #send t curebot heal;
+  #send t idbot strength;
+  #send t idbot densify;
+}

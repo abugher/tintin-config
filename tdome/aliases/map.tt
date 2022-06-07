@@ -19,13 +19,14 @@
 }
 #alias M{} {
   #if {$mapping == 1} {
+    mapwrite;
     mapleave;
     #echo {mapping:  off};
     #var {mapping} {0};
   };
   #else {
     mapstart;
-    #map goto 1;
+    #map return;
     #echo {mapping:  on};
     #var {mapping} {1};
   };
@@ -33,6 +34,14 @@
 #alias mw{} {
   #map write {maps/$map};
   #echo {map written}
+}
+
+#alias run{} {
+  #map explore {%1};
+  #path run;
+}
+#alias runto{} {
+  #map run {%1};
 }
 
 /* Don't map imaginary rooms when walking into walls.
@@ -59,14 +68,36 @@
     #map undo;
   }
 }
+#action {The grate seems to be closed.} {
+  #if {$mapping == 1} {
+    #map undo;
+  }
+}
 #action {need a boat to go} {
+  #if {$mapping == 1} {
+    #map undo;
+  }
+}
+#action {You are too exhausted.} {
+  #if {$mapping == 1} {
+    #map undo;
+  }
+}
+#action {You are blocked} {
   #if {$mapping == 1} {
     #map undo;
   }
 }
 
 
-/* These would be nice to catch, but the message is can occur for non-movement actions, which would cause overcorrection. */
+/* Fix map upon respawn. */
+#action {The Information Center of Tek Angeles [ Inside ]} {
+  mapstart;
+  #map goto info;
+}
+
+
+/* These would be nice to catch, but the messages can occur for non-movement actions, which would cause overcorrection. */
 /*
 #action {No way!  You're fighting for your life!} {
   #if {$mapping == 1} {

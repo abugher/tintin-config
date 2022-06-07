@@ -1,0 +1,126 @@
+#nop Include this line in every file to set the command character.
+/* Like grudges, but weaker. */
+
+
+#alias {prey_on} {
+  #var {prey} {1};
+  #echo {Prey:  on};
+  #alias {prey} {prey_off};
+}
+#alias {prey_off} {
+  #var {prey} {0};
+  #echo {Prey:  off};
+  #alias {prey} {prey_on};
+}
+#alias {prey} {
+  prey_on;
+}
+#alias {P} {
+  prey;
+}
+prey_off;
+
+#action {soldier spits over his left shoulder.} {
+  #if {$prey} {
+    jump soldier;
+  }
+}
+#action {views you with contempt.} {
+  #if {$prey} {
+    jump soldier;
+  }
+}
+#action {oldier arrives from} {
+  #if {$prey} {
+    jump soldier;
+  }
+}
+#action {oldier moves into view from} {
+  #if {$prey} {
+    jump soldier;
+  }
+}
+
+
+#action {A smelly drunk staggers past you.} {
+  #if {$prey} {
+    jump smelly;
+  }
+}
+#action {smelly drunk arrives from} {
+  #if {$prey} {
+    jump smelly;
+  }
+}
+#action {smelly drunk moves into view from} {
+  #if {$prey} {
+    jump smelly;
+  }
+}
+
+#action {a punked-out girl combs her mohawk.} {
+  #if {$prey} {
+    jump punked-out;
+  }
+}
+#action {punked-out girl arrives from} {
+  #if {$prey} {
+    jump punked-out;
+  }
+}
+#action {punked-out girl moves into view from} {
+  #if {$prey} {
+    jump punked-out;
+  }
+}
+
+#action {An impatient traveler glances at his watch.} {
+} {
+  #if {$prey} {
+    jump traveler;
+  }
+}
+#action {An impatient traveler glances at her watch.} {
+} {
+  #if {$prey} {
+    jump traveler;
+  }
+}
+#action {impatient traveler arrives from} {
+  #if {$prey} {
+    jump traveler;
+  }
+}
+#action {impatient traveler moves into view from} {
+  #if {$prey} {
+    jump traveler;
+  }
+}
+
+
+#action {A crackhead looks for his next fix.} {
+} {
+  #if {$prey} {
+    jump crackhead;
+  }
+}
+#action {crackhead arrives from} {
+  #if {$prey} {
+    jump crackhead;
+  }
+}
+#action {crackhead moves into view from} {
+  #if {$prey} {
+    jump crackhead;
+  }
+}
+
+
+
+/*
+#action {hobgoblin arrives from} {
+  #if {$prey} {
+    jump hobgoblin;
+  }
+}
+*/

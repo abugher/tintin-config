@@ -1,0 +1,38 @@
+#nop Include this line in every file to set the command character.
+/* Automatic attacks.  Dangerous.  Might help with leveling grind.  Be specific; don't trigger on every hit message. */
+
+#alias {grudges_on} {
+  #var {grudges} {1};
+  #echo {Grudges:  on};
+  #alias {grudges} {grudges_off};
+}
+#alias {grudges_off} {
+  #var {grudges} {0};
+  #echo {Grudges:  off};
+  #alias {grudges} {grudges_on};
+}
+#alias {grudges} {
+  grudges_on;
+}
+#alias {G} {
+  grudges;
+}
+grudges_on;
+
+
+#action {A pickpocket gets looks for a mark.} {
+  #if {$grudges} {
+    jump pickpocket;
+  }
+}
+#action {pickpocket arrives from} {
+  #if {$grudges} {
+    jump pickpocket;
+  }
+}
+#action {pickpocket moves into view from} {
+  #if {$grudges} {
+    jump pickpocket;
+  }
+}
+

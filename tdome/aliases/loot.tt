@@ -4,6 +4,9 @@
   #send get all from all.remains;
   #send get all from all.corpse;
   #send get all;
+  #send drop all.corpse;
+  #send drop all.remains;
+  #send drop all.skin;
 }
 #alias {ta} {
   ga
