@@ -3,54 +3,42 @@
  * don't trigger on every hit message.
  */
 
-#alias {grudges_on} {
-  #var {grudges} {1};
-  #echo {Grudges:  on};
-  #alias {grudges} {grudges_off};
+#alias {grudge_on} {
+  #var {grudge} {1};
+  #echo {Prey:  on};
+  #alias {toggle_grudge} {grudge_off};
 }
-#alias {grudges_off} {
-  #var {grudges} {0};
-  #echo {Grudges:  off};
-  #alias {grudges} {grudges_on};
+#alias {grudge_off} {
+  #var {grudge} {0};
+  #echo {Prey:  off};
+  #alias {toggle_grudge} {grudge_on};
 }
-#alias {grudges} {
-  grudges_on;
+#alias {toggle_grudge} {
+  grudge_on;
 }
 #alias {G} {
-  grudges;
+  toggle_grudge;
+}
+grudge_off;
+
+#alias {grudge} {
+  #action {%3} {
+    #if {1 == $grudge} {jump %1;};
+  };
+  #action {%2 arrives} {
+    #if {1 == $grudge} {jump %1;};
+  };
+  #action {%2 moves into view} {
+    #if {1 == $grudge} {jump %1;};
+  };
+  #action {%2 climbs up into view} {
+    #if {1 == $grudge} {jump %1;};
+  };
+  #action {%2 climbs up into view} {
+    #if {1 == $grudge} {jump %1;};
+  };
 }
 grudges_on;
 
-
-#action {A pickpocket gets looks for a mark} {
-  #if {1 == $grudges} {
-    jump pickpocket;
-  }
-}
-#action {pickpocket arrives from} {
-  #if {1 == $grudges} {
-    jump pickpocket;
-  }
-}
-#action {pickpocket moves into view from} {
-  #if {1 == $grudges} {
-    jump pickpocket;
-  }
-}
-
-#action {pimp struts past you.} {
-  #if {1 == $grudges} {
-    jump pimp;
-  }
-}
-#action {pimp arrives from} {
-  #if {1 == $grudges} {
-    jump pimp;
-  }
-}
-#action {pimp moves into view from} {
-  #if {1 == $grudges} {
-    jump pimp;
-  }
-}
-
+grudge {pickpocket}     {pickpocket}            {A pickpocket gets looks for a mark};
+grudge {pimp}           {pimp}                  {pimp struts past you.};
