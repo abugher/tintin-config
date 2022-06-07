@@ -1,149 +1,69 @@
 #nop Include this line in every file to set the command character.
 /* Like grudges, but more about profiting. */
 
-
 #alias {prey_on} {
   #var {prey} {1};
   #echo {Prey:  on};
-  #alias {prey} {prey_off};
+  #alias {toggle_prey} {prey_off};
 }
 #alias {prey_off} {
   #var {prey} {0};
   #echo {Prey:  off};
-  #alias {prey} {prey_on};
+  #alias {toggle_prey} {prey_on};
 }
-#alias {prey} {
+#alias {toggle_prey} {
   prey_on;
 }
 #alias {P} {
-  prey;
+  toggle_prey;
 }
 prey_off;
 
-#action {A MAT security guard tries to stay awake} {
-  #if {1 == $prey} {jump guard;};
-}
-#action {guard arrives from} {
-  #if {1 == $prey} {jump guard;};
-}
-#action {guard moves into view from} {
-  #if {1 == $prey} {jump guard;};
+#alias {prey} {
+  /*
+  #var {target_name} {%1};
+  #var {description_name} {%2};
+  #var {description} {%3};
+  */
+
+  #action {%3} {
+    #if {1 == $prey} {jump %1;};
+  };
+  #action {%2 arrives} {
+    #if {1 == $prey} {jump %1;};
+  };
+  #action {%2 moves into view} {
+    #if {1 == $prey} {jump %1;};
+  };
+  #action {%2 climbs up into view} {
+    #if {1 == $prey} {jump %1;};
+  };
+  #action {%2 climbs up into view} {
+    #if {1 == $prey} {jump %1;};
+  };
 }
 
-#action {soldier spits over his left shoulder} {
-  #if {1 == $prey} {jump soldier;};
-}
-#action {views you with contempt} {
-  #if {1 == $prey} {jump soldier;};
-}
-#action {oldier arrives from} {
-  #if {1 == $prey} {jump soldier;};
-}
-#action {oldier moves into view from} {
-  #if {1 == $prey} {jump soldier;};
-}
-
-
-#action {A smelly drunk staggers past you} {
-  #if {1 == $prey} {jump smelly;};
-}
-#action {smelly drunk arrives from} {
-  #if {1 == $prey} {jump smelly;};
-}
-#action {smelly drunk moves into view from} {
-  #if {1 == $prey} {jump smelly;};
+#alias {initialize_prey} {
+prey {guard}            {MAT security guard}    {MAT security guard tries to stay awake.};
+prey {soldier}          {soldier}               {soldier spits over his left shoulder.};
+prey {soldier}          {soldier}               {views you with contempt.};
+prey {drunk}            {smelly drunk}          {smelly drunk staggers past you.};
+prey {girl}             {young girl}            {young girl avoids your gaze.};
+prey {girl}             {punked-out girl}       {punked-out girl combs her mohawk.};
+prey {traveler}         {impatient traveler}    {impatient traveler reads a newspaper.};
+prey {traveler}         {impatient traveler}    {impatient traveler glances at his watch.};
+prey {traveler}         {impatient traveler}    {impatient traveler glances at her watch.};
+prey {crackhead}        {crackhead}             {A crackhead looks for her next fix.};
+prey {commuter}         {commuter}              {A commuter reads a newspaper.};
+prey {commuter}         {commuter}              {A commuter glances at his watch.};
+prey {commuter}         {commuter}              {A commuter glances at her watch.};
+prey {drunk}            {sloppy drunk}          {sloppy drunk is just asking for it.};
+prey {walker}           {walker}                {walker is walking};
+prey {baglady}          {old baglady}           {An old baglady mutters to herself.};
+prey {man}              {man}                   {A man stands here.};
+#nop prey {cockroach}       {giant cockroach}      {};
+#nop prey {hobgoblin}        {hobgoblin}       {?}
 }
 
-#action {A young girl avoids your gaze} {
-  #if {1 == $prey} {jump girl;};
-}
-#action {young girl arrives from} {
-  #if {1 == $prey} {jump girl;};
-}
-#action {young girl moves into view from} {
-  #if {1 == $prey} {jump girl;};
-}
+initialize_prey;
 
-#action {a punked-out girl combs her mohawk} {
-  #if {1 == $prey} {jump girl;};
-}
-#action {punked-out girl arrives from} {
-  #if {1 == $prey} {jump girl;};
-}
-#action {punked-out girl moves into view from} {
-  #if {1 == $prey} {jump girl;};
-}
-
-#action {An impatient traveler reads a newspaper} {
-} {
-  #if {1 == $prey} {jump traveler;};
-}
-#action {An impatient traveler glances at his watch} {
-} {
-  #if {1 == $prey} {jump traveler;};
-}
-#action {An impatient traveler glances at her watch} {
-} {
-  #if {1 == $prey} {jump traveler;};
-}
-#action {impatient traveler arrives from} {
-  #if {1 == $prey} {jump traveler;};
-}
-#action {impatient traveler moves into view from} {
-  #if {1 == $prey} {jump traveler;};
-}
-
-
-#action {A crackhead looks for his next fix} {
-} {
-  #if {1 == $prey} {jump crackhead;};
-}
-#action {A crackhead looks for her next fix} {
-} {
-  #if {1 == $prey} {jump crackhead;};
-}
-#action {crackhead arrives from} {
-  #if {1 == $prey} {jump crackhead;};
-}
-#action {crackhead moves into view from} {
-  #if {1 == $prey} {jump crackhead;};
-}
-
-#action {A commuter reads a newspaper} {
-} {
-  #if {1 == $prey} {jump commuter;};
-}
-#action {A commuter glances at his watch} {
-} {
-  #if {1 == $prey} {jump commuter;};
-}
-#action {A commuter glances at her watch} {
-} {
-  #if {1 == $prey} {jump commuter;};
-}
-#action {commuter arrives from} {
-  #if {1 == $prey} {jump commuter;};
-}
-#action {commuter moves into view from} {
-  #if {1 == $prey} {jump commuter;};
-}
-
-#action {sloppy drunk is just asking for it} {
-} {
-  #if {1 == $prey} {jump drunk;};
-}
-#action {sloppy drunk arrives from} {
-  #if {1 == $prey} {jump drunk;};
-}
-#action {sloppy drunk moves into view from} {
-  #if {1 == $prey} {jump drunk;};
-}
-
-
-
-
-/*
-#action {hobgoblin arrives from} {
-  #if {1 == $prey} {jump hobgoblin;};
-}
-*/
