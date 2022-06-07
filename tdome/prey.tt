@@ -20,12 +20,6 @@
 prey_off;
 
 #alias {prey} {
-  /*
-  #var {target_name} {%1};
-  #var {description_name} {%2};
-  #var {description} {%3};
-  */
-
   #action {%3} {
     #if {1 == $prey} {jump %1;};
   };
