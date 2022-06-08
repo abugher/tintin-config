@@ -39,6 +39,7 @@ prey_off;
 
 #alias {initialize_prey} {
 prey {guard}            {MAT security guard}    {MAT security guard tries to stay awake.};
+prey {worker}           {MAT system worker}     {A MAT system worker looks for a place to nap.};
 prey {soldier}          {soldier}               {soldier spits over his left shoulder.};
 prey {soldier}          {soldier}               {views you with contempt.};
 prey {drunk}            {smelly drunk}          {smelly drunk staggers past you.};
@@ -55,7 +56,8 @@ prey {drunk}            {sloppy drunk}          {sloppy drunk is just asking for
 prey {walker}           {walker}                {walker is walking};
 prey {baglady}          {old baglady}           {An old baglady mutters to herself.};
 prey {man}              {man}                   {A man stands here.};
-#nop prey {cockroach}       {giant cockroach}      {};
+prey {cockroach}        {giant cockroach}       {giant cockroach is here};
+prey {urchin}           {street urchin}         {street urchin looks for a handout.};
 #nop prey {hobgoblin}        {hobgoblin}       {?}
 }
 

@@ -31,9 +31,12 @@
     #var {mapping} {1};
   };
 }
-#alias mw{} {
+#alias mapwrite{} {
   #map write {maps/$map};
   #echo {map written}
+}
+#alias mw{} {
+  mapwrite;
 }
 
 #alias run{} {

@@ -5,12 +5,12 @@
 
 #alias {grudge_on} {
   #var {grudge} {1};
-  #echo {Prey:  on};
+  #echo {Grudge:  on};
   #alias {toggle_grudge} {grudge_off};
 }
 #alias {grudge_off} {
   #var {grudge} {0};
-  #echo {Prey:  off};
+  #echo {Grudge:  off};
   #alias {toggle_grudge} {grudge_on};
 }
 #alias {toggle_grudge} {
@@ -38,7 +38,6 @@ grudge_off;
     #if {1 == $grudge} {jump %1;};
   };
 }
-grudges_on;
 
 grudge {pickpocket}     {pickpocket}            {A pickpocket gets looks for a mark};
 grudge {pimp}           {pimp}                  {pimp struts past you.};
