@@ -7,6 +7,9 @@
   #send drop all.corpse;
   #send drop all.remains;
   #send drop all.skin;
+  #send drop all.placard;
+  #send drop all.trash;
+  #send drop all.chain;
 }
 #alias {ta} {
   ga

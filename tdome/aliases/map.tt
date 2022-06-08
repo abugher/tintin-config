@@ -1,11 +1,14 @@
 #nop Include this line in every file to set the command character.
 
 #alias mapstart{} {
+  #var {mapping} {1};
   #map read {maps/$map};
   #map offset {0} {81} {-2} {-0};
   #map flag vtmap on;
   #map flag AsciiGraphics off;
   #map flag unicode on;
+  #map return;
+  #echo {mapping:  on};
 }
 #alias mapnear{} {
   #map flag unicode on;
@@ -14,21 +17,18 @@
   #map flag unicode off;
 }
 #alias mapleave{} {
+  #var {mapping} {0};
   #map write {maps/$map};
   #map leave;
+  #echo {mapping:  off};
 }
 #alias M{} {
   #if {$mapping == 1} {
     mapwrite;
     mapleave;
-    #echo {mapping:  off};
-    #var {mapping} {0};
   };
   #else {
     mapstart;
-    #map return;
-    #echo {mapping:  on};
-    #var {mapping} {1};
   };
 }
 #alias mapwrite{} {
@@ -93,18 +93,6 @@
 }
 
 
-/* Fix map upon respawn. */
-#action {The Information Center of Tek Angeles [ Inside ]} {
-  mapstart;
-  #map goto info;
-}
-/* Fix map upon bail out. */
-#action {Master Sin's School [ Inside ]} {
-  mapstart;
-  #map goto sin;
-}
-
-
 /* These would be nice to catch, but the messages can occur for non-movement actions, which would cause overcorrection. */
 /*
 #action {No way!  You're fighting for your life!} {
@@ -118,6 +106,19 @@
   }
 }
 */
+
+
+/* Fix map upon respawn. */
+#action {The Information Center of Tek Angeles [ Inside ]} {
+  mapstart;
+  #map goto info;
+}
+/* Fix map upon bail out. */
+#action {Master Sin's School [ Inside ]} {
+  mapstart;
+  #map goto sin;
+}
+
 
 #alias {sin} {#map run sin;}
 #alias {tot} {#map run tot;}
