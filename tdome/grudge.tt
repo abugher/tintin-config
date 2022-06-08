@@ -19,7 +19,7 @@
 #alias {G} {
   toggle_grudge;
 }
-grudge_off;
+grudge_on;
 
 #alias {grudge} {
   #action {%3} {

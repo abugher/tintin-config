@@ -3,8 +3,8 @@
 #var {user} {NeoMercevi}
 #script {pass} {bash -c 'pass show aaron/tdome.net/$user'}
 
-#var {wield} {knife}
-#var {dual} {knife}
+#var {wield} {dagger}
+#var {dual} {switchblade}
 #var {container} {bag}
 
 #var {map} {ta}

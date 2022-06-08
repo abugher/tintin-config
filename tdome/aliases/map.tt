@@ -71,7 +71,7 @@
     #map undo;
   }
 }
-#action {The grate seems to be closed.} {
+#action {seems to be closed.} {
   #if {$mapping == 1} {
     #map undo;
   }
@@ -97,6 +97,11 @@
 #action {The Information Center of Tek Angeles [ Inside ]} {
   mapstart;
   #map goto info;
+}
+/* Fix map upon bail out. */
+#action {Master Sin's School [ Inside ]} {
+  mapstart;
+  #map goto sin;
 }
 
 

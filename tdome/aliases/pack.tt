@@ -5,6 +5,7 @@
   #send wield $wield;
   #send dual $dual;
   #send wear all;
+  #send remove $container;
   #send put all in $container;
 }
 
