@@ -43,14 +43,5 @@ patrol_off;
 };
 
 
-#alias {LPA} {
-  L;
-  P;
-  A;
-}
-#alias {lpa} {
-  LPA
-}
-
-patrol {ta_subway_stair}        {A Public Stairway [ Inside ]}          {ta_subway}
-patrol {ta_subway}              {Boarding Platform [ Inside ]}          {ta_subway_stair}
+patrol {ta_subway_stair}        {A Public Stairway [ Inside ]}                  {forest_subway_stair}
+patrol {forest_subway_stair}    {On a Leaf Covered Staircase [ Inside ]}        {ta_subway_stair}

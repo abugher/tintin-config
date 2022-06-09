@@ -101,6 +101,15 @@
     };
   };
 };
+#action {Maybe you should get on your feet first?} {
+  #if {$mapping == 1} {
+    #if {1 == $patrol} {
+      #map undo;
+      st;
+    };
+  };
+};
+
 /*
 #action {"In your dreams, or what?"} {
   #if {$mapping == 1} {
