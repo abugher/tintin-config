@@ -58,6 +58,7 @@ prey {girl}             {punked-out girl}       {punked-out girl combs her mohaw
 prey {traveler}         {impatient traveler}    {impatient traveler reads a newspaper.};
 prey {traveler}         {impatient traveler}    {impatient traveler glances at his watch.};
 prey {traveler}         {impatient traveler}    {impatient traveler glances at her watch.};
+prey {crackhead}        {crackhead}             {A crackhead looks for his next fix.};
 prey {crackhead}        {crackhead}             {A crackhead looks for her next fix.};
 prey {commuter}         {commuter}              {A commuter reads a newspaper.};
 prey {commuter}         {commuter}              {A commuter glances at his watch.};
@@ -68,13 +69,20 @@ prey {baglady}          {old baglady}           {An old baglady mutters to herse
 prey {man}              {man}                   {A man stands here.};
 prey {cockroach}        {giant cockroach}       {A giant cockroach charges toward you.};
 prey {urchin}           {street urchin}         {street urchin looks for a handout.};
+prey {urchin}           {street urchin}         {A dirty urchin runs up to you and grabs at your legs.};
 prey {bugbear}          {large bugbear}         {A large bugbear growls at you.};
-prey {mime} {mime}      {a mime juggles a pair of imaginary cats.};
+prey {mime}             {mime}                  {a mime juggles a pair of imaginary cats.};
 prey {lunatic}          {screaming lunatic}     {a screaming lunatic rants at you.};
 prey {fanatic}          {wild-eyed fanatic}     {A wild-eyed fanatic waves a placard in your face.};
 prey {rabbit}           {rabbit}                {A rabbit is here.};
-#nop prey {homeless}         {homeless man}          {?}
+prey {citizen}          {citizen}               {A citizen mutters something about 'foreigners'.};
+prey {citizen}          {citizen}               {A citizen stops to smell the tar on the road.};
+prey {citizen}          {citizen}               {A citizen bumps you as he hurries to work.};
+prey {homeless}         {homeless man}          {A homeless man looks for a place to lie down.};
+prey {jester}           {jester}                {A jester bounces happily around you.};
+prey {salesman}         {salesman}              {A salesman wanders around looking for people like you to rip off.};
 #nop prey {hobgoblin}        {hobgoblin}       {?}
+
 }
 
 initialize_prey;

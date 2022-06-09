@@ -1,0 +1,49 @@
+#nop Include this line in every file to set the command character.
+
+#alias {patrol_on} {
+  #var {patrol} {1};
+  #echo {Patrol:  on};
+  #alias {toggle_patrol} {patrol_off};
+}
+#alias {patrol_off} {
+  #var {patrol} {0};
+  #echo {Patrol:  off};
+  #alias {toggle_patrol} {patrol_on};
+}
+#alias {toggle_patrol} {
+  patrol_on;
+}
+#alias {patrol} {
+  toggle_patrol;
+}
+patrol_off;
+
+
+#action {$scene1_description} {
+  #if {1 == $patrol} {
+    #delay {$patrol_time} {
+      #map run $scene2_name;
+    };
+  };
+};
+
+#action {$scene2_description} {
+  #if {1 == $patrol} {
+    #delay {$patrol_time} {
+      #map run $scene1_name;
+    };
+  };
+};
+
+
+#action {It's empty already.} {
+  #if {1 == $life_support} {
+    #if {1 == $patrol} {
+      #map run $water_place;
+      #send fill barrel $water_thing;
+      #send drink $water_thing;
+      #send drink $water_thing;
+      #map run $scene1_name;
+    };
+  };
+};

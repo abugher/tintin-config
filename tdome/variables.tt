@@ -8,3 +8,13 @@
 #var {container} {bag}
 
 #var {map} {ta}
+
+#var {scene1_name} {ta_subway_stair}
+#var {scene1_description} {A Public Stairway [ Inside ]}
+#var {scene2_name} {ta_subway}
+#var {scene2_description} {Boarding Platform [ Inside ]}
+#var {water_place} {cooler}
+#var {water_thing} {cooler}
+
+#var {sleep_time} {15}
+#var {patrol_time} {15}

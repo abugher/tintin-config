@@ -1,0 +1,74 @@
+#nop Include this line in every file to set the command character.
+
+#alias {life_support_on} {
+  #var {life_support} {1};
+  #echo {Life Support:  on};
+  #alias {toggle_life_support} {life_support_off};
+}
+#alias {life_support_off} {
+  #var {life_support} {0};
+  #echo {Life Support:  off};
+  #alias {toggle_life_support} {life_support_on};
+}
+#alias {toggle_life_support} {
+  life_support_on;
+}
+#alias {L} {
+  toggle_life_support;
+}
+life_support_off;
+
+
+#alias {sleep_action} {
+  #if {1 == $life_support} {
+    #send sleep;
+    #delay {$sleep_time} {
+      #send wake;
+      #send stand;
+      #send score;
+      #send look;
+    };
+  };
+}
+
+#alias {food_action} {
+  #if {1 == $life_support} {
+    #send eat meat;
+    #send eat ham;
+    #send unbag ham;
+    #send eat ham;
+  };
+}
+
+#alias {water_action} {
+  #if {1 == $life_support} {
+    #send drink barrel;
+  };
+}
+
+
+#action {Yawn.... Perhaps it is time for a nap?} {
+  sleep_action;
+};
+
+#action {You are sleepy.} {
+  sleep_action;
+};
+
+#action {You need some food.} {
+  food_action;
+};
+
+#action {You are hungry.} {
+  food_action;
+};
+
+#action {You're getting thirsty.} {
+  water_action;
+};
+
+#action {You are thirsty.} {
+  water_action;
+};
+
+#alias {lpp} {L;P;patrol;};
