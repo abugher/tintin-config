@@ -35,6 +35,15 @@ prey_off;
   #action {%2 climbs up into view} {
     #if {1 == $prey} {jump %1;};
   };
+  #action {%2 drags himself to his feet.} {
+    #if {1 == $prey} {jump %1;};
+  };
+  #action {%2 drags herself to her feet.} {
+    #if {1 == $prey} {jump %1;};
+  };
+  #action {%2 drags itself to its feet.} {
+    #if {1 == $prey} {jump %1;};
+  };
 }
 
 #alias {initialize_prey} {
@@ -64,6 +73,7 @@ prey {mime} {mime}      {a mime juggles a pair of imaginary cats.};
 prey {lunatic}          {screaming lunatic}     {a screaming lunatic rants at you.};
 prey {fanatic}          {wild-eyed fanatic}     {A wild-eyed fanatic waves a placard in your face.};
 prey {rabbit}           {rabbit}                {A rabbit is here.};
+#nop prey {homeless}         {homeless man}          {?}
 #nop prey {hobgoblin}        {hobgoblin}       {?}
 }
 
