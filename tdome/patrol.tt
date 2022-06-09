@@ -4,7 +4,8 @@
   #var {patrol} {1};
   #echo {Patrol:  on};
   #alias {toggle_patrol} {patrol_off};
-  #map run $scene1_name;
+  #map run {$patrol_start} {$patrol_step_time};
+  #send look;
 }
 #alias {patrol_off} {
   #var {patrol} {0};
@@ -21,21 +22,20 @@ patrol_off;
 
 
 #alias {patrol} {
-  #var {patrol_from_name} {%1};
-  #var {patrol_from_description} {%1};
-  #var {patrol_to_name} {%2};
-
-  #action {$patrol_from_description} {
+  #action {%2} {
     #if {1 == $patrol} {
+      #echo {PATROL POINT:  %1};
+      #map goto {%1};
       #delay {$patrol_time} {
-        #map run $patrol_to_name $patrol_step_time;
+        #if {1 == $prey} {
+          prey_off;
+          #map run {%3} {$patrol_step_time};
+          prey_on;
+        };
+        #else {
+          #map run {%3} {$patrol_step_time};
+        };
       };
-    };
-  };
-  #action {$patrol_from_description} {
-    #if {1 == $patrol} {
-      mapstart;
-      #map goto $patrol_from_name;
     };
   };
 };
@@ -50,5 +50,5 @@ patrol_off;
   LPA
 }
 
-patrol {$scene1_name} {$scene1_description} {$scene2_name}
-patrol {$scene2_name} {$scene2_description} {$scene1_name}
+patrol {ta_subway_stair}        {A Public Stairway [ Inside ]}          {ta_subway}
+patrol {ta_subway}              {Boarding Platform [ Inside ]}          {ta_subway_stair}

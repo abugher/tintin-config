@@ -81,6 +81,7 @@ prey {citizen}          {citizen}               {A citizen bumps you as he hurri
 prey {homeless}         {homeless man}          {A homeless man looks for a place to lie down.};
 prey {jester}           {jester}                {A jester bounces happily around you.};
 prey {salesman}         {salesman}              {A salesman wanders around looking for people like you to rip off.};
+prey {banger}           {gang banger}           {A punk little gang banger awaits your lethal blow.};
 #nop prey {hobgoblin}        {hobgoblin}       {?}
 
 }

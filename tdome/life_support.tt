@@ -19,23 +19,48 @@
 life_support_off;
 
 
+#alias {real_sleep_action} {
+}
+
 #alias {sleep_action} {
   #if {1 == $life_support} {
-    #send sleep;
-    #delay {$sleep_time} {
-      #send wake;
-      #send stand;
-      #send score;
-      #send look;
+    #echo {SLEEP CYCLE:  START};
+    life_support_off;
+    #if {1 == $patrol} {
+      patrol_off;
+      #delay {$patrol_time} {
+        #delay {$patrol_time} {
+          #send sleep;
+          #delay {$sleep_time} {
+            #send wake;
+            #send stand;
+            #send score;
+            patrol_on;
+            life_support_on;
+            #echo {SLEEP CYCLE:  END};
+          };
+        };
+      };
+    };
+    #else {
+      #send sleep;
+      #delay {$sleep_time} {
+        #send wake;
+        #send stand;
+        #send score;
+        #send look;
+        life_support_on;
+        #echo {SLEEP CYCLE:  END};
+      };
     };
   };
 }
 
 #alias {food_action} {
   #if {1 == $life_support} {
-    uncontain $container $food;
-    #send eat $food;
-    contain $container all.$food;
+    #send get $food_thing from $container;
+    #send eat $food_thing;
+    #send put all.$food_thing in $container;
   };
 }
 
@@ -46,20 +71,16 @@ life_support_off;
 }
 
 
-/* Turn of patrol, wait out any patrol timers, then sleep, then turn on patrol.  This is to avoid breaking the map. */
+/* Try hard to avoid breaking the map. */
 #action {Yawn.... Perhaps it is time for a nap?} {
-  if {1 == $patrol} {
-    patrol_off;
-    delay {$patrol_time} {
-      delay {$patrol_time} {
-        sleep_action;
-        patrol_on;
-      }
-    }
-  }
+  sleep_action;
 };
 
 #action {You are sleepy.} {
+  sleep_action;
+};
+
+#action {You feel drowsy. You should get some rest.} {
   sleep_action;
 };
 

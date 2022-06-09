@@ -1,40 +1,72 @@
 #nop Include this line in every file to set the command character.
 
 
+#alias {real_replenish_water} {
+  #map run $water_place;
+  #send fill $water_container $water_thing;
+  #send drink $water_thing;
+  #send drink $water_thing;
+  #map run $patrol_start;
+}
 #alias {replenish_water} {
   #if {1 == $life_support} {
     #if {1 == $patrol} {
-      #map run $water_place;
-      #send fill $water_container $water_thing;
-      #send drink $water_thing;
-      #send drink $water_thing;
-      #map run $scene1_name;
+      #if {1 == $prey} {
+        prey_off;
+        real_replenish_water;
+        prey_on;
+      };
+      #else {
+        real_replenish_water;
+      };
     };
   };
 };
-#alias {replenish_food_disabled} {
+#alias {real_replenish_food} {
+  #map run $food_place;
+  #send buy $food;
+  #send buy $food;
+  #send buy $food;
+  #send buy $food;
+  #send buy $food;
+  #send buy $food;
+  #send buy $food;
+  #send buy $food;
+  #send eat $food;
+  #send buy $food;
+  bag all.food;
+  #map run $patrol_start;
+  #nop run_errands;
+}
+#alias {replenish_food} {
   #if {1 == $life_support} {
     #if {1 == $patrol} {
-      #map run $food_place;
-      #send buy $food;
-      #send buy $food;
-      #send buy $food;
-      #send buy $food;
-      #send buy $food;
-      #send buy $food;
-      #send buy $food;
-      #send buy $food;
-      #send eat $food;
-      #send buy $food;
-      bag all.food;
-      #map run $scene1_name;
+      #if {1 == $prey} {
+      prey_off;
+      real_replenish_food;
+      prey_on;
+      }
+    };
+    #else {
+      real_replenish_food;
     };
   };
 };
-#alias {replenish_food} {
+#alias {replenish_food_stub} {
   #if {1 == $life_support} {
     #echo {Replenish food:  unimplemented.};
   };
+}
+
+#alias {run_errands} {
+  sell_to_frankk;
+  sell_to_igor;
+  sell_to_pawn;
+  sell_to_water;
+  sell_to_hoby;
+  sell_to_potion;
+  sell_to_magic;
+  sell_to_jewel;
 }
 
 #action {It's empty already.} {
