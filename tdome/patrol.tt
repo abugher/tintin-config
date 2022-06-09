@@ -4,6 +4,7 @@
   #var {patrol} {1};
   #echo {Patrol:  on};
   #alias {toggle_patrol} {patrol_off};
+  #map run $scene1_name;
 }
 #alias {patrol_off} {
   #var {patrol} {0};
@@ -13,37 +14,41 @@
 #alias {toggle_patrol} {
   patrol_on;
 }
-#alias {patrol} {
+#alias {A} {
   toggle_patrol;
 }
 patrol_off;
 
 
-#action {$scene1_description} {
-  #if {1 == $patrol} {
-    #delay {$patrol_time} {
-      #map run $scene2_name;
-    };
-  };
-};
+#alias {patrol} {
+  #var {patrol_from_name} {%1};
+  #var {patrol_from_description} {%1};
+  #var {patrol_to_name} {%2};
 
-#action {$scene2_description} {
-  #if {1 == $patrol} {
-    #delay {$patrol_time} {
-      #map run $scene1_name;
-    };
-  };
-};
-
-
-#action {It's empty already.} {
-  #if {1 == $life_support} {
+  #action {$patrol_from_description} {
     #if {1 == $patrol} {
-      #map run $water_place;
-      #send fill barrel $water_thing;
-      #send drink $water_thing;
-      #send drink $water_thing;
-      #map run $scene1_name;
+      #delay {$patrol_time} {
+        #map run $patrol_to_name $patrol_step_time;
+      };
+    };
+  };
+  #action {$patrol_from_description} {
+    #if {1 == $patrol} {
+      mapstart;
+      #map goto $patrol_from_name;
     };
   };
 };
+
+
+#alias {LPA} {
+  L;
+  P;
+  A;
+}
+#alias {lpa} {
+  LPA
+}
+
+patrol {$scene1_name} {$scene1_description} {$scene2_name}
+patrol {$scene2_name} {$scene2_description} {$scene1_name}

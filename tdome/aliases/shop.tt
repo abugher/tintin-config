@@ -1,0 +1,17 @@
+#nop Include this line in every file to set the command character.
+
+#alias {sell} {
+  #var items %0;
+  #replace items { } {;};
+  #foreach {$items} {item} {
+    #send sell $item;
+  }
+}
+
+#alias {buy} {
+  #var items %0;
+  #replace items { } {;};
+  #foreach {$items} {item} {
+    #send buy $item;
+  }
+}

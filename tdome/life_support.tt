@@ -33,25 +33,37 @@ life_support_off;
 
 #alias {food_action} {
   #if {1 == $life_support} {
-    #send eat meat;
-    #send eat ham;
-    #send unbag ham;
-    #send eat ham;
+    uncontain $container $food;
+    #send eat $food;
+    contain $container all.$food;
   };
 }
 
 #alias {water_action} {
   #if {1 == $life_support} {
-    #send drink barrel;
+    #send drink $water_container;
   };
 }
 
 
+/* Turn of patrol, wait out any patrol timers, then sleep, then turn on patrol.  This is to avoid breaking the map. */
 #action {Yawn.... Perhaps it is time for a nap?} {
-  sleep_action;
+  if {1 == $patrol} {
+    patrol_off;
+    delay {$patrol_time} {
+      delay {$patrol_time} {
+        sleep_action;
+        patrol_on;
+      }
+    }
+  }
 };
 
 #action {You are sleepy.} {
+  sleep_action;
+};
+
+#action {You have been awake 24 hours plus. You REALLY need some sleep.} {
   sleep_action;
 };
 
@@ -70,5 +82,3 @@ life_support_off;
 #action {You are thirsty.} {
   water_action;
 };
-
-#alias {lpp} {L;P;patrol;};

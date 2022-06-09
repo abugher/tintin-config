@@ -1,0 +1,47 @@
+#nop Include this line in every file to set the command character.
+
+
+#alias {replenish_water} {
+  #if {1 == $life_support} {
+    #if {1 == $patrol} {
+      #map run $water_place;
+      #send fill $water_container $water_thing;
+      #send drink $water_thing;
+      #send drink $water_thing;
+      #map run $scene1_name;
+    };
+  };
+};
+#alias {replenish_food_disabled} {
+  #if {1 == $life_support} {
+    #if {1 == $patrol} {
+      #map run $food_place;
+      #send buy $food;
+      #send buy $food;
+      #send buy $food;
+      #send buy $food;
+      #send buy $food;
+      #send buy $food;
+      #send buy $food;
+      #send buy $food;
+      #send eat $food;
+      #send buy $food;
+      bag all.food;
+      #map run $scene1_name;
+    };
+  };
+};
+#alias {replenish_food} {
+  #if {1 == $life_support} {
+    #echo {Replenish food:  unimplemented.};
+  };
+}
+
+#action {It's empty already.} {
+  replenish_water;
+};
+
+/* This is all it says when you eat something absent. */
+#action {You can't find it!} {
+  replenish_food;
+};
