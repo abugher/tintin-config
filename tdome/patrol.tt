@@ -27,13 +27,15 @@ patrol_off;
       #echo {PATROL POINT:  %1};
       #map goto {%1};
       #delay {$patrol_time} {
-        #if {1 == $prey} {
-          prey_off;
-          #map run {%3} {$patrol_step_time};
-          prey_on;
-        };
-        #else {
-          #map run {%3} {$patrol_step_time};
+        #if {1 == $patrol} {
+          #if {1 == $prey} {
+            prey_off;
+            #map run {%3} {$patrol_step_time};
+            prey_on;
+          };
+          #else {
+            #map run {%3} {$patrol_step_time};
+          };
         };
       };
     };

@@ -22,7 +22,7 @@
   #map leave;
   #echo {mapping:  off};
 }
-#alias M{} {
+#alias {M} {
   #if {$mapping == 1} {
     mapwrite;
     mapleave;
@@ -33,7 +33,7 @@
 }
 #alias mapwrite{} {
   #map write {maps/$map};
-  #echo {map written}
+  #echo {map written};
 }
 #alias mw{} {
   mapwrite;
@@ -54,52 +54,54 @@
 #action {cannot move that way} {
   #if {$mapping == 1} {
     #map undo;
-  }
+  };
 }
 #action {cannot go that way} {
   #if {$mapping == 1} {
     #map undo;
-  }
+  };
 }
 #action {can't go that way} {
   #if {$mapping == 1} {
     #map undo;
-  }
+  };
 }
 #action {The door seems to be closed.} {
   #if {$mapping == 1} {
     #map undo;
-  }
+  };
 }
 #action {seems to be closed.} {
   #if {$mapping == 1} {
     #map undo;
-  }
+  };
 }
 #action {need a boat to go} {
   #if {$mapping == 1} {
     #map undo;
-  }
+  };
 }
 #action {You are too exhausted.} {
   #if {$mapping == 1} {
     #map undo;
-  }
+  };
 }
 #action {You are blocked} {
   #if {$mapping == 1} {
     #map undo;
-  }
+  };
 }
 
 
 /* These would be nice to catch, but the messages can occur for non-movement actions, which would cause overcorrection. */
-/*
 #action {No way!  You're fighting for your life!} {
   #if {$mapping == 1} {
-    #map undo;
-  }
-}
+    #if {1 == $patrol} {
+      #map undo;
+    };
+  };
+};
+/*
 #action {"In your dreams, or what?"} {
   #if {$mapping == 1} {
     #map undo;
@@ -112,16 +114,16 @@
 #action {The Information Center of Tek Angeles [ Inside ]} {
   mapstart;
   #map goto info;
-}
+};
 /* Fix map upon bail out. */
 #action {Master Sin's School [ Inside ]} {
   mapstart;
   #map goto sin;
-}
+};
 
 
-#alias {sin} {#map run sin;}
-#alias {tot} {#map run tot;}
-#alias {zero} {#map run zero;}
-#alias {pawn} {#map run pawn;}
-#alias {subway} {#map run ta_subway;}
+#alias {sin} {#map run sin;};
+#alias {tot} {#map run tot;};
+#alias {zero} {#map run zero;};
+#alias {pawn} {#map run pawn;};
+#alias {subway} {#map run ta_subway;};

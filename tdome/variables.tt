@@ -16,6 +16,6 @@
 #var {food_thing} {hamburger}
 
 #var {sleep_time} {60}
-#var {patrol_time} {15}
-#var {patrol_step_time} {0.3}
+#var {patrol_time} {30}
+#var {patrol_step_time} {0.5}
 #var {patrol_start} {ta_subway_stair}

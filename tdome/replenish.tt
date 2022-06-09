@@ -2,11 +2,15 @@
 
 
 #alias {real_replenish_water} {
+  patrol_off;
+  life_support_off;
   #map run $water_place;
   #send fill $water_container $water_thing;
   #send drink $water_thing;
   #send drink $water_thing;
   #map run $patrol_start;
+  life_support_on;
+  patrol_on;
 }
 #alias {replenish_water} {
   #if {1 == $life_support} {
@@ -23,33 +27,46 @@
   };
 };
 #alias {real_replenish_food} {
+  patrol_off;
+  life_support_off;
   #map run $food_place;
-  #send buy $food;
-  #send buy $food;
-  #send buy $food;
-  #send buy $food;
-  #send buy $food;
-  #send buy $food;
-  #send buy $food;
-  #send buy $food;
-  #send eat $food;
-  #send buy $food;
-  bag all.food;
+  #send buy $food_thing;
+  #send put all.$food_thing in $container;
+  #send buy $food_thing;
+  #send put all.$food_thing in $container;
+  #send buy $food_thing;
+  #send put all.$food_thing in $container;
+  #send buy $food_thing;
+  #send put all.$food_thing in $container;
+  #send buy $food_thing;
+  #send put all.$food_thing in $container;
+  #send buy $food_thing;
+  #send put all.$food_thing in $container;
+  #send buy $food_thing;
+  #send put all.$food_thing in $container;
+  #send buy $food_thing;
+  #send put all.$food_thing in $container;
+  #send buy $food_thing;
+  #send eat $food_thing;
   #map run $patrol_start;
   #nop run_errands;
+  life_support_on;
+  patrol_on;
 }
 #alias {replenish_food} {
   #if {1 == $life_support} {
+    life_support_off;
     #if {1 == $patrol} {
       #if {1 == $prey} {
-      prey_off;
-      real_replenish_food;
-      prey_on;
-      }
+        prey_off;
+        real_replenish_food;
+        prey_on;
+      };
+      #else {
+        real_replenish_food;
+      };
     };
-    #else {
-      real_replenish_food;
-    };
+    life_support_on;
   };
 };
 #alias {replenish_food_stub} {
@@ -75,5 +92,8 @@
 
 /* This is all it says when you eat something absent. */
 #action {You can't find it!} {
+  replenish_food;
+};
+#action {There doesn't seem to be a $food_item in a $container.} {
   replenish_food;
 };
