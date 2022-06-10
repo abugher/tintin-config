@@ -61,6 +61,8 @@ life_support_off;
 
 #alias {food_action} {
   #if {1 == $life_support} {
+    #send get eat meat;
+    #send get eat meat;
     #send get $food_thing from $container;
     #send eat $food_thing;
     #send put all.$food_thing in $container;

@@ -192,6 +192,6 @@
   replenish_dark_vision;
 };
 
-#action {Your arms are already full!} {
-  sell_stuff;
-}
+#nop   #action {Your arms are already full!} {
+#nop     sell_stuff;
+#nop   }
