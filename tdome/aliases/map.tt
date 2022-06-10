@@ -94,13 +94,7 @@
 
 
 /* These would be nice to catch, but the messages can occur for non-movement actions, which would cause overcorrection. */
-#action {No way!  You're fighting for your life!} {
-  #if {$mapping == 1} {
-    #if {1 == $patrol} {
-      #map undo;
-    };
-  };
-};
+
 #action {Maybe you should get on your feet first?} {
   #if {$mapping == 1} {
     #if {1 == $patrol} {
@@ -111,6 +105,13 @@
 };
 
 /*
+#action {No way!  You're fighting for your life!} {
+  #if {$mapping == 1} {
+    #if {1 == $patrol} {
+      #map undo;
+    };
+  };
+};
 #action {"In your dreams, or what?"} {
   #if {$mapping == 1} {
     #map undo;

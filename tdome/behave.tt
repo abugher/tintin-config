@@ -1,0 +1,27 @@
+#nop Include this line in every file to set the command character.
+
+/* OK, look, is this gonna work?  You'll see guards while running.  I guess prey is off during running.  We can turn off patrol and life support to keep from wandering away before the all clear.  Or the patrol function can clear the behave flag after clearing the prey flag while leaving. */
+
+#alias {behave} {
+  #if {1 == $
+};
+
+#alias {guard} {
+  #action {%3} {
+    behave;
+  };
+  #action {%2 arrives} {
+  };
+  #action {%2 moves into view} {
+  };
+  #action {%2 climbs up into view} {
+  };
+  #action {%2 climbs up into view} {
+  };
+  #action {%2 drags himself to his feet.} {
+  };
+  #action {%2 drags herself to her feet.} {
+  };
+  #action {%2 drags itself to its feet.} {
+  };
+};

@@ -68,8 +68,6 @@ prey {walker}           {walker}                {walker is walking};
 prey {baglady}          {old baglady}           {An old baglady mutters to herself.};
 prey {man}              {man}                   {A man stands here.};
 prey {cockroach}        {giant cockroach}       {A giant cockroach charges toward you.};
-prey {urchin}           {street urchin}         {street urchin looks for a handout.};
-prey {urchin}           {street urchin}         {A dirty urchin runs up to you and grabs at your legs.};
 prey {bugbear}          {large bugbear}         {A large bugbear growls at you.};
 prey {mime}             {mime}                  {a mime juggles a pair of imaginary cats.};
 prey {lunatic}          {screaming lunatic}     {a screaming lunatic rants at you.};

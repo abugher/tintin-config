@@ -42,4 +42,6 @@ grudge_on;
 grudge {pickpocket}     {pickpocket}            {A pickpocket gets looks for a mark};
 grudge {pickpocket}     {pickpocket}            {You discover that an urchin has his hands in your pocket.};
 grudge {pickpocket}     {pickpocket}            {You discover that a pickpocket has his hands in your pocket.};
+grudge {urchin}         {street urchin}         {street urchin looks for a handout.};
+grudge {urchin}         {street urchin}         {A dirty urchin runs up to you and grabs at your legs.};
 grudge {pimp}           {pimp}                  {pimp struts past you.};

@@ -37,7 +37,7 @@ patrol_off;
 
 #alias {patrol_run} {
   #send sneak;
-  #path destroy;
+  #path run {$patrol_step_time};
   #map run {%3} {$patrol_step_time};
 };
 

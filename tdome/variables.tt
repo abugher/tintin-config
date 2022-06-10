@@ -3,8 +3,8 @@
 #var {user} {NeoMercevi};
 #script {pass} {bash -c 'pass show aaron/tdome.net/$user'};
 
-#var {wield} {dagger};
-#var {dual} {switchblade};
+#var {wield} {knife};
+#var {dual} {knife};
 #var {container} {bag};
 #var {water_container} {barrel};
 
@@ -18,5 +18,5 @@
 #var {patrol_start} {dark_chamber};
 #var {sleep_time} {60};
 #var {patrol_time} {30};
-#var {patrol_step_time} {1.5};
+#var {patrol_step_time} {0.5};
 #var {patrol_dark} {1};

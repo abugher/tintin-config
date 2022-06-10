@@ -109,7 +109,7 @@
         patrol_off;
         life_support_off;
         #map run sin;
-        #delay {1} {
+        #delay {5} {
           #send e;
           #delay {30} {
             #send w;
