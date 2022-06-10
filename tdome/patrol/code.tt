@@ -3,15 +3,10 @@
 #alias {patrol_searching_on} {
   #var {patrol_searching} {1};
   #echo {Patrol searching:  on};
-  #alias {toggle_patrol_searching} {patrol_searching_off};
 }
 #alias {patrol_searching_off} {
   #var {patrol_searching} {0};
   #echo {Patrol searching:  off};
-  #alias {toggle_patrol_searching} {patrol_searching_on};
-}
-#alias {toggle_patrol_searching} {
-  patrol_searching_off;
 }
 patrol_searching_on;
 
@@ -40,6 +35,8 @@ patrol_off;
   #send sneak;
   #path run {$patrol_step_time};
   #map run {%1} {$patrol_step_time};
+  patrol_searching_on;
+  #send look;
 };
 
 #alias {patrol} {
@@ -56,8 +53,6 @@ patrol_off;
                 prey_off;
                 life_support_off;
                 patrol_run %3;
-                patrol_searching_on;
-                #send look;
                 life_support_on;
                 prey_on;
               };

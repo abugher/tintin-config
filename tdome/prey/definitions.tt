@@ -1,5 +1,6 @@
 #nop Include this line in every file to set the command character.
 
+prey   {politician}     {politician}            {A shifty politician is here.};
 prey   {pickpocket}     {pickpocket}            {A pickpocket gets looks for a mark};
 prey   {pickpocket}     {pickpocket}            {You discover that an urchin has his hands in your pocket.};
 prey   {pickpocket}     {pickpocket}            {You discover that a pickpocket has his hands in your pocket.};
