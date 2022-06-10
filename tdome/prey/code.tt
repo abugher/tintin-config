@@ -1,0 +1,49 @@
+#nop Include this line in every file to set the command character.
+/* Like grudges, but more about profiting. */
+
+#alias {prey_on} {
+  #var {prey} {1};
+  #echo {Prey:  on};
+  #alias {toggle_prey} {prey_off};
+}
+#alias {prey_off} {
+  #var {prey} {0};
+  #echo {Prey:  off};
+  #alias {toggle_prey} {prey_on};
+}
+#alias {toggle_prey} {
+  prey_on;
+}
+#alias {P} {
+  toggle_prey;
+}
+prey_off;
+
+#alias {prey} {
+  #action {%3} {
+    #if {1 == $prey} {jump %1;};
+  };
+  #action {%2 arrives} {
+    #if {1 == $prey} {jump %1;};
+  };
+  #action {%2 moves into view} {
+    #if {1 == $prey} {jump %1;};
+  };
+  #action {%2 climbs up into view} {
+    #if {1 == $prey} {jump %1;};
+  };
+  #action {%2 climbs up into view} {
+    #if {1 == $prey} {jump %1;};
+  };
+  #action {%2 drags himself to his feet.} {
+    #if {1 == $prey} {jump %1;};
+  };
+  #action {%2 drags herself to her feet.} {
+    #if {1 == $prey} {jump %1;};
+  };
+  #action {%2 drags itself to its feet.} {
+    #if {1 == $prey} {jump %1;};
+  };
+}
+
+

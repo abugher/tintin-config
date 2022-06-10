@@ -6,7 +6,6 @@
 #read {config/tdome/hacks.tt}
 #read {config/tdome/aliases.tt}
 #read {config/tdome/actions.tt}
-#read {config/tdome/grudge.tt}
 #read {config/tdome/prey.tt}
 #read {config/tdome/life_support.tt}
 #read {config/tdome/replenish.tt}

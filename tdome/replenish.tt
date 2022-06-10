@@ -29,31 +29,35 @@
 };
 
 #alias {real_replenish_food} {
-  patrol_off;
-  life_support_off;
-  #map run $food_place;
-  #send buy $food_thing;
-  #send put all.$food_thing in $container;
-  #send buy $food_thing;
-  #send put all.$food_thing in $container;
-  #send buy $food_thing;
-  #send put all.$food_thing in $container;
-  #send buy $food_thing;
-  #send put all.$food_thing in $container;
-  #send buy $food_thing;
-  #send put all.$food_thing in $container;
-  #send buy $food_thing;
-  #send put all.$food_thing in $container;
-  #send buy $food_thing;
-  #send put all.$food_thing in $container;
-  #send buy $food_thing;
-  #send put all.$food_thing in $container;
-  #send buy $food_thing;
-  #send eat $food_thing;
-  #map run $patrol_start;
-  #nop run_errands;
-  life_support_on;
-  patrol_on;
+  #if {1 == $patrol} {
+    #if {1 == $life_support} {
+      patrol_off;
+      life_support_off;
+      #map run {$food_place} {$patrol_step_time};
+      #send buy $food_thing;
+      #send put all.$food_thing in $container;
+      #send buy $food_thing;
+      #send put all.$food_thing in $container;
+      #send buy $food_thing;
+      #send put all.$food_thing in $container;
+      #send buy $food_thing;
+      #send put all.$food_thing in $container;
+      #send buy $food_thing;
+      #send put all.$food_thing in $container;
+      #send buy $food_thing;
+      #send put all.$food_thing in $container;
+      #send buy $food_thing;
+      #send put all.$food_thing in $container;
+      #send buy $food_thing;
+      #send put all.$food_thing in $container;
+      #send buy $food_thing;
+      #send eat $food_thing;
+      #map run {$patrol_start} {$patrol_step_time};
+      #nop run_errands;
+      life_support_on;
+      patrol_on;
+    };
+  };
 };
 
 #alias {replenish_food} {
