@@ -12,4 +12,3 @@
 #read {config/tdome/aliases/bell.tt}
 #read {config/tdome/aliases/map.tt};
 #read {config/tdome/aliases/refresh.tt};
-#read {config/tdome/aliases/shop.tt};

@@ -28,3 +28,23 @@
 #action {credits lie} {
   gc
 }
+
+#alias {multi} {
+  #var {items} {%0};
+  #var {first_iteration} {1};
+  #replace items { } {;};
+  #foreach {$items} {item} {
+    #if {1 == $first_iteration} {
+      #var {first_iteration} {0};
+      #var {action} {$item};
+      #continue;
+    };
+    #send {$action $item};
+  };
+};
+
+#alias {sell} {multi sell %0;};
+#alias {buy} {multi buy %0;};
+#alias {drop} {multi drop %0;};
+/* "get" uses extra arguments to find containers. */
+#alias {mget} {multi get %0;};
