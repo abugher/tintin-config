@@ -77,4 +77,10 @@
 #alias {uncan} {
   uncontain can %0;
 }
+#alias {chest} {
+  contain chest %0;
+}
+#alias {unchest} {
+  uncontain chest %0;
+}
 

@@ -1,11 +1,26 @@
 #nop Include this line in every file to set the command character.
 
+#alias {patrol_searching_on} {
+  #var {patrol_searching} {1};
+  #echo {Patrol searching:  on};
+  #alias {toggle_patrol_searching} {patrol_searching_off};
+}
+#alias {patrol_searching_off} {
+  #var {patrol_searching} {0};
+  #echo {Patrol searching:  off};
+  #alias {toggle_patrol_searching} {patrol_searching_on};
+}
+#alias {toggle_patrol_searching} {
+  patrol_searching_off;
+}
+patrol_searching_on;
+
+
 #alias {patrol_on} {
   #var {patrol} {1};
   #echo {Patrol:  on};
   #alias {toggle_patrol} {patrol_off};
   #map run {$patrol_start} {$patrol_step_time};
-  #send look;
 }
 #alias {patrol_off} {
   #var {patrol} {0};
@@ -20,21 +35,45 @@
 }
 patrol_off;
 
+#alias {patrol_run} {
+  #send sneak;
+  #path destroy;
+  #map run {%3} {$patrol_step_time};
+};
 
 #alias {patrol} {
   #action {%2} {
     #if {1 == $patrol} {
-      #echo {PATROL POINT:  %1};
-      #map goto {%1};
-      #delay {$patrol_time} {
-        #if {1 == $patrol} {
-          #if {1 == $prey} {
-            prey_off;
-            #map run {%3} {$patrol_step_time};
-            prey_on;
-          };
-          #else {
-            #map run {%3} {$patrol_step_time};
+      #if {1 == $patrol_searching} {
+        patrol_searching_off;
+        #echo {PATROL POINT:  %1};
+        #map goto {%1};
+        #delay {$patrol_time} {
+          #if {1 == $patrol} {
+            #if {1 == $prey} {
+              #if {1 == $life_support} {
+                prey_off;
+                life_support_off;
+                patrol_run;
+                patrol_searching_on;
+                #send look;
+                life_support_on;
+                prey_on;
+              };
+              prey_off;
+              patrol_run;
+              prey_on;
+            };
+            #else {
+              #if {1 == $life_support} {
+                life_support_off;
+                patrol_run;
+                life_support_on;
+              };
+              #else {
+                patrol_run;
+              };
+            };
           };
         };
       };
@@ -43,5 +82,8 @@ patrol_off;
 };
 
 
-patrol {ta_subway_stair}        {A Public Stairway [ Inside ]}                  {forest_subway_stair}
-patrol {forest_subway_stair}    {On a Leaf Covered Staircase [ Inside ]}        {ta_subway_stair}
+#nop patrol {ta_subway_stair}        {A Public Stairway [ Inside ]}                  {forest_subway_stair}
+#nop patrol {forest_subway_stair}    {On a Leaf Covered Staircase [ Inside ]}        {ta_subway_stair}
+
+patrol {dark_chamber}   {A dark chamber [ Inside ]}     {intersection};
+patrol {intersection}   {An intersection [ Inside ]}    {dark_chamber};

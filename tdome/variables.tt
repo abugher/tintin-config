@@ -1,21 +1,22 @@
 #nop Include this line in every file to set the command character.
 
-#var {user} {NeoMercevi}
-#script {pass} {bash -c 'pass show aaron/tdome.net/$user'}
+#var {user} {NeoMercevi};
+#script {pass} {bash -c 'pass show aaron/tdome.net/$user'};
 
-#var {wield} {dagger}
-#var {dual} {switchblade}
-#var {container} {bag}
-#var {water_container} {barrel}
+#var {wield} {dagger};
+#var {dual} {switchblade};
+#var {container} {bag};
+#var {water_container} {barrel};
 
-#var {map} {ta}
+#var {map} {ta};
 
-#var {water_place} {cooler}
-#var {water_thing} {cooler}
-#var {food_place} {mcdeath}
-#var {food_thing} {hamburger}
+#var {water_place} {zero};
+#var {water_thing} {fountain};
+#var {food_place} {mcdeath};
+#var {food_thing} {hamburger};
 
-#var {sleep_time} {60}
-#var {patrol_time} {30}
-#var {patrol_step_time} {1.5}
-#var {patrol_start} {ta_subway_stair}
+#var {patrol_start} {dark_chamber};
+#var {sleep_time} {60};
+#var {patrol_time} {30};
+#var {patrol_step_time} {1.5};
+#var {patrol_dark} {1};

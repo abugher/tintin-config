@@ -9,7 +9,6 @@
   #send drop all.skin;
   #send drop all.placard;
   #send drop all.trash;
-  #send drop all.chain;
 }
 #alias {ta} {
   ga
@@ -23,5 +22,9 @@
   #send get all.credits;
 }
 #alias {tc} {
+  gc
+}
+
+#action {credits lie here} {
   gc
 }

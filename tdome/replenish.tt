@@ -11,7 +11,8 @@
   #map run $patrol_start;
   life_support_on;
   patrol_on;
-}
+};
+
 #alias {replenish_water} {
   #if {1 == $life_support} {
     #if {1 == $patrol} {
@@ -26,6 +27,7 @@
     };
   };
 };
+
 #alias {real_replenish_food} {
   patrol_off;
   life_support_off;
@@ -52,7 +54,8 @@
   #nop run_errands;
   life_support_on;
   patrol_on;
-}
+};
+
 #alias {replenish_food} {
   #if {1 == $life_support} {
     life_support_off;
@@ -73,7 +76,7 @@
   #if {1 == $life_support} {
     #echo {Replenish food:  unimplemented.};
   };
-}
+};
 
 #alias {run_errands} {
   sell_to_frankk;
@@ -84,7 +87,7 @@
   sell_to_potion;
   sell_to_magic;
   sell_to_jewel;
-}
+};
 
 #action {It's empty already.} {
   replenish_water;
@@ -97,3 +100,94 @@
 #action {There doesn't seem to be a $food_item in a $container.} {
   replenish_food;
 };
+
+#alias {replenish_dark_vision} {
+  #if {1 == $patrol} {
+    #if {1 == $life_support} {
+      #if {1 == $patrol_dark} {
+        #echo {REFRESH DARK VISION:  START};
+        patrol_off;
+        life_support_off;
+        #map run sin;
+        #delay {1} {
+          #send e;
+          #delay {30} {
+            #send w;
+            buff;
+            #delay {5} {
+              life_support_on;
+              patrol_on;
+              #echo {REFRESH DARK VISION:  END};
+            };
+          };
+        };
+      };
+    };
+  };
+};
+
+
+/* It seems possible to set action handlers for items, list items to trigger those handlers, then remove the action handlers.  Spamming sell commands is easier. */
+#alias {sell_armor} {
+  #map run hoby {$patrol_step_time};
+  foreach {
+    shirt;
+    hauberk;
+    girder;
+    pants;
+    jeans;
+    cap;
+    hat;
+    helm;
+    helmet;
+    rag;
+    sleeves;
+    mail;
+    leather;
+    bronze;
+    iron;
+    steel;
+    trews;
+    vambraces;
+    leggings;
+  } {item} {
+    #send sell $item;
+  }
+};
+
+#alias {sell_stuff} {
+  #if {1 == $patrol} {
+    #if {1 == $life_support} {
+      patrol_off;
+      life_support_off;
+
+      sell_armor;
+
+      life_support_on;
+      patrol_on;
+    };
+  };
+};
+
+/*
+      sell_weapons;
+      sell_clothes;
+      sell_junk;
+      sell_potions;
+      sell_magic;
+      sell_merchandise;
+      sell_drugs;
+      dump;
+*/
+
+
+#action {You can no longer see in the dark.} {
+  replenish_dark_vision;
+};
+#action {It is pitch black...} {
+  replenish_dark_vision;
+};
+
+#action {Your arms are already full!} {
+  sell_stuff;
+}

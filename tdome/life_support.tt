@@ -34,9 +34,11 @@ life_support_off;
           #delay {$sleep_time} {
             #send wake;
             #send stand;
+            life_support_on;
             #send score;
             patrol_on;
-            life_support_on;
+            patrol_searching_on;
+            #send look;
             #echo {SLEEP CYCLE:  END};
           };
         };
@@ -47,9 +49,10 @@ life_support_off;
       #delay {$sleep_time} {
         #send wake;
         #send stand;
-        #send score;
-        #send look;
         life_support_on;
+        #send score;
+        patrol_searching_on;
+        #send look;
         #echo {SLEEP CYCLE:  END};
       };
     };

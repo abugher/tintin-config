@@ -82,7 +82,12 @@ prey {homeless}         {homeless man}          {A homeless man looks for a plac
 prey {jester}           {jester}                {A jester bounces happily around you.};
 prey {salesman}         {salesman}              {A salesman wanders around looking for people like you to rip off.};
 prey {banger}           {gang banger}           {A punk little gang banger awaits your lethal blow.};
-#nop prey {hobgoblin}        {hobgoblin}       {?}
+prey {skeleton}         {nasty skeleton}        {A nasty skeleton is here.};
+prey {troglodyte}       {evil troglodyte}       {An evil troglodyte is here.};
+prey {ghoul}            {hideous ghoul}         {A hideous ghoul shrieks at you.};
+prey {hobgoblin}        {hobgoblin}             {A small nasty hobgoblin stands here.};
+prey {rat}              {giant rat}             {A giant rat gnashes its teeth as it advances.};
+prey {doppelganger}     {doppelganger}          {You see yourself standing here.};
 
 }
 
