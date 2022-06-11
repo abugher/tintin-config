@@ -43,9 +43,9 @@ patrol_off;
   #action {%2} {
     #if {1 == $patrol} {
       #if {1 == $patrol_searching} {
-        patrol_searching_off;
         #echo {PATROL POINT:  %1};
-        #map goto {%1};
+        patrol_searching_off;
+        /* #map goto {%1}; */
         #delay {$patrol_time} {
           #if {1 == $patrol} {
             #if {1 == $prey} {
