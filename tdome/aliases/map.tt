@@ -23,27 +23,26 @@
 }
 #alias {M} {
   #if {$mapping == 1} {
-    mapwrite;
     mapleave;
   };
   #else {
     mapstart;
   };
 }
-#alias mapwrite{} {
+#alias {mapwrite} {
   #map write {maps/$map};
   #echo {map written};
 }
-#alias mw{} {
+#alias {mw} {
   mapwrite;
 }
 
-#alias run{} {
+#alias wander{} {
   #map explore {%1};
-  #path run;
+  #path run {$step_time};
 }
 #alias runto{} {
-  #map run {%1};
+  #map run {%1} {$step_time};
 }
 
 /* Don't map imaginary rooms when walking into walls.
@@ -131,8 +130,8 @@
 };
 
 
-#alias {sin} {#map run sin;};
-#alias {tot} {#map run tot;};
-#alias {zero} {#map run zero;};
-#alias {pawn} {#map run pawn;};
-#alias {subway} {#map run ta_subway;};
+#alias {sin} {#map run sin {$step_time};};
+#alias {tot} {#map run tot {$step_time};};
+#alias {zero} {#map run zero {$step_time};};
+#alias {pawn} {#map run pawn {$step_time};};
+#alias {subway} {#map run ta_subway {$step_time};};

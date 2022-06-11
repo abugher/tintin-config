@@ -19,41 +19,31 @@
 life_support_off;
 
 
-#alias {real_sleep_action} {
+#alias {wake_action} {
+  #send wake;
+  #send stand;
+  life_support_on;
+  #send score;
+  patrol_searching_on;
+  #echo {SLEEP CYCLE:  END};
 }
 
 #alias {sleep_action} {
   #if {1 == $life_support} {
     #echo {SLEEP CYCLE:  START};
     life_support_off;
+    #send sleep;
     #if {1 == $patrol} {
       patrol_off;
-      #delay {$patrol_time} {
-        #delay {$patrol_time} {
-          #send sleep;
-          #delay {$sleep_time} {
-            #send wake;
-            #send stand;
-            life_support_on;
-            #send score;
-            patrol_on;
-            patrol_searching_on;
-            #send look;
-            #echo {SLEEP CYCLE:  END};
-          };
-        };
+      #delay {$sleep_time} {
+        wake_action;
+        patrol_on;
+        #send look;
       };
     };
     #else {
-      #send sleep;
       #delay {$sleep_time} {
-        #send wake;
-        #send stand;
-        life_support_on;
-        #send score;
-        patrol_searching_on;
-        #send look;
-        #echo {SLEEP CYCLE:  END};
+        wake_action;
       };
     };
   };

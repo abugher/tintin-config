@@ -14,4 +14,12 @@
 #var {food_place}       {mcdeath};
 #var {food_thing}       {hamburger};
 
-#var {sleep_time}       {60};
+#var {sleep_time}       {30};
+#var {step_time}        {0.5};
+
+#var {patrol_start}     {food_kiosk};
+#var {patrol_dark}      {1};
+#var {patrol_time}      {5};
+
+patrol {food_kiosk}     {Food Kiosk [ Inside ]}         {ta_subway};
+patrol {ta_subway}      {Boarding Platform [ Inside ]}  {food_kiosk};

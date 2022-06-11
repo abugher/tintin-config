@@ -4,11 +4,11 @@
 #alias {real_replenish_water} {
   patrol_off;
   life_support_off;
-  #map run $water_place;
+  #map run {$water_place} {$step_time};
   #send fill $water_container $water_thing;
   #send drink $water_thing;
   #send drink $water_thing;
-  #map run $patrol_start;
+  #map run {$patrol_start} {$step_time};
   life_support_on;
   patrol_on;
 };
@@ -33,7 +33,7 @@
     #if {1 == $life_support} {
       patrol_off;
       life_support_off;
-      #map run {$food_place} {$patrol_step_time};
+      #map run {$food_place} {$step_time};
       #send buy $food_thing;
       #send put all.$food_thing in $container;
       #send buy $food_thing;
@@ -52,7 +52,7 @@
       #send put all.$food_thing in $container;
       #send buy $food_thing;
       #send eat $food_thing;
-      #map run {$patrol_start} {$patrol_step_time};
+      #map run {$patrol_start} {$step_time};
       #nop run_errands;
       life_support_on;
       patrol_on;
@@ -112,7 +112,7 @@
         #echo {REFRESH DARK VISION:  START};
         patrol_off;
         life_support_off;
-        #map run sin;
+        #map run sin {$step_time};
         #delay {5} {
           #send e;
           #delay {30} {
@@ -133,7 +133,7 @@
 
 /* It seems possible to set action handlers for items, list items to trigger those handlers, then remove the action handlers.  Spamming sell commands is easier. */
 #alias {sell_armor} {
-  #map run hoby {$patrol_step_time};
+  #map run hoby {$step_time};
   foreach {
     shirt;
     hauberk;
