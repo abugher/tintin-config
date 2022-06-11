@@ -5,8 +5,8 @@
 
 #var {map} {ta};
 
-#var {wield}            {knife};
-#var {dual}             {knife};
+#var {wield}            {screw};
+#var {dual}             {spoon};
 #var {container}        {bag};
 #var {water_container}  {barrel};
 #var {water_place}      {cooler};
@@ -15,7 +15,8 @@
 #var {food_thing}       {hamburger};
 
 #var {sleep_time}       {30};
-#var {step_time}        {0.5};
+#nop Try not to outrun the scroll.
+#var {step_time}        {0.8};
 
 #var {patrol_start}     {food_kiosk};
 #var {patrol_dark}      {1};

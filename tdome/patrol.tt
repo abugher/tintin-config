@@ -39,38 +39,43 @@ patrol_off;
   #send look;
 };
 
+
+#alias {patrol_delayed} {
+  #if {1 == $patrol} {
+    #if {1 == $prey} {
+      #if {1 == $life_support} {
+        prey_off;
+        life_support_off;
+        patrol_run %1;
+        life_support_on;
+        prey_on;
+      };
+      prey_off;
+      patrol_run %1;
+      prey_on;
+    };
+    #else {
+      #if {1 == $life_support} {
+        life_support_off;
+        patrol_run %1;
+        life_support_on;
+      };
+      #else {
+        patrol_run %1;
+      };
+    };
+  };
+};
+
+
 #alias {patrol} {
   #action {%2} {
     #if {1 == $patrol} {
       #if {1 == $patrol_searching} {
         #echo {PATROL POINT:  %1};
         patrol_searching_off;
-        /* #map goto {%1}; */
         #delay {$patrol_time} {
-          #if {1 == $patrol} {
-            #if {1 == $prey} {
-              #if {1 == $life_support} {
-                prey_off;
-                life_support_off;
-                patrol_run %3;
-                life_support_on;
-                prey_on;
-              };
-              prey_off;
-              patrol_run %3;
-              prey_on;
-            };
-            #else {
-              #if {1 == $life_support} {
-                life_support_off;
-                patrol_run %3;
-                life_support_on;
-              };
-              #else {
-                patrol_run %3;
-              };
-            };
-          };
+          patrol_delayed %3;
         };
       };
     };

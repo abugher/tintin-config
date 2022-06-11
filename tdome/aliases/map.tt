@@ -130,8 +130,8 @@
 };
 
 
-#alias {sin} {#map run sin {$step_time};};
-#alias {tot} {#map run tot {$step_time};};
-#alias {zero} {#map run zero {$step_time};};
-#alias {pawn} {#map run pawn {$step_time};};
-#alias {subway} {#map run ta_subway {$step_time};};
+#alias {sin} {#map run {sin} {$step_time};};
+#alias {tot} {#map run {tot} {$step_time};};
+#alias {zero} {#map run {zero} {$step_time};};
+#alias {pawn} {#map run {pawn} {$step_time};};
+#alias {subway} {#map run {ta_subway} {$step_time};};

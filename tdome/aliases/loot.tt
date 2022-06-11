@@ -48,3 +48,13 @@
 #alias {drop} {multi drop %0;};
 /* "get" uses extra arguments to find containers. */
 #alias {mget} {multi get %0;};
+
+#alias {withdraw} {
+  #send {withdraw %0};
+  #send balance;
+}
+
+#alias {deposit} {
+  #send {deposit %0};
+  #send balance;
+}
