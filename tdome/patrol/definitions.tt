@@ -1,6 +1,6 @@
 #nop Include this line in every file to set the command character.
 
-#var {patrol_start}     {ta_subway};
+#var {patrol_start}     {food_kiosk};
 #var {patrol_step_time} {0.5};
 #var {patrol_dark}      {1};
 #var {patrol_time}      {30};

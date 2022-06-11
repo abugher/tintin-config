@@ -18,7 +18,6 @@
 }
 #alias mapleave{} {
   #var {mapping} {0};
-  #map write {maps/$map};
   #map leave;
   #echo {mapping:  off};
 }
