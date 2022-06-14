@@ -58,3 +58,10 @@
   #send {deposit %0};
   #send balance;
 }
+
+#gag {You don't seem to have any skins.};
+#gag {You don't seem to have any placards.};
+#gag {You don't seem to have any corpses.};
+#gag {You don't seem to have any remainss.};
+#gag {You don't seem to have any trashs.};
+#gag {};

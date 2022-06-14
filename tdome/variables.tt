@@ -5,8 +5,8 @@
 
 #var {map} {ta};
 
-#var {wield}            {screw};
-#var {dual}             {spoon};
+#var {wield}            {spoon};
+#var {dual}             {screw};
 #var {container}        {bag};
 #var {water_container}  {barrel};
 #var {water_place}      {cooler};
@@ -14,13 +14,14 @@
 #var {food_place}       {mcdeath};
 #var {food_thing}       {hamburger};
 
-#var {sleep_time}       {30};
-#nop Try not to outrun the scroll.
-#var {step_time}        {0.8};
+#var {sleep_time}       {15};
+#nop Too slow and things notice and attack.
+#nop Too fast and the scroll gets out of sync and breaks the map.
+#var {step_time}        {1};
 
 #var {patrol_start}     {food_kiosk};
 #var {patrol_dark}      {1};
-#var {patrol_time}      {5};
+#var {patrol_time}      {15};
 
 patrol {food_kiosk}     {Food Kiosk [ Inside ]}         {ta_subway};
 patrol {ta_subway}      {Boarding Platform [ Inside ]}  {food_kiosk};

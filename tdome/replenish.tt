@@ -193,7 +193,11 @@
 #nop   };
 
 #action {Your arms are already full!} {
-  #send wear all;
-  #send drop all;
-  #send get bag;
+  #if {1 == $patrol} {
+    #if {1 == $life_support} {
+      #send wear all;
+      #send drop all;
+      #send get bag;
+    };
+  };
 };

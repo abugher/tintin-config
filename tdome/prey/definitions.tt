@@ -1,11 +1,14 @@
 #nop Include this line in every file to set the command character.
 
+prey   {dervish}        {dervish}               {What does a dervish say?};
 prey   {politician}     {politician}            {A shifty politician is here.};
 prey   {pickpocket}     {pickpocket}            {A pickpocket gets looks for a mark};
-prey   {pickpocket}     {pickpocket}            {You discover that an urchin has his hands in your pocket.};
 prey   {pickpocket}     {pickpocket}            {You discover that a pickpocket has his hands in your pocket.};
 prey   {urchin}         {street urchin}         {street urchin looks for a handout.};
+prey   {urchin}         {urchin}                {You discover that an urchin has his hands in your pocket.};
+prey   {urchin}         {little urchin}         {A little urchin hides behind casks and crates.};
 prey   {urchin}         {street urchin}         {A dirty urchin runs up to you and grabs at your legs.};
+
 prey   {pimp}           {pimp}                  {pimp struts past you.};
 prey   {guard}          {MAT security guard}    {MAT security guard tries to stay awake.};
 prey   {worker}         {MAT system worker}     {A MAT system worker looks for a place to nap.};
@@ -45,7 +48,9 @@ prey   {troglodyte}     {evil troglodyte}       {An evil troglodyte is here.};
 prey   {ghoul}          {hideous ghoul}         {A hideous ghoul shrieks at you.};
 prey   {hobgoblin}      {hobgoblin}             {A small nasty hobgoblin stands here.};
 prey   {rat}            {giant rat}             {A giant rat gnashes its teeth as it advances.};
+prey   {rat}            {mutated rat}           {A horribly mutated rat charges toward you.};
 prey   {doppelganger}   {doppelganger}          {You see yourself standing here.};
-prey {tourist}          {tourist}               {A tourist gawks at you.}
-prey {worker}           {worker}                {A worker is here, working.}
+prey   {tourist}        {tourist}               {A tourist gawks at you.}
+prey   {worker}         {worker}                {A worker is here, working.}
+prey   {villager}       {twig villager}         {A twig villager smiles at you.}
 

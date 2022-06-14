@@ -2,7 +2,7 @@
 
 #alias mapstart{} {
   #var {mapping} {1};
-  #map read {maps/$map};
+  #map read {config/tdome/maps/$map};
   #map offset {0} {81} {-2} {-0};
   #map flag vtmap on;
   #map flag AsciiGraphics off;
@@ -30,7 +30,7 @@
   };
 }
 #alias {mapwrite} {
-  #map write {maps/$map};
+  #map write {config/tdome/maps/$map};
   #echo {map written};
 }
 #alias {mw} {

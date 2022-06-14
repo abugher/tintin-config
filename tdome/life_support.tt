@@ -4,18 +4,18 @@
   #var {life_support} {1};
   #echo {Life Support:  on};
   #alias {toggle_life_support} {life_support_off};
-}
+};
 #alias {life_support_off} {
   #var {life_support} {0};
   #echo {Life Support:  off};
   #alias {toggle_life_support} {life_support_on};
-}
+};
 #alias {toggle_life_support} {
   life_support_on;
-}
+};
 #alias {L} {
   toggle_life_support;
-}
+};
 life_support_off;
 
 
@@ -26,7 +26,7 @@ life_support_off;
   #send score;
   patrol_searching_on;
   #echo {SLEEP CYCLE:  END};
-}
+};
 
 #alias {sleep_action} {
   #if {1 == $life_support} {
@@ -47,7 +47,7 @@ life_support_off;
       };
     };
   };
-}
+};
 
 #alias {food_action} {
   #if {1 == $life_support} {
@@ -57,13 +57,13 @@ life_support_off;
     #send eat $food_thing;
     #send put all.$food_thing in $container;
   };
-}
+};
 
 #alias {water_action} {
   #if {1 == $life_support} {
     #send drink $water_container;
   };
-}
+};
 
 
 /* Try hard to avoid breaking the map. */

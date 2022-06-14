@@ -11,6 +11,9 @@
 #alias {j} {
   jump %1
 }
+#alias {f} {
+  #send feign;
+}
 #alias {bs} {
   #send backstab %1;
 }
