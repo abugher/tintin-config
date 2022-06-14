@@ -75,6 +75,10 @@ life_support_off;
   sleep_action;
 };
 
+#action {You are getting kind of sleepy... time for a nap!} {
+  sleep_action;
+};
+
 #action {You feel drowsy. You should get some rest.} {
   sleep_action;
 };
@@ -98,3 +102,10 @@ life_support_off;
 #action {You are thirsty.} {
   water_action;
 };
+
+#nop #action {A noise awakens you.} {
+#nop   #if {1 == $life_support} {
+#nop     /* No, that flag gets turned of while actually sleeping. */
+#nop   };
+#nop   #send sleep;
+#nop };
