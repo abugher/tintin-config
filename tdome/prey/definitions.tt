@@ -50,7 +50,7 @@ prey   {hobgoblin}      {hobgoblin}             {A small nasty hobgoblin stands 
 prey   {rat}            {giant rat}             {A giant rat gnashes its teeth as it advances.};
 prey   {rat}            {mutated rat}           {A horribly mutated rat charges toward you.};
 prey   {doppelganger}   {doppelganger}          {You see yourself standing here.};
-prey   {tourist}        {tourist}               {A tourist gawks at you.}
-prey   {worker}         {worker}                {A worker is here, working.}
-prey   {villager}       {twig villager}         {A twig villager smiles at you.}
-
+prey   {tourist}        {tourist}               {A tourist gawks at you.};
+prey   {worker}         {worker}                {A worker is here, working.};
+prey   {villager}       {twig villager}         {A twig villager smiles at you.};
+prey   {blob}           {lemure blob}           {The lemure blob slithers terribly precisely towards you for an attack!};
