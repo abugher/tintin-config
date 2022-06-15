@@ -103,9 +103,11 @@ life_support_off;
   water_action;
 };
 
-#nop #action {A noise awakens you.} {
+/*
+#nop #action {A noise wakens you.} {
 #nop   #if {1 == $life_support} {
-#nop     /* No, that flag gets turned of while actually sleeping. */
+#nop     #nop No, that flag gets turned of while actually sleeping.
 #nop   };
 #nop   #send sleep;
 #nop };
+*/

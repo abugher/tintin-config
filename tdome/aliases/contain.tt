@@ -83,4 +83,10 @@
 #alias {unchest} {
   uncontain chest %0;
 }
+#alias {ruck} {
+  contain rucksack %0;
+}
+#alias {unruck} {
+  uncontain rucksack %0;
+}
 
