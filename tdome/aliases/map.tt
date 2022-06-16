@@ -37,10 +37,6 @@
   mapwrite;
 }
 
-#alias wander{} {
-  #map explore {%1};
-  #path run {$step_time};
-}
 #alias runto{} {
   #map run {%1} {$step_time};
 }
@@ -53,31 +49,49 @@
   #if {$mapping == 1} {
     #map undo;
   };
+  #if {1 == $wander} {
+    turn_right;
+  }
 }
 #action {cannot go that way} {
   #if {$mapping == 1} {
     #map undo;
   };
+  #if {1 == $wander} {
+    turn_right;
+  }
 }
 #action {can't go that way} {
   #if {$mapping == 1} {
     #map undo;
   };
+  #if {1 == $wander} {
+    turn_right;
+  }
 }
 #action {The door seems to be closed.} {
   #if {$mapping == 1} {
     #map undo;
   };
+  #if {1 == $wander} {
+    turn_right;
+  }
 }
 #action {seems to be closed.} {
   #if {$mapping == 1} {
     #map undo;
   };
+  #if {1 == $wander} {
+    turn_right;
+  }
 }
 #action {need a boat to go} {
   #if {$mapping == 1} {
     #map undo;
   };
+  #if {1 == $wander} {
+    turn_right;
+  }
 }
 #action {You are too exhausted.} {
   #if {$mapping == 1} {

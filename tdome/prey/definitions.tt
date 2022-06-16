@@ -8,6 +8,7 @@ prey    {urchin}        {street urchin}         {street urchin looks for a hando
 prey    {urchin}        {urchin}                {You discover that an urchin has his hands in your pocket.};
 prey    {urchin}        {little urchin}         {A little urchin hides behind casks and crates.};
 prey    {urchin}        {street urchin}         {A dirty urchin runs up to you and grabs at your legs.};
+prey    {crook}         {crook}                 {A crook sizes up your equipment.};
 
 prey    {pimp}          {pimp}                  {pimp struts past you.};
 prey    {guard}         {MAT security guard}    {MAT security guard tries to stay awake.};
@@ -32,6 +33,7 @@ prey    {baglady}       {old baglady}           {An old baglady mutters to herse
 prey    {man}           {man}                   {A man stands here.};
 prey    {cockroach}     {giant cockroach}       {A giant cockroach charges toward you.};
 prey    {bugbear}       {bugbear}               {A large bugbear growls at you.};
+prey    {chief}         {bugbear chief}         {A large bugbear is here.};
 prey    {mime}          {mime}                  {a mime juggles a pair of imaginary cats.};
 prey    {lunatic}       {screaming lunatic}     {a screaming lunatic rants at you.};
 prey    {fanatic}       {wild-eyed fanatic}     {A wild-eyed fanatic waves a placard in your face.};
@@ -56,3 +58,5 @@ prey    {villager}      {twig villager}         {A twig villager smiles at you.}
 prey    {blob}          {lemure blob}           {The lemure blob slithers terribly precisely towards you for an attack!};
 prey    {ghoul}         {ghoul}                 {A hideous ghoul shrieks at you.};
 prey    {spider}        {large spider}          {What does a spider say?};
+prey    {snake}         {snake}                 {A small green snake.};
+prey    {stirge}        {stirge}                {A ferocious stirge is here, glaring hungrily at you.};

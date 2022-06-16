@@ -23,5 +23,7 @@
 #var {patrol_dark}      {1};
 #var {patrol_time}      {15};
 
+#var {wander_time}      {5};
+
 patrol {food_kiosk}     {Food Kiosk [ Inside ]}         {ta_subway};
 patrol {ta_subway}      {Boarding Platform [ Inside ]}  {food_kiosk};

@@ -1,0 +1,100 @@
+#nop Include this line in every file to set the command character.
+
+/* Hug the left wall. */
+
+
+#alias {wander} {
+  #switch {$direction} {
+    #send {$direction};
+    turn_left;
+    #case {'n'} {
+      #send {n};
+    };
+    #case {'e'} {
+      #send {e};
+    };
+    #case {'s'} {
+      #send {s};
+    };
+    #case {'w'} {
+      #send {w};
+    };
+    #default {
+      #var {direction} {n};
+    };
+  };
+  #if {1 == $wander} {
+    #delay {$wander_time} {
+      wander;
+    };
+  };
+};
+
+
+#alias {wander_on} {
+  #var {wander} {1};
+  #echo {Wander:  on};
+  wander;
+  #alias {wander_toggle} {
+    wander_off;
+  };
+};
+
+
+#alias {wander_off} {
+  #var {wander} {0};
+  #echo {Wander:  off};
+  #alias {wander_toggle} {
+    wander_on;
+  };
+};
+
+
+#alias W {
+  wander_toggle;
+};
+
+
+wander_off;
+
+
+#alias {turn_right} {
+  #switch {$direction} {
+    #case {n} {
+      #var {direction} {e};
+    };
+    #case {e} {
+      #var {direction} {s};
+    };
+    #case {s} {
+      #var {direction} {w};
+    };
+    #case {w} {
+      #var {direction} {n};
+    };
+    #default {
+      #var {direction} {n};
+    };
+  };
+};
+
+
+#alias {turn_left} {
+  #switch {$direction} {
+    #case {n} {
+      #var {direction} {w};
+    };
+    #case {e} {
+      #var {direction} {n};
+    };
+    #case {s} {
+      #var {direction} {e};
+    };
+    #case {w} {
+      #var {direction} {s};
+    };
+    #default {
+      #var {direction} {n};
+    };
+  };
+};
