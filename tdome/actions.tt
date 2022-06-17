@@ -13,24 +13,3 @@
   look;
 };
 
-#nop #action {You feign your own death!!! Heheheheheh.} {
-#nop   sneak;
-#nop   stun;
-#nop };
-
-#nop #action {You stun} {
-#nop   backstab;
-#nop };
-
-#nop #action {into its back} {
-#nop   feign;
-#nop };
-
-#nop #action {acting isn't very good} {
-#nop   feign;
-#nop };
-
-#nop #action {in its back} {
-#nop   sneak;
-#nop   stun;
-#nop };

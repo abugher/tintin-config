@@ -5,9 +5,9 @@
 
 #var {map} {ta};
 
-#var {wield}            {utility};
-#var {dual}             {utility};
-#var {container}        {rucksack};
+#var {wield}            {splint};
+#var {dual}             {dagger};
+#var {container}        {bag};
 #var {water_container}  {barrel};
 #var {water_place}      {cooler};
 #var {water_thing}      {fountain};

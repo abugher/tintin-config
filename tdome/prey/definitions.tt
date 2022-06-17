@@ -16,6 +16,7 @@ prey    {worker}        {MAT system worker}     {A MAT system worker looks for a
 prey    {soldier}       {soldier}               {soldier spits over his left shoulder.};
 prey    {soldier}       {soldier}               {views you with contempt.};
 prey    {drunk}         {smelly drunk}          {smelly drunk staggers past you.};
+prey    {drunk}         {sleeping drunk}        {Snores emanate from a sleeping drunk.}
 prey    {girl}          {young girl}            {young girl avoids your gaze.};
 prey    {girl}          {working girl}          {A working girl plies her trade.};
 prey    {girl}          {punked-out girl}       {punked-out girl combs her mohawk.};
@@ -30,6 +31,7 @@ prey    {commuter}      {commuter}              {A commuter glances at her watch
 prey    {drunk}         {sloppy drunk}          {sloppy drunk is just asking for it.};
 prey    {walker}        {walker}                {walker is walking};
 prey    {baglady}       {old baglady}           {An old baglady mutters to herself.};
+prey    {baglady}       {baglady}               {A baglady is resting here.};
 prey    {man}           {man}                   {A man stands here.};
 prey    {cockroach}     {giant cockroach}       {A giant cockroach charges toward you.};
 prey    {bugbear}       {bugbear}               {A large bugbear growls at you.};
@@ -60,3 +62,7 @@ prey    {ghoul}         {ghoul}                 {A hideous ghoul shrieks at you.
 prey    {spider}        {large spider}          {What does a spider say?};
 prey    {snake}         {snake}                 {A small green snake.};
 prey    {stirge}        {stirge}                {A ferocious stirge is here, glaring hungrily at you.};
+prey    {bull}          {roan bull}             {A roan bull is resting here.};
+prey    {jerk}          {jerk}                  {A jerk acts like a jerk.};
+prey    {bum}           {old bum}               {An old bum looks through some stock quotes.};
+

@@ -1,5 +1,4 @@
 #nop Include this line in every file to set the command character.
-/* Like grudges, but more about profiting. */
 
 #alias {prey_on} {
   #var {prey} {1};
@@ -47,3 +46,27 @@ prey_off;
 }
 
 
+#action {You stun %1!!!} {
+  #var {target_string} {%1};
+  #replace {target_string} { } {;};
+  #foreach {$target_string} {target_substring} {
+    #var {target} {$target_substring};
+  };
+  #echo {Targeting:  $target};
+  #send {backstab $target};
+  #send {feign};
+};
+
+#action {acting isn't very good} {
+  #send {feign};
+};
+
+#action {You feign your own death!!! Heheheheheh.} {
+  #send {hide};
+  #send {stun $target};
+};
+
+/* Does nothing if not already engaged. */
+#action {You try to stun %1 but fail!} {
+  #send {feign};
+};

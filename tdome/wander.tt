@@ -3,24 +3,24 @@
 /* Hug the left wall. */
 
 
-
-
-#alias {wander} {
+/* Pseudo-daemon. */
+#alias {wanderd} {
   #if {1 == $wander} {
     turn_left;
     #echo {Moving:  $direction};
     #send {$direction};
+    #map move {$direction};
   };
   #delay {$wander_time} {
-    wander;
+    wanderd;
   };
 };
+wanderd;
 
 
 #alias {wander_on} {
   #var {wander} {1};
   #echo {Wander:  on};
-  wander;
   #alias {wander_toggle} {
     wander_off;
   };
