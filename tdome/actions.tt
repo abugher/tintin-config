@@ -18,10 +18,18 @@
 #nop   stun;
 #nop };
 
-#nop #action {into its back} {
-#nop   sneak;
-#nop   stun;
+#nop #action {You stun} {
+#nop   backstab;
 #nop };
+
+#nop #action {into its back} {
+#nop   feign;
+#nop };
+
+#nop #action {acting isn't very good} {
+#nop   feign;
+#nop };
+
 #nop #action {in its back} {
 #nop   sneak;
 #nop   stun;

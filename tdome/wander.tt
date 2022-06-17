@@ -3,30 +3,16 @@
 /* Hug the left wall. */
 
 
+
+
 #alias {wander} {
-  #switch {$direction} {
-    #send {$direction};
-    turn_left;
-    #case {'n'} {
-      #send {n};
-    };
-    #case {'e'} {
-      #send {e};
-    };
-    #case {'s'} {
-      #send {s};
-    };
-    #case {'w'} {
-      #send {w};
-    };
-    #default {
-      #var {direction} {n};
-    };
-  };
   #if {1 == $wander} {
-    #delay {$wander_time} {
-      wander;
-    };
+    turn_left;
+    #echo {Moving:  $direction};
+    #send {$direction};
+  };
+  #delay {$wander_time} {
+    wander;
   };
 };
 

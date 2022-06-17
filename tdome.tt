@@ -9,4 +9,5 @@
 #read {config/tdome/prey.tt};
 #read {config/tdome/replenish.tt};
 #read {config/tdome/patrol.tt};
+#read {config/tdome/wander.tt};
 #read {config/tdome/variables.tt};

@@ -45,91 +45,81 @@
  * Dream rooms are still an issue.   shows up in
  * response to movement as well as other actions.
  */
+#alias {blocked_action} {
+  #if {$mapping == 1} {
+    #map undo;
+  };
+  #if {1 == $wander} {
+    turn_right;
+    turn_right;
+  };
+};
+
+/* I kind of want to traverse doors and such while wandering (and map them), but if it turns out to be locked I'll get stuck in a loop. */
+#nop #alias {traverse} {
+#nop   #map move $direction;
+#nop   turn_right;
+#nop   turn_right;
+#nop   #map exit {$direction} command {open %1 $direction; $direction};
+#nop   turn_right;
+#nop   turn_right;
+#nop   #map exit {$direction} command {open %1 $direction; $direction};
+#nop   #send {open %1 $direction; $direction};
+#nop };
+
 #action {cannot move that way} {
-  #if {$mapping == 1} {
-    #map undo;
-  };
-  #if {1 == $wander} {
-    turn_right;
-  }
-}
+  blocked_action;
+};
 #action {cannot go that way} {
-  #if {$mapping == 1} {
-    #map undo;
-  };
-  #if {1 == $wander} {
-    turn_right;
-  }
-}
+  blocked_action;
+};
 #action {can't go that way} {
-  #if {$mapping == 1} {
-    #map undo;
-  };
-  #if {1 == $wander} {
-    turn_right;
-  }
-}
-#action {The door seems to be closed.} {
-  #if {$mapping == 1} {
-    #map undo;
-  };
-  #if {1 == $wander} {
-    turn_right;
-  }
-}
-#action {seems to be closed.} {
-  #if {$mapping == 1} {
-    #map undo;
-  };
-  #if {1 == $wander} {
-    turn_right;
-  }
-}
+  blocked_action;
+};
 #action {need a boat to go} {
-  #if {$mapping == 1} {
-    #map undo;
-  };
-  #if {1 == $wander} {
-    turn_right;
-  }
+  blocked_action;
+};
+#action {The door seems to be closed.} {
+  blocked_action;
+};
+#action {seems to be closed.} {
+  blocked_action;
+};
+#action {You are blocked} {
+  blocked_action;
 }
+
 #action {You are too exhausted.} {
   #if {$mapping == 1} {
     #map undo;
   };
 }
-#action {You are blocked} {
-  #if {$mapping == 1} {
-    #map undo;
-  };
-}
 
 
-/* These would be nice to catch, but the messages can occur for non-movement actions, which would cause overcorrection. */
+/* These messages can occur for non-movement actions, which can cause overcorrection. */
 
-#action {Maybe you should get on your feet first?} {
-  #if {$mapping == 1} {
-    #if {1 == $patrol} {
-      #map undo;
-      st;
-    };
-  };
-};
-
-/*
-#action {No way!  You're fighting for your life!} {
-  #if {$mapping == 1} {
-    #if {1 == $patrol} {
-      #map undo;
-    };
-  };
-};
-#action {"In your dreams, or what?"} {
-  #if {$mapping == 1} {
-    #map undo;
-  }
-}
-*/
+#nop #action {Maybe you should get on your feet first?} {
+#nop   #if {1 == $patrol} {
+#nop     st;
+#nop     #if {$mapping == 1} {
+#nop       #map undo;
+#nop     };
+#nop   };
+#nop };
+#nop #action {No way!  You're fighting for your life!} {
+#nop   #if {1 == $patrol} {
+#nop     #if {$mapping == 1} {
+#nop       #map undo;
+#nop     };
+#nop   };
+#nop };
+#nop #action {"In your dreams, or what?"} {
+#nop   #if {1 == $patrol} {
+#nop     #if {$mapping == 1} {
+#nop       #map undo;
+#nop     };
+#nop   };
+#nop };
 
 
 /* Fix map upon respawn. */
@@ -142,6 +132,11 @@
   mapstart;
   #map goto sin;
 };
+/* Fix map upon return after rent. */
+#action {Bag's Inn reception [ Inside ]} {
+  mapstart;
+  #map goto bag;
+}
 
 
 #alias {sin} {#map run {sin} {$step_time};};
