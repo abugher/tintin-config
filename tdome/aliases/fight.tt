@@ -16,3 +16,64 @@
 #alias {bs} {
   #send backstab %1;
 }
+
+
+/* stun -> backstab -> feign -> repeat */
+
+#alias {F} {
+  #if {1 == $mana} {
+    #echo {Fight (with mana):  off};
+    #var {mana} {0};
+  };
+  #else {
+    #echo {Fight (with mana):  on};
+    #var {mana} {1};
+  };
+};
+
+#alias {target} {
+  #var {target} {%1};
+};
+
+#action {You stun %1!!!} {
+  target_long_name {%1};
+  #send {backstab $target};
+  #if {1 == mana} {
+    #send {feign};
+  };
+};
+
+#action {acting isn't very good} {
+  #if {1 == mana} {
+    #send {feign};
+  };
+};
+
+#action {You feign your own death!!! Heheheheheh.} {
+  #send {hide};
+  #send {stun $target};
+};
+
+#action {You try to stun %1 but fail!} {
+  #if {1 == mana} {
+    #send {feign};
+  };
+  #else {
+    target_long_name {%1};
+    #send {backstab $target};
+  };
+};
+
+#action {into its back} {
+  #send {feign};
+};
+
+
+#alias {target_long_name} {
+  #var {target_string} {%1};
+  #replace {target_string} { } {;};
+  #foreach {$target_string} {target_substring} {
+    #var {target} {$target_substring};
+  };
+  #echo {Targeting:  $target};
+};

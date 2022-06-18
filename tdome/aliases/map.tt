@@ -88,6 +88,9 @@
 #action {You are blocked} {
   blocked_action;
 }
+#action {A strange force field prevents you from moving} {
+  blocked_action;
+};
 
 #action {You are too exhausted.} {
   #if {$mapping == 1} {

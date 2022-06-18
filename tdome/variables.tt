@@ -6,7 +6,7 @@
 #var {map} {ta};
 
 #var {wield}            {splint};
-#var {dual}             {dagger};
+#var {dual}             {splint};
 #var {container}        {bag};
 #var {water_container}  {barrel};
 #var {water_place}      {cooler};
