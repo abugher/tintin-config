@@ -22,32 +22,42 @@ life_support_off;
 #alias {wake_action} {
   #send wake;
   #send stand;
-  life_support_on;
   #send score;
+  #var {lock_ls} {0};
   patrol_searching_on;
   #echo {SLEEP CYCLE:  END};
 };
 
-#alias {sleep_action} {
-  #if {1 == $life_support} {
-    #echo {SLEEP CYCLE:  START};
-    life_support_off;
-    #send sleep;
-    #if {1 == $patrol} {
-      patrol_off;
+#alias {sleep_wake_for_lock} {
+  #if {ls == $lock_move} {
+    #if {1 == $life_support} {
+      #echo {SLEEP CYCLE:  START};
+      #send sleep;
       #delay {$sleep_time} {
         wake_action;
-        patrol_on;
-        #send look;
-      };
-    };
-    #else {
-      #delay {$sleep_time} {
-        wake_action;
+        #if {1 == $patrol} {
+          #send look;
+        };
       };
     };
   };
+  #else {
+    #delay {$lockd_interval} {
+      sleep_wake_for_lock;
+    };
+  };
 };
+
+
+#alias {sleep_action} {
+  #if {1 != $lock_ls} {
+    #var {lock_ls} {1};
+
+    sleep_wait_for_lock;
+
+  };
+};
+
 
 #alias {food_action} {
   #if {1 == $life_support} {

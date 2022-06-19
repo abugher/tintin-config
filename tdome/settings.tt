@@ -6,7 +6,20 @@
 
 /* startup */
 #alias {tdome} {
-  #session session1 $server $port;
+  #session tdome $server $port;
+
+  #if {1 != $lock_lock} {
+    lockd;
+  };
+  #if {1 != $lock_wander} {
+    wanderd;
+  };
+
+  #map read               {config/tdome/maps/$map};
+  #map offset             {0} {81} {-2} {-0};
+  #map flag vtmap         on;
+  #map flag AsciiGraphics off;
+  #map flag unicode       on;
 };
 #event {PROGRAM START} {
   tdome;
@@ -14,9 +27,6 @@
 #event {SESSION CONNECTED} {
   #send $user;
   #send $pass[1];
-  #if {1 != $lock_lock} {
-    lockd;
-  };
 };
 
 /* Avoid broken lines due to fragmented packets.  See FAQ. */
@@ -38,27 +48,15 @@
 /* Put map on the right. */
 #split 0 1 0 -80 1;
 
-
-/* This sometimes shows error messages hidden during startup. */
+/* refresh configuration */
 #alias refresh{} {
   #read {config/tdome.tt};
 };
 
 
-/* map */
-#map read {config/tdome/maps/$map};
-#map offset {0} {81} {-2} {-0};
-#map flag vtmap on;
-#map flag AsciiGraphics off;
-#map flag unicode on;
-
 /* personal settings */
-
 #var {user}             {NeoMercevi};
 #script {pass} {bash -c 'pass show aaron/tdome.net/$user'};
-
-#var {map}              {world};
-
 #var {wield}            {splint};
 #var {dual}             {splint};
 #var {container}        {bag};
@@ -78,3 +76,5 @@
 #var {wander_time}      {5};
 
 #var {lockd_interval}   {1};
+
+#var {map}              {world};
