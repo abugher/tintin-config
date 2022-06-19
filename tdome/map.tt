@@ -2,19 +2,8 @@
 
 #alias mapstart{} {
   #var {mapping} {1};
-  #map read {config/tdome/maps/$map};
-  #map offset {0} {81} {-2} {-0};
-  #map flag vtmap on;
-  #map flag AsciiGraphics off;
-  #map flag unicode on;
-  #map return;
   #echo {mapping:  on};
-}
-#alias mapnear{} {
-  #map flag unicode on;
-}
-#alias mapfar{} {
-  #map flag unicode off;
+  #map return;
 }
 #alias mapleave{} {
   #var {mapping} {0};
@@ -35,6 +24,12 @@
 }
 #alias {mw} {
   mapwrite;
+}
+#alias mapnear{} {
+  #map flag unicode on;
+}
+#alias mapfar{} {
+  #map flag unicode off;
 }
 
 #alias runto{} {

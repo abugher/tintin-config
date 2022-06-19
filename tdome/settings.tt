@@ -34,3 +34,42 @@
 */
 /* Put map on the right. */
 #split 0 1 0 -80 1;
+
+
+/* This sometimes shows error messages hidden during startup. */
+#alias refresh{} {
+  #read {config/tdome.tt};
+};
+
+
+/* map */
+#map read {config/tdome/maps/$map};
+#map offset {0} {81} {-2} {-0};
+#map flag vtmap on;
+#map flag AsciiGraphics off;
+#map flag unicode on;
+
+/* personal settings */
+
+#var {user}             {NeoMercevi};
+#script {pass} {bash -c 'pass show aaron/tdome.net/$user'};
+
+#var {map}              {world};
+
+#var {wield}            {splint};
+#var {dual}             {splint};
+#var {container}        {bag};
+#var {water_container}  {barrel};
+#var {water_place}      {cooler};
+#var {water_thing}      {fountain};
+#var {food_place}       {mcdeath};
+#var {food_thing}       {hamburger};
+
+#var {sleep_time}       {15};
+#var {step_time}        {1};
+
+#var {patrol_start}     {food_kiosk};
+#var {patrol_dark}      {1};
+#var {patrol_time}      {15};
+
+#var {wander_time}      {5};

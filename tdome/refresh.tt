@@ -1,5 +1,0 @@
-#nop Include this line in every file to set the command character.
-
-#alias refresh{} {
-  #read {config/tdome.tt};
-}

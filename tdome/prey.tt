@@ -1,4 +1,0 @@
-#nop Include this line in every file to set the command character.
-
-#read {config/tdome/prey/code.tt};
-#read {config/tdome/prey/definitions.tt};

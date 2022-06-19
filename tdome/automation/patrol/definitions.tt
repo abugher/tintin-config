@@ -1,0 +1,4 @@
+#nop Include this line in every file to set the command character.
+
+patrol {food_kiosk}     {Food Kiosk [ Inside ]}         {ta_subway};
+patrol {ta_subway}      {Boarding Platform [ Inside ]}  {food_kiosk};

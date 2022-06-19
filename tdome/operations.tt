@@ -1,0 +1,12 @@
+#nop Include this line in every file to set the command character.
+
+#read {config/tdome/operations/identify.tt};
+#read {config/tdome/operations/bail.tt};
+
+#read {config/tdome/operations/dress.tt};
+#read {config/tdome/operations/contain.tt};
+#read {config/tdome/operations/look.tt};
+#read {config/tdome/operations/move.tt};
+#read {config/tdome/operations/fight.tt};
+#read {config/tdome/operations/loot.tt};
+#read {config/tdome/operations/sleep.tt};

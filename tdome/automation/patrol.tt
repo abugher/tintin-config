@@ -1,0 +1,4 @@
+#nop Include this line in every file to set the command character.
+
+#read {config/tdome/automation/patrol/code.tt};
+#read {config/tdome/automation/patrol/definitions.tt};
