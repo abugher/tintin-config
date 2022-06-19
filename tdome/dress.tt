@@ -1,12 +1,16 @@
 #nop Include this line in every file to set the command character.
 
-#alias {pack} {
+#alias {dress} {
   #send remove all;
   #send wield $wield;
   #send dual $dual;
   #send wear all;
   #send remove $container;
   #send put all in $container;
-}
+};
 
 
+#alias {pack} {
+  #echo {Pack?  You mean dress.};
+  dress;
+};

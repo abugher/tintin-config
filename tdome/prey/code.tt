@@ -45,3 +45,9 @@ prey_off;
   };
 }
 
+/* After a kill, loot.  Then look for another victim. */
+#action {experience points for the kill.} {
+  ga;
+  look;
+};
+

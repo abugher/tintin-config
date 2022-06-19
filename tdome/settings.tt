@@ -1,5 +1,21 @@
 #nop Include this line in every file to set the command character.
 
+/* server */
+#var {server} {tdome.net};
+#var {port} {5555};
+
+/* startup */
+#alias {tdome} {
+  #session session1 $server $port;
+};
+#event {PROGRAM START} {
+  tdome;
+};
+#event {SESSION CONNECTED} {
+  #send $user;
+  #send $pass[1];
+};
+
 /* Avoid broken lines due to fragmented packets.  See FAQ. */
 #config {packet patch} {0.15}
 

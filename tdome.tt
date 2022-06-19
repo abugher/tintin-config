@@ -1,13 +1,28 @@
 #nop Include this line in every file to set the command character.
 
-#read {config/tdome/server.tt};
-#read {config/tdome/startup.tt};
-#read {config/tdome/hacks.tt};
-#read {config/tdome/aliases.tt};
-#read {config/tdome/actions.tt};
-#read {config/tdome/life_support.tt};
+#read {config/tdome/settings.tt};
+#read {config/tdome/refresh.tt};
+
+#read {config/tdome/dress.tt};
+#read {config/tdome/contain.tt};
+
+#read {config/tdome/identify.tt};
+#read {config/tdome/bail.tt};
+
+#read {config/tdome/look.tt};
+#read {config/tdome/move.tt};
+#read {config/tdome/fight.tt};
+#read {config/tdome/loot.tt};
+#read {config/tdome/sleep.tt};
+
+#read {config/tdome/map.tt};
+
+#read {config/tdome/auto-bid.tt};
+
 #read {config/tdome/prey.tt};
+#read {config/tdome/life_support.tt};
 #read {config/tdome/replenish.tt};
 #read {config/tdome/patrol.tt};
 #read {config/tdome/wander.tt};
+
 #read {config/tdome/variables.tt};
