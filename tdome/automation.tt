@@ -1,5 +1,7 @@
 #nop Include this line in every file to set the command character.
 
+#read {config/tdome/automation/lock.tt};
+
 #read {config/tdome/automation/auto-bid.tt};
 #read {config/tdome/automation/prey.tt};
 #nop #read {config/tdome/automation/behave.tt};

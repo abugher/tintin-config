@@ -1,0 +1,71 @@
+#nop Include this line in every file to set the command character.
+
+#var {lock_move} {available};
+
+#var {lm_request_ls} {0};
+#var {lm_release_ls} {0};
+#var {lm_request_patrol} {0};
+#var {lm_release_patrol} {0};
+#var {lm_request_wander} {0};
+#var {lm_release_wander} {0};
+#var {lm_request_replenish} {0};
+#var {lm_release_replenish} {0};
+
+#alias {lockd} {
+  #var {lock_lock} {1};
+  #echo {Tick.};
+  #switch {$lock_move} {
+    #case {ls} {
+      #if {1 == lm_release_ls} {
+        #var {lock_move} {available};
+        #var {lm_release_ls} {0};
+      };
+    };
+    #case {patrol} {
+      #if {1 == lm_release_patrol} {
+        #var {lock_move} {available};
+        #var {lm_release_patrol} {0};
+      };
+    };
+    #case {wander} {
+      #if {1 == lm_release_wander} {
+        #var {lock_move} {available};
+        #var {lm_release_wander} {0};
+      };
+    };
+    #case {replenish} {
+      #if {1 == lm_release_replenish} {
+        #var {lock_move} {available};
+        #var {lm_release_replenish} {0};
+      };
+    };
+  };
+
+  #if {available == $lock_move} {
+    #if {1 == lm_request_ls} {
+      #var {lm_request_ls} {0};
+      #var {lm_release_ls} {0};
+      #var {lock_move} {ls};
+    };
+    #elseif {1 == lm_request_patrol} {
+      #var {lm_request_patrol} {0};
+      #var {lm_release_patrol} {0};
+      #var {lock_move} {patrol};
+    };
+    #elseif {1 == lm_request_wander} {
+      #var {lm_request_wander} {0};
+      #var {lm_release_wander} {0};
+      #var {lock_move} {wander};
+    };
+    #elseif {1 == lm_request_replenish} {
+      #var {lm_request_replenish} {0};
+      #var {lm_release_replenish} {0};
+      #var {lock_move} {replenish};
+    };
+  };
+
+  #delay {$lockd_interval} {lockd};
+};
+#if {1 != $lock_lock} {
+  lockd;
+};

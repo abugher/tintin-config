@@ -14,6 +14,9 @@
 #event {SESSION CONNECTED} {
   #send $user;
   #send $pass[1];
+  #if {1 != $lock_lock} {
+    lockd;
+  };
 };
 
 /* Avoid broken lines due to fragmented packets.  See FAQ. */
@@ -73,3 +76,5 @@
 #var {patrol_time}      {15};
 
 #var {wander_time}      {5};
+
+#var {lockd_interval}   {1};
