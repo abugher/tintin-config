@@ -74,9 +74,6 @@
 #action {need a boat to go} {
   blocked_action;
 };
-#action {The door seems to be closed.} {
-  blocked_action;
-};
 #action {seems to be closed.} {
   blocked_action;
 };
@@ -104,13 +101,13 @@
 #nop     };
 #nop   };
 #nop };
-#nop #action {No way!  You're fighting for your life!} {
-#nop   #if {1 == $patrol} {
-#nop     #if {$mapping == 1} {
-#nop       #map undo;
-#nop     };
-#nop   };
-#nop };
+#action {No way!  You're fighting for your life!} {
+  #if {1 == $patrol} {
+    #if {$mapping == 1} {
+      #map undo;
+    };
+  };
+};
 #nop #action {"In your dreams, or what?"} {
 #nop   #if {1 == $patrol} {
 #nop     #if {$mapping == 1} {

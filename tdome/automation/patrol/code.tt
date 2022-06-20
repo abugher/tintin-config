@@ -1,22 +1,45 @@
 #nop Include this line in every file to set the command character.
 
-#alias {patrol_searching_on} {
-  #var {patrol_searching} {1};
-  #echo {Patrol searching:  on};
-}
-#alias {patrol_searching_off} {
-  #var {patrol_searching} {0};
-  #echo {Patrol searching:  off};
-}
-patrol_searching_on;
 
+#alias {patrold} {
+  launch_patrol_run;
+  #delay {$patrol_time} {
+    patrold;
+  };
+};
+
+
+#alias {launch_patrol_run} {
+  #if {1 != $lock_patrol_run} {
+    #var {lock_patrol_run} {1};
+    #var {lm_request_patrol} {1};
+    patrol_run;
+  };
+};
+
+
+#alias {patrol_run} {
+  #if {patrol == $lock_move} {
+    #if {1 == $patrol} {
+      #send sneak;
+      #map run {$patrol_next} {$step_time};
+      #send sneak;
+      #var {lm_release_patrol} {1};
+      release_patrol;
+    };
+    #var {lock_patrol_run} {0};
+  };
+  #else {
+    #delay {$lock_interval} {
+      patrol_run;
+    };
+  };
+};
 
 #alias {patrol_on} {
   #var {patrol} {1};
   #echo {Patrol:  on};
   #alias {toggle_patrol} {patrol_off};
-  #map run {$patrol_start} {$step_time};
-  #send look;
 }
 #alias {patrol_off} {
   #var {patrol} {0};
@@ -31,52 +54,13 @@ patrol_searching_on;
 }
 patrol_off;
 
-#alias {patrol_run} {
-  #send sneak;
-  #path run {$step_time};
-  #map run {%1} {$step_time};
-  patrol_searching_on;
-  #send look;
-};
-
-
-#alias {patrol_delayed} {
-  #if {1 == $patrol} {
-    #if {1 == $prey} {
-      #if {1 == $life_support} {
-        prey_off;
-        life_support_off;
-        patrol_run %1;
-        life_support_on;
-        prey_on;
-      };
-      prey_off;
-      patrol_run %1;
-      prey_on;
-    };
-    #else {
-      #if {1 == $life_support} {
-        life_support_off;
-        patrol_run %1;
-        life_support_on;
-      };
-      #else {
-        patrol_run %1;
-      };
-    };
-  };
-};
-
 
 #alias {patrol} {
+  #var {patrol_next} {%3};
   #action {%2} {
     #if {1 == $patrol} {
-      #if {1 == $patrol_searching} {
-        #echo {PATROL POINT:  %1};
-        patrol_searching_off;
-        #delay {$patrol_time} {
-          patrol_delayed %3;
-        };
+      #if {%2 == $patrol_next} {
+        #var {patrol_next} {%3};
       };
     };
   };

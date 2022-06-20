@@ -5,7 +5,6 @@
 
 /* Pseudo-daemon. */
 #alias {wanderd} {
-  #var {lock_wander} {1};
   #if {1 == $wander} {
     turn_left;
     #echo {Moving:  $direction};

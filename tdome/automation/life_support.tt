@@ -18,32 +18,29 @@
 };
 life_support_off;
 
-
-#alias {wake_action} {
-  #send wake;
-  #send stand;
-  #send score;
-  #var {lock_ls} {0};
-  patrol_searching_on;
+#alias {sleep_cycle_end} {
+  #var {lm_release_ls} {1};
+  release {lock_ls} {lock_move} {ls};
   #echo {SLEEP CYCLE:  END};
 };
 
-#alias {sleep_wake_for_lock} {
+#alias {sleep_wait_for_lock} {
   #if {ls == $lock_move} {
     #if {1 == $life_support} {
       #echo {SLEEP CYCLE:  START};
       #send sleep;
       #delay {$sleep_time} {
-        wake_action;
-        #if {1 == $patrol} {
-          #send look;
-        };
+        wa;
+        sleep_cycle_end;
       };
+    };
+    #else {
+      sleep_cycle_end;
     };
   };
   #else {
     #delay {$lockd_interval} {
-      sleep_wake_for_lock;
+      sleep_wait_for_lock;
     };
   };
 };
@@ -52,9 +49,8 @@ life_support_off;
 #alias {sleep_action} {
   #if {1 != $lock_ls} {
     #var {lock_ls} {1};
-
+    #var {lm_request_ls} {1};
     sleep_wait_for_lock;
-
   };
 };
 

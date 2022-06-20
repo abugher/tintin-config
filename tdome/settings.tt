@@ -9,10 +9,16 @@
   #session tdome $server $port;
 
   #if {1 != $lock_lock} {
+    #var {lock_lock} {1};
     lockd;
   };
   #if {1 != $lock_wander} {
+    #var {lock_wander} {1};
     wanderd;
+  };
+  #if {1 != $lock_patrol} {
+    #var {lock_patrol} {1};
+    patrold;
   };
 
   #map read               {config/tdome/maps/$map};
@@ -30,7 +36,7 @@
 };
 
 /* Avoid broken lines due to fragmented packets.  See FAQ. */
-#config {packet patch} {0.15}
+#config {packet patch} {0.3};
 
 /* Split command line, map, and output areas. */
 /* 
@@ -62,16 +68,20 @@
 #var {container}        {bag};
 #var {water_container}  {barrel};
 #var {water_place}      {cooler};
-#var {water_thing}      {fountain};
+#var {water_thing}      {cooler};
 #var {food_place}       {mcdeath};
 #var {food_thing}       {hamburger};
 
 #var {sleep_time}       {15};
 #var {step_time}        {1};
 
-#var {patrol_start}     {food_kiosk};
 #var {patrol_dark}      {1};
-#var {patrol_time}      {15};
+/* Direction commands pile up during combat.  The "no go" messages can be very
+ * delayed.  If the next map movement starts before they have resolved, things
+ * become inconsistent.  For now, set this kind of high.  Later, make attack
+ * operations acquire the movement lock, attempt to acquire it when attacked,
+ * and prioritize that defensive lock. */
+#var {patrol_time}      {45};
 
 #var {wander_time}      {5};
 
