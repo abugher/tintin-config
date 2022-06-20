@@ -65,7 +65,7 @@
 #script {pass} {bash -c 'pass show aaron/tdome.net/$user'};
 #var {wield}            {splint};
 #var {dual}             {splint};
-#var {container}        {bag};
+#var {container}        {sack};
 #var {water_container}  {barrel};
 #var {water_place}      {cooler};
 #var {water_thing}      {cooler};

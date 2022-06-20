@@ -6,14 +6,22 @@
     #if {1 == $life_support} {
       #if {1 == $patrol} {
         #map run {$water_place} {$step_time};
-        #send fill $water_container $water_thing;
-        #send drink $water_thing;
-        #send drink $water_thing;
-        #map run {$patrol_next} {$step_time};
+        #delay {$patrol_time} {
+          #send fill $water_container $water_thing;
+          #send drink $water_thing;
+          #send drink $water_thing;
+          #map run {$patrol_next} {$step_time};
+          #var {lm_release_rw} {1};
+          release {lock_rw} {lock_move} {rw};
+        };
       };
+      #var {lm_release_rw} {1};
+      release {lock_rw} {lock_move} {rw};
     };
-    #var {lm_release_rw} {1};
-    release {lock_rw} {lock_move} {rw};
+    #else {
+      #var {lm_release_rw} {1};
+      release {lock_rw} {lock_move} {rw};
+    };
   };
   #else {
     #delay {$lockd_interval} {
@@ -39,25 +47,27 @@
     #if {1 == $patrol} {
       #if {1 == $life_support} {
         #map run {$food_place} {$step_time};
-        #send buy $food_thing;
-        #send put all.$food_thing in $container;
-        #send buy $food_thing;
-        #send put all.$food_thing in $container;
-        #send buy $food_thing;
-        #send put all.$food_thing in $container;
-        #send buy $food_thing;
-        #send put all.$food_thing in $container;
-        #send buy $food_thing;
-        #send put all.$food_thing in $container;
-        #send buy $food_thing;
-        #send put all.$food_thing in $container;
-        #send buy $food_thing;
-        #send put all.$food_thing in $container;
-        #send buy $food_thing;
-        #send put all.$food_thing in $container;
-        #send buy $food_thing;
-        #send eat $food_thing;
-        #map run {$patrol_next} {$step_time};
+        #delay {$patrol_time} {
+          #send buy $food_thing;
+          #send put all.$food_thing in $container;
+          #send buy $food_thing;
+          #send put all.$food_thing in $container;
+          #send buy $food_thing;
+          #send put all.$food_thing in $container;
+          #send buy $food_thing;
+          #send put all.$food_thing in $container;
+          #send buy $food_thing;
+          #send put all.$food_thing in $container;
+          #send buy $food_thing;
+          #send put all.$food_thing in $container;
+          #send buy $food_thing;
+          #send put all.$food_thing in $container;
+          #send buy $food_thing;
+          #send put all.$food_thing in $container;
+          #send buy $food_thing;
+          #send eat $food_thing;
+          #map run {$patrol_next} {$step_time};
+        };
       };
     };
     #var {lm_release_rf} {1};
@@ -99,7 +109,7 @@
   replenish_water;
 };
 
-#action {There doesn't seem to be a $food_item in a $container.} {
+#action {There doesn't seem to be a} {
   replenish_food;
 };
 
