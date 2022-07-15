@@ -54,12 +54,6 @@
 /* Put map on the right. */
 #split 0 1 0 -80 1;
 
-/* refresh configuration */
-#alias refresh{} {
-  #read {config/tdome.tt};
-};
-
-
 /* personal settings */
 #var {user}             {NeoMercevi};
 #script {pass} {bash -c 'pass show aaron/tdome.net/$user'};
