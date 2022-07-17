@@ -22,7 +22,7 @@
   };
 
   #map read               {config/tdome/maps/$map};
-  #map offset             {0} {81} {-2} {-0};
+
   #map flag vtmap         on;
   #map flag AsciiGraphics off;
   #map flag unicode       on;
