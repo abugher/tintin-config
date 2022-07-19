@@ -2,12 +2,13 @@
 
 #alias mapstart{} {
 
-  /* This works if you set it here.  If you just set it in settings, the map
-   * gets squeezed into a single character tall bar at the top of the screen.
-   * */
+  #nop # This works if you set it here.  If you just set it in settings, the map
+  #nop # gets squeezed into a single character tall bar at the top of the screen.
+  #nop # 
+  #nop # Define the offset of the vtmap as a square. Without an argument
+  #nop # it defaults to the entire top split region.
+  #nop # 
   #nop #map offset <row> <col> <row> <col>
-  #nop   Define the offset of the vtmap as a square. Without an argument
-  #nop   it defaults to the entire top split region.
   #map offset             {1} {81} {-4} {-1};
 
   #var {mapping} {1};
