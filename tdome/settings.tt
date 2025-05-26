@@ -1,8 +1,8 @@
 #nop Include this line in every file to set the command character.
 
 /* server */
-#var {server} {tdome.net};
-#var {port} {5555};
+#var {server} {tdome.nukefire.org};
+#var {port} {4000};
 
 /* startup */
 #alias {tdome} {
@@ -52,10 +52,10 @@
   middle) and the remainder is devoted to the right box.
 */
 /* Put map on the right. */
-#split 0 1 0 -80 1;
+#split 0 1 0 -90 1;
 
 /* personal settings */
-#var {user}             {NeoMercevi};
+#var {user}             {Mercevi};
 #script {pass} {bash -c 'pass show aaron/tdome.net/$user'};
 #var {wield}            {splint};
 #var {dual}             {splint};

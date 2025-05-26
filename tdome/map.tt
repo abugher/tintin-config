@@ -8,7 +8,7 @@
   #nop # Define the offset of the vtmap as a square. Without an argument
   #nop # it defaults to the entire top split region.
   #nop # 
-  #nop #map offset <row> <col> <row> <col>
+  #nop #map offset <row> <col> <row> <col>;
   #map offset             {1} {81} {-4} {-1};
 
   #var {mapping} {1};
