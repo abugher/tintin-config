@@ -1,68 +1,77 @@
 #nop Include this line in every file to set the command character.
 
-prey    {dervish}       {dervish}               {What does a dervish say?};
-prey    {politician}    {politician}            {A shifty politician is here.};
-prey    {pickpocket}    {pickpocket}            {A pickpocket gets looks for a mark};
-prey    {pickpocket}    {pickpocket}            {You discover that a pickpocket has his hands in your pocket.};
-prey    {urchin}        {street urchin}         {street urchin looks for a handout.};
-prey    {urchin}        {urchin}                {You discover that an urchin has his hands in your pocket.};
-prey    {urchin}        {little urchin}         {A little urchin hides behind casks and crates.};
-prey    {urchin}        {street urchin}         {A dirty urchin runs up to you and grabs at your legs.};
-prey    {crook}         {crook}                 {A crook sizes up your equipment.};
+/*
+ *      Target by this name.            Notice this arrive.     Notice this description.
+ */
 
-prey    {pimp}          {pimp}                  {pimp struts past you.};
-prey    {guard}         {MAT security guard}    {MAT security guard tries to stay awake.};
-prey    {worker}        {MAT system worker}     {A MAT system worker looks for a place to nap.};
-prey    {soldier}       {soldier}               {soldier spits over his left shoulder.};
-prey    {soldier}       {soldier}               {views you with contempt.};
-prey    {drunk}         {smelly drunk}          {smelly drunk staggers past you.};
-prey    {drunk}         {sleeping drunk}        {Snores emanate from a sleeping drunk.}
-prey    {girl}          {young girl}            {young girl avoids your gaze.};
-prey    {girl}          {working girl}          {A working girl plies her trade.};
-prey    {girl}          {punked-out girl}       {punked-out girl combs her mohawk.};
-prey    {traveler}      {impatient traveler}    {impatient traveler reads a newspaper.};
-prey    {traveler}      {impatient traveler}    {impatient traveler glances at his watch.};
-prey    {traveler}      {impatient traveler}    {impatient traveler glances at her watch.};
-prey    {crackhead}     {crackhead}             {A crackhead looks for his next fix.};
-prey    {crackhead}     {crackhead}             {A crackhead looks for her next fix.};
-prey    {commuter}      {commuter}              {A commuter reads a newspaper.};
-prey    {commuter}      {commuter}              {A commuter glances at his watch.};
-prey    {commuter}      {commuter}              {A commuter glances at her watch.};
-prey    {drunk}         {sloppy drunk}          {sloppy drunk is just asking for it.};
-prey    {walker}        {walker}                {walker is walking};
-prey    {baglady}       {old baglady}           {An old baglady mutters to herself.};
-prey    {baglady}       {baglady}               {A baglady is resting here.};
-prey    {man}           {man}                   {A man stands here.};
-prey    {cockroach}     {giant cockroach}       {A giant cockroach charges toward you.};
-prey    {bugbear}       {bugbear}               {A large bugbear growls at you.};
-prey    {chief}         {bugbear chief}         {A large bugbear is here.};
-prey    {mime}          {mime}                  {a mime juggles a pair of imaginary cats.};
-prey    {lunatic}       {screaming lunatic}     {a screaming lunatic rants at you.};
-prey    {fanatic}       {wild-eyed fanatic}     {A wild-eyed fanatic waves a placard in your face.};
-prey    {rabbit}        {rabbit}                {A rabbit is here.};
-prey    {citizen}       {citizen}               {A citizen mutters something about 'foreigners'.};
-prey    {citizen}       {citizen}               {A citizen stops to smell the tar on the road.};
-prey    {citizen}       {citizen}               {A citizen bumps you as he hurries to work.};
-prey    {homeless}      {homeless man}          {A homeless man looks for a place to lie down.};
-prey    {jester}        {jester}                {A jester bounces happily around you.};
-prey    {salesman}      {salesman}              {A salesman wanders around looking for people like you to rip off.};
-prey    {banger}        {gang banger}           {A punk little gang banger awaits your lethal blow.};
-prey    {skeleton}      {nasty skeleton}        {A nasty skeleton is here.};
-prey    {troglodyte}    {evil troglodyte}       {An evil troglodyte is here.};
-prey    {ghoul}         {hideous ghoul}         {A hideous ghoul shrieks at you.};
-prey    {hobgoblin}     {hobgoblin}             {A small nasty hobgoblin stands here.};
-prey    {rat}           {giant rat}             {A giant rat gnashes its teeth as it advances.};
-prey    {rat}           {mutated rat}           {A horribly mutated rat charges toward you.};
-prey    {doppelganger}  {doppelganger}          {You see yourself standing here.};
-prey    {tourist}       {tourist}               {A tourist gawks at you.};
-prey    {worker}        {worker}                {A worker is here, working.};
-prey    {villager}      {twig villager}         {A twig villager smiles at you.};
-prey    {blob}          {lemure blob}           {The lemure blob slithers terribly precisely towards you for an attack!};
-prey    {ghoul}         {ghoul}                 {A hideous ghoul shrieks at you.};
-prey    {spider}        {large spider}          {What does a spider say?};
-prey    {snake}         {snake}                 {A small green snake.};
-prey    {stirge}        {stirge}                {A ferocious stirge is here, glaring hungrily at you.};
-prey    {bull}          {roan bull}             {A roan bull is resting here.};
-prey    {jerk}          {jerk}                  {A jerk acts like a jerk.};
-prey    {bum}           {old bum}               {An old bum looks through some stock quotes.};
+prey    {dervish}                       {dervish}               {What does a dervish say?};
+prey    {politician}                    {politician}            {A shifty politician is here.};
+prey    {pickpocket}                    {pickpocket}            {A pickpocket gets looks for a mark};
+prey    {pickpocket}                    {pickpocket}            {You discover that a pickpocket has his hands in your pocket.};
+prey    {urchin}                        {street urchin}         {street urchin looks for a handout.};
+prey    {urchin}                        {urchin}                {You discover that an urchin has his hands in your pocket.};
+prey    {urchin}                        {little urchin}         {A little urchin hides behind casks and crates.};
+prey    {urchin}                        {street urchin}         {A dirty urchin runs up to you and grabs at your legs.};
+prey    {crook}                         {crook}                 {A crook sizes up your equipment.};
 
+prey    {pimp}                          {pimp}                  {pimp struts past you.};
+prey    {guard}                         {MAT security guard}    {MAT security guard tries to stay awake.};
+prey    {worker}                        {MAT system worker}     {A MAT system worker looks for a place to nap.};
+prey    {soldier}                       {soldier}               {soldier spits over his left shoulder.};
+prey    {soldier}                       {soldier}               {views you with contempt.};
+prey    {drunk}                         {smelly drunk}          {smelly drunk staggers past you.};
+prey    {drunk}                         {sleeping drunk}        {Snores emanate from a sleeping drunk.}
+prey    {girl}                          {young girl}            {young girl avoids your gaze.};
+prey    {girl}                          {working girl}          {A working girl plies her trade.};
+prey    {girl}                          {punked-out girl}       {punked-out girl combs her mohawk.};
+prey    {traveler}                      {impatient traveler}    {impatient traveler reads a newspaper.};
+prey    {traveler}                      {impatient traveler}    {impatient traveler glances at his watch.};
+prey    {traveler}                      {impatient traveler}    {impatient traveler glances at her watch.};
+prey    {crackhead}                     {crackhead}             {A crackhead looks for his next fix.};
+prey    {crackhead}                     {crackhead}             {A crackhead looks for her next fix.};
+prey    {commuter}                      {commuter}              {A commuter reads a newspaper.};
+prey    {commuter}                      {commuter}              {A commuter glances at his watch.};
+prey    {commuter}                      {commuter}              {A commuter glances at her watch.};
+prey    {drunk}                         {sloppy drunk}          {sloppy drunk is just asking for it.};
+prey    {walker}                        {walker}                {walker is walking};
+prey    {baglady}                       {old baglady}           {An old baglady mutters to herself.};
+prey    {baglady}                       {baglady}               {A baglady is resting here.};
+prey    {man}                           {man}                   {A man stands here.};
+prey    {cockroach}                     {giant cockroach}       {A giant cockroach charges toward you.};
+prey    {bugbear}                       {bugbear}               {A large bugbear growls at you.};
+prey    {chief}                         {bugbear chief}         {A large bugbear is here.};
+prey    {mime}                          {mime}                  {a mime juggles a pair of imaginary cats.};
+prey    {lunatic}                       {screaming lunatic}     {a screaming lunatic rants at you.};
+prey    {fanatic}                       {wild-eyed fanatic}     {A wild-eyed fanatic waves a placard in your face.};
+prey    {rabbit}                        {rabbit}                {A rabbit is here.};
+prey    {citizen}                       {citizen}               {A citizen mutters something about 'foreigners'.};
+prey    {citizen}                       {citizen}               {A citizen stops to smell the tar on the road.};
+prey    {citizen}                       {citizen}               {A citizen bumps you as he hurries to work.};
+prey    {homeless}                      {homeless man}          {A homeless man looks for a place to lie down.};
+prey    {jester}                        {jester}                {A jester bounces happily around you.};
+prey    {salesman}                      {salesman}              {A salesman wanders around looking for people like you to rip off.};
+prey    {banger}                        {gang banger}           {A punk little gang banger awaits your lethal blow.};
+prey    {skeleton}                      {nasty skeleton}        {A nasty skeleton is here.};
+prey    {troglodyte}                    {evil troglodyte}       {An evil troglodyte is here.};
+prey    {ghoul}                         {hideous ghoul}         {A hideous ghoul shrieks at you.};
+prey    {hobgoblin}                     {hobgoblin}             {A small nasty hobgoblin stands here.};
+prey    {rat}                           {giant rat}             {A giant rat gnashes its teeth as it advances.};
+prey    {rat}                           {mutated rat}           {A horribly mutated rat charges toward you.};
+prey    {doppelganger}                  {doppelganger}          {You see yourself standing here.};
+prey    {tourist}                       {tourist}               {A tourist gawks at you.};
+prey    {worker}                        {worker}                {A worker is here, working.};
+prey    {villager}                      {twig villager}         {A twig villager smiles at you.};
+prey    {blob}                          {lemure blob}           {The lemure blob slithers terribly precisely towards you for an attack!};
+prey    {ghoul}                         {ghoul}                 {A hideous ghoul shrieks at you.};
+prey    {spider}                        {large spider}          {What does a spider say?};
+prey    {snake}                         {snake}                 {A small green snake.};
+prey    {stirge}                        {stirge}                {A ferocious stirge is here, glaring hungrily at you.};
+prey    {bull}                          {roan bull}             {A roan bull is resting here.};
+prey    {jerk}                          {jerk}                  {A jerk acts like a jerk.};
+prey    {bum}                           {old bum}               {An old bum looks through some stock quotes.};
+
+prey    {contestant}                    {contestant}            {A contestant runs by screaming at the top of his lungs.}
+prey    {blue robot}                    {blue robot}            {A little blue robot looks for things to zap with its tazer gun.}
+prey    {red robot}                     {red robot}             {A small red robot suddenly attacks you.}
+prey    {cleaning robot}                {cleaning robot}        {A cleaning robot scurries around.}
+prey    {maintenance droid}             {maintenance droid}     {A large maintenance droid is here, fixing things.}

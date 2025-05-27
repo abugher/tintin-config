@@ -6,6 +6,7 @@
 #alias {jump} {
   #send hide;
   #send stun %1;
+  #send kill %1;
 }
 #alias {j} {
   jump %1
