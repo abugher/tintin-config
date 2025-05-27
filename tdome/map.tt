@@ -2,28 +2,41 @@
 
 /*
  * Enter 'M' to turn on the map.  If no map exists:
- *   #map create
+ *   #map create world
  *   #map goto 1
  *   mw
- * Then restart tintin++.  Then turn on the map again.  It should be visible.
- * Mapping seems buggy, though.  It thinks McDeathBurger and the Temple of
- * Technology are the same room.
+ * Then maybe restart tintin++, and maybe turn on the map again if that doesn't
+ * happen automatically.
+ * 
+ * Disconnected areas (or areas connected by hard to map regions, like ocean)
+ * may require separate maps.
+ *   #map create otherplace
+ *   #map goto 1
+ *   mw
+ * 
+ * Insert void rooms to stretch parts of the map so other parts don't overlap.
+ *   #map insert n void
+ *
+ * Mapping asymmetrically connected sets of rooms is tricky.  Step from the
+ * main map into the new area, insert a void room behind you, then delete the
+ * void room.  That should create a disconected area.  Use room names and links
+ * to specify how to get in and out.
+ *   #map set roomname info
+ *   n
+ *   #map insert s void
+ *   #map delete s
+ *   #map set roomname cryostart
+ *   #map goto info
+ *   #map link n cryostart
+ *   #map goto cryostart
  */
 
 #alias mapstart{} {
-/*
- * This works if you set it here.  If you just set it in settings, the map
- * gets squeezed into a single character tall bar at the top of the screen.
- * 
- * Define the offset of the vtmap as a square. Without an argument
- * it defaults to the entire top split region.
- */
   #nop #map offset      <row>   <col>   <row>   <col>;
   #map offset           {1}     {92}    {-4}   {-4};
 
   #var {mapping} {1};
   #echo {mapping:  on};
-  #map return;
 }
 #alias mapleave{} {
   #var {mapping} {0};
@@ -140,6 +153,7 @@
 /* Fix map upon respawn. */
 #action {The Temple of Technology - } {
   mapstart;
+  #map read world;
   #map goto tot;
 }
 /* Fix map upon bail out. */
