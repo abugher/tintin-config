@@ -138,10 +138,10 @@
 
 
 /* Fix map upon respawn. */
-#action {The Information Center of Tek Angeles [ Inside ]} {
+#action {The Temple of Technology - } {
   mapstart;
-  #map goto info;
-};
+  #map goto tot;
+}
 /* Fix map upon bail out. */
 #action {Master Sin's School [ Inside ]} {
   mapstart;
