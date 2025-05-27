@@ -1,5 +1,15 @@
 #nop Include this line in every file to set the command character.
 
+/*
+ * Enter 'M' to turn on the map.  If no map exists:
+ *   #map create
+ *   #map goto 1
+ *   mw
+ * Then restart tintin++.  Then turn on the map again.  It should be visible.
+ * Mapping seems buggy, though.  It thinks McDeathBurger and the Temple of
+ * Technology are the same room.
+ */
+
 #alias mapstart{} {
 /*
  * This works if you set it here.  If you just set it in settings, the map
@@ -9,7 +19,7 @@
  * it defaults to the entire top split region.
  */
   #nop #map offset      <row>   <col>   <row>   <col>;
-  #map offset           {10}     {100}    {70}   {180};
+  #map offset           {1}     {92}    {-4}   {-4};
 
   #var {mapping} {1};
   #echo {mapping:  on};
