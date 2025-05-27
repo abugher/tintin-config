@@ -1,7 +1,6 @@
 #nop Include this line in every file to set the command character.
 
 #alias mapstart{} {
-
 /*
  * This works if you set it here.  If you just set it in settings, the map
  * gets squeezed into a single character tall bar at the top of the screen.
@@ -9,8 +8,8 @@
  * Define the offset of the vtmap as a square. Without an argument
  * it defaults to the entire top split region.
  */
-  #nop #map offset      <row> <col> <row> <col>;
-  #map offset           {1} {91} {180} {70};
+  #nop #map offset      <row>   <col>   <row>   <col>;
+  #map offset           {10}     {100}    {70}   {180};
 
   #var {mapping} {1};
   #echo {mapping:  on};
