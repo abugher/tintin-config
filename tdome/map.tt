@@ -130,14 +130,16 @@
 
 /* These messages can occur for non-movement actions, which can cause overcorrection. */
 
-#nop #action {Maybe you should get on your feet first?} {
-#nop   #if {1 == $patrol} {
-#nop     st;
-#nop     #if {$mapping == 1} {
-#nop       #map undo;
-#nop     };
-#nop   };
-#nop };
+/*
+#action {Maybe you should get on your feet first?} {
+  #if {1 == $patrol} {
+    #send stand;
+    #if {$mapping == 1} {
+      #map undo;
+    };
+  };
+};
+
 #action {No way!  You're fighting for your life!} {
   #if {1 == $patrol} {
     #if {$mapping == 1} {
@@ -145,13 +147,16 @@
     };
   };
 };
-#nop #action {"In your dreams, or what?"} {
-#nop   #if {1 == $patrol} {
-#nop     #if {$mapping == 1} {
-#nop       #map undo;
-#nop     };
-#nop   };
-#nop };
+
+#action {"In your dreams, or what?"} {
+  #if {1 == $patrol} {
+    #send wake;
+    #if {$mapping == 1} {
+      #map undo;
+    };
+  };
+};
+*/
 
 
 /* Fix map upon startup. */
