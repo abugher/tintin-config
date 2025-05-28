@@ -45,7 +45,7 @@
 #alias {toggle_patrol} {
   patrol_on;
 }
-#alias {A} {
+#alias {p} {
   toggle_patrol;
 }
 patrol_off;
