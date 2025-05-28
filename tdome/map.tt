@@ -114,6 +114,9 @@
 #action {You are blocked} {
   blocked_action;
 }
+#action {blocks your way} {
+  blocked_action;
+}
 #action {A strange force field prevents you from moving} {
   blocked_action;
 };
