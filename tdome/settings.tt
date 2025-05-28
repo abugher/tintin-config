@@ -5,7 +5,7 @@
 #var {port} {4000};
 
 /* startup */
-#alias {tdome} {
+#alias {start_daemons} {
   #session tdome $server $port;
 
   #if {1 != $lock_lock} {
@@ -20,7 +20,9 @@
     #var {lock_patrol} {1};
     patrold;
   };
+}
 
+#alias {load_map} {
   #map read               {config/tdome/maps/$map};
 
   #map flag vtmap         on;
@@ -28,7 +30,8 @@
   #map flag unicode       on;
 };
 #event {PROGRAM START} {
-  tdome;
+  start_daemons;
+  load_map;
 };
 #event {SESSION CONNECTED} {
   #send $user;

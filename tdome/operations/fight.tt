@@ -1,14 +1,15 @@
 #nop Include this line in every file to set the command character.
 
 #alias {c} {
-  #send consider
+  #send consider %1;
 }
 #alias {jump} {
   #send hide;
   #send stun %1;
 }
 #alias {j} {
-  jump %1
+  jump %1;
+  bs %1;
 }
 #alias {f} {
   #send feign;
