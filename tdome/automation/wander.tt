@@ -44,17 +44,17 @@ wander_off;
 
 
 #alias {turn_right} {
-  #switch {$direction} {
-    #case {n} {
+  #switch {"$direction"} {
+    #case {"n"} {
       #var {direction} {e};
     };
-    #case {e} {
+    #case {"e"} {
       #var {direction} {s};
     };
-    #case {s} {
+    #case {"s"} {
       #var {direction} {w};
     };
-    #case {w} {
+    #case {"w"} {
       #var {direction} {n};
     };
     #default {
@@ -65,17 +65,17 @@ wander_off;
 
 
 #alias {turn_left} {
-  #switch {$direction} {
-    #case {n} {
+  #switch {"$direction"} {
+    #case {"n"} {
       #var {direction} {w};
     };
-    #case {e} {
+    #case {"e"} {
       #var {direction} {n};
     };
-    #case {s} {
+    #case {"s"} {
       #var {direction} {e};
     };
-    #case {w} {
+    #case {"w"} {
       #var {direction} {s};
     };
     #default {

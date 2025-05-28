@@ -12,38 +12,38 @@
 #var {lm_release_replenish} {0};
 
 #alias {lockd} {
-  #switch {$lock_move} {
-    #case {ls} {
+  #switch {"$lock_move"} {
+    #case {"ls"} {
       #if {1 == lm_release_ls} {
         #var {lm_release_ls} {0};
         #var {lock_move} {available};
       };
     };
-    #case {patrol} {
+    #case {"patrol"} {
       #if {1 == lm_release_patrol} {
         #var {lm_release_patrol} {0};
         #var {lock_move} {available};
       };
     };
-    #case {wander} {
+    #case {"wander"} {
       #if {1 == lm_release_wander} {
         #var {lm_release_wander} {0};
         #var {lock_move} {available};
       };
     };
-    #case {rf} {
+    #case {"rf"} {
       #if {1 == lm_release_rf} {
         #var {lm_release_rf} {0};
         #var {lock_move} {available};
       };
     };
-    #case {rw} {
+    #case {"rw"} {
       #if {1 == lm_release_rw} {
         #var {lm_release_rw} {0};
         #var {lock_move} {available};
       };
     };
-    #case {rdv} {
+    #case {"rdv"} {
       #if {1 == lm_release_rdv} {
         #var {lm_release_rdv} {0};
         #var {lock_move} {available};
