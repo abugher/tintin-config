@@ -4,6 +4,21 @@
  *      Target by this name.            Notice this arrive.     Notice this description.
  */
 
+/* danger game */
+prey    {contestant}                    {contestant}            {A contestant runs by screaming at the top of his lungs.}
+prey    {blue robot}                    {blue robot}            {A little blue robot looks for things to zap with its tazer gun.}
+prey    {red robot}                     {red robot}             {A small red robot suddenly attacks you.}
+prey    {cleaning robot}                {cleaning robot}        {A cleaning robot scurries around.}
+prey    {maintenance droid}             {maintenance droid}     {A large maintenance droid is here, fixing things.}
+prey    {floating head}                 {floating head}         {A floating head, trailing it's crucified decapitated corpse, hovers here.}
+prey    {charmer}                       {charmer}               {A wiry lock charmer is slyly looking for somewhere to apply his trade.}
+prey    {ranger}                        {ranger}                {A ranger sifts through some scat for treasure.}
+prey    {aggressor}                     {aggressor}             {An aggressor looks really aggressive.}
+prey    {virtual bear}                  {virtual bear}          {A virtual bear is here.}
+prey    {virtual ape}                   {virtual ape}           {A virtual ape is here.}
+prey    {virtual scorpion}              {virtual scorpion}      {A virtual scorpion is here.}
+
+/* tek angeles, easy prey */
 prey    {dervish}                       {dervish}               {What does a dervish say?};
 prey    {politician}                    {politician}            {A shifty politician is here.};
 prey    {pickpocket}                    {pickpocket}            {A pickpocket gets looks for a mark};
@@ -14,6 +29,7 @@ prey    {urchin}                        {little urchin}         {A little urchin
 prey    {urchin}                        {street urchin}         {A dirty urchin runs up to you and grabs at your legs.};
 prey    {crook}                         {crook}                 {A crook sizes up your equipment.};
 
+/* subway? */
 prey    {pimp}                          {pimp}                  {pimp struts past you.};
 prey    {guard}                         {MAT security guard}    {MAT security guard tries to stay awake.};
 prey    {worker}                        {MAT system worker}     {A MAT system worker looks for a place to nap.};
@@ -70,8 +86,3 @@ prey    {bull}                          {roan bull}             {A roan bull is 
 prey    {jerk}                          {jerk}                  {A jerk acts like a jerk.};
 prey    {bum}                           {old bum}               {An old bum looks through some stock quotes.};
 
-prey    {contestant}                    {contestant}            {A contestant runs by screaming at the top of his lungs.}
-prey    {blue robot}                    {blue robot}            {A little blue robot looks for things to zap with its tazer gun.}
-prey    {red robot}                     {red robot}             {A small red robot suddenly attacks you.}
-prey    {cleaning robot}                {cleaning robot}        {A cleaning robot scurries around.}
-prey    {maintenance droid}             {maintenance droid}     {A large maintenance droid is here, fixing things.}
