@@ -151,10 +151,13 @@
 #nop };
 
 
-/* Fix map upon respawn. */
+/* Fix map upon startup. */
 #action {The Temple of Technology - } {
-  #map read world;
   #map goto tot;
+}
+/* Fix map upon respawn. */
+#action {The Morgue -} {
+  #map goto morgue;
 }
 /* Fix map upon bail out. */
 #action {Master Sin's School [ Inside ]} {

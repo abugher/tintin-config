@@ -1,12 +1,6 @@
 #nop Include this line in every file to set the command character.
 
-#event {PROGRAM START} {
-  #if {1 != $lock_lock} {
-    #var {lock_lock} {1};
-    lockd;
-  };
-};
-
+/* start daemons */
 #event {PROGRAM START} {
   #if {1 != $lock_lock} {
     #var {lock_lock} {1};
