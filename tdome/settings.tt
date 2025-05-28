@@ -1,36 +1,5 @@
 #nop Include this line in every file to set the command character.
 
-/* server */
-#var {server} {tdome.nukefire.org};
-#var {port} {4000};
-
-/* startup */
-#alias {start_daemons} {
-  #session tdome $server $port;
-
-  #if {1 != $lock_lock} {
-    #var {lock_lock} {1};
-    lockd;
-  };
-  #if {1 != $lock_wander} {
-    #var {lock_wander} {1};
-    wanderd;
-  };
-  #if {1 != $lock_patrol} {
-    #var {lock_patrol} {1};
-    patrold;
-  };
-}
-
-#event {PROGRAM START} {
-  start_daemons;
-};
-
-#event {SESSION CONNECTED} {
-  #send $user;
-  #send $pass[1];
-};
-
 /* Avoid broken lines due to fragmented packets.  See FAQ. */
 #config {packet patch} {0.3};
 
@@ -53,10 +22,10 @@
 /* personal settings */
 #var {user}             {Mercevi};
 #script {pass} {bash -c 'pass show aaron/tdome.net/$user'};
-#var {wield}            {splint};
+#var {wield}            {dagger};
 #var {dual}             {splint};
-#var {container}        {sack};
-#var {water_container}  {barrel};
+#var {container}        {ruck};
+#var {water_container}  {flask};
 #var {water_place}      {cooler};
 #var {water_thing}      {cooler};
 #var {food_place}       {mcdeath};
@@ -72,9 +41,6 @@
  * operations acquire the movement lock, attempt to acquire it when attacked,
  * and prioritize that defensive lock. */
 #var {patrol_time}      {15};
-
 #var {wander_time}      {5};
-
 #var {lockd_interval}   {1};
-
 #var {map}              {world};

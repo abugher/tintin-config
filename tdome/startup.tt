@@ -1,0 +1,24 @@
+#nop Include this line in every file to set the command character.
+
+/* startup */
+#alias {start_daemons} {
+  #session tdome $server $port;
+
+  #if {1 != $lock_lock} {
+    #var {lock_lock} {1};
+    lockd;
+  };
+  #if {1 != $lock_wander} {
+    #var {lock_wander} {1};
+    wanderd;
+  };
+  #if {1 != $lock_patrol} {
+    #var {lock_patrol} {1};
+    patrold;
+  };
+}
+
+#event {PROGRAM START} {
+  start_daemons;
+};
+

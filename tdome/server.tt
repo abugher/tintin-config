@@ -1,0 +1,12 @@
+#nop Include this line in every file to set the command character.
+
+/* server */
+#var {server} {tdome.nukefire.org};
+#var {port} {4000};
+
+#event {SESSION CONNECTED} {
+  #send $user;
+  #send $pass[1];
+};
+
+

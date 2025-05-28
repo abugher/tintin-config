@@ -4,3 +4,5 @@
 #read {config/tdome/operations.tt};
 #read {config/tdome/map.tt};
 #read {config/tdome/automation.tt};
+#read {config/tdome/startup.tt};
+#read {config/tdome/server.tt};
