@@ -25,13 +25,7 @@ prey_off;
   #action {%2 arrives} {
     #if {1 == $prey} {jump %1;};
   };
-  #action {%2 moves into view} {
-    #if {1 == $prey} {jump %1;};
-  };
-  #action {%2 climbs up into view} {
-    #if {1 == $prey} {jump %1;};
-  };
-  #action {%2 climbs up into view} {
+  #action {%2 into view} {
     #if {1 == $prey} {jump %1;};
   };
   #action {%2 drags himself to his feet.} {
