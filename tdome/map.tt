@@ -32,7 +32,6 @@
  */
 
 #alias mapstart{} {
-  #map read               {config/tdome/maps/$map};
 
   #nop #map offset      <row>   <col>   <row>   <col>;
   #map offset           {1}     {92}    {-4}   {-4};
