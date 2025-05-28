@@ -29,7 +29,8 @@
     #delay {$patrol_step_interval} {
       patrold_up;
     };
-  }}
+  };
+};
 
 #alias {patrol_on} {
   #var {patrol} {1};

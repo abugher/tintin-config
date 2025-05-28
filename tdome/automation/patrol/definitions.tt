@@ -2,5 +2,5 @@
 
 /* Define exactly two patrol points. */
 
-#var {patrol_point_1}           {food_kiosk}
-#var {patrol_point_2}           {ta_subway}
+#var {patrol_point_1}           {food_kiosk};
+#var {patrol_point_2}           {ta_subway};

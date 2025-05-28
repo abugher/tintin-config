@@ -1,19 +1,11 @@
 #nop Include this line in every file to set the command character.
 
 #alias {home} {
-  #send t curebot summon;
-  #send t curebot confirm summon;
+  #send recall;
 }
 #alias {bail} {
-  #send t curebot summon;
-  #send recall;
-  #send t curebot confirm summon;
+  home;
   #send flee;
   #send flee;
   #send flee;
 }
-#alias {nobail} {
-  #send t curebot cancel summon;
-}
-
-
