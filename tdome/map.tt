@@ -36,10 +36,6 @@
   #nop #map offset      <row>   <col>   <row>   <col>;
   #map offset           {1}     {92}    {-4}   {-4};
 
-  #map flag vtmap         on;
-  #map flag AsciiGraphics off;
-  #map flag unicode       on;
-
   #var {mapping} {1};
   #echo {mapping:  on};
 }
@@ -157,18 +153,15 @@
 
 /* Fix map upon respawn. */
 #action {The Temple of Technology - } {
-  mapstart;
   #map read world;
   #map goto tot;
 }
 /* Fix map upon bail out. */
 #action {Master Sin's School [ Inside ]} {
-  mapstart;
   #map goto sin;
 };
 /* Fix map upon return after rent. */
 #action {Bag's Inn reception [ Inside ]} {
-  mapstart;
   #map goto bag;
 }
 

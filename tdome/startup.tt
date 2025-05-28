@@ -29,4 +29,9 @@
 /* Connect to server. */
 #session tdome $server $port;
 #map read {config/tdome/maps/$map};
+
+#map flag vtmap         on;
+#map flag AsciiGraphics off;
+#map flag unicode       on;
+
 mapstart;
