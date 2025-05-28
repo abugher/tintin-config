@@ -1,4 +1,6 @@
 #nop Include this line in every file to set the command character.
 
-patrol {food_kiosk}     {Food Kiosk}            {ta_subway};
-patrol {ta_subway}      {Boarding Platform}     {food_kiosk};
+/* Define exactly two patrol points. */
+
+#var {patrol_point_1}           {food_kiosk}
+#var {patrol_point_2}           {ta_subway}

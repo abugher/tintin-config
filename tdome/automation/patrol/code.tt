@@ -1,40 +1,35 @@
 #nop Include this line in every file to set the command character.
 
-
-#alias {patrold} {
-  launch_patrol_run;
-  #delay {$patrol_time} {
-    patrold;
-  };
-};
-
-
-#alias {launch_patrol_run} {
-  #if {1 != $lock_patrol_run} {
-    #var {lock_patrol_run} {1};
-    #var {lm_request_patrol} {1};
-    patrol_run;
-  };
-};
-
-
-#alias {patrol_run} {
-  #if {patrol == $lock_move} {
-    #if {1 == $patrol} {
-      #send sneak;
-      #map run {$patrol_next} {$step_time};
-      #send sneak;
-      #var {lm_release_patrol} {1};
-      release_patrol;
+#alias {patrold_up} {
+  #if {1 == $patrol} {
+    #send sneak;
+    #map run {$patrol_point_1} {$patrol_step_interval};
+    #send sneak;
+    #delay {$patrol_lap_interval} {
+      patrold_down;
     };
-    #var {lock_patrol_run} {0};
   };
   #else {
-    #delay {$lock_interval} {
-      patrol_run;
+    #delay {$patrol_step_interval} {
+      patrold_down;
+    };
+  }
+};
+
+#alias {patrold_down} {
+  #if {1 == $patrol} {
+    #send sneak;
+    #map run {$patrol_point_2} {$patrol_step_interval};
+    #send sneak;
+    #delay {$patrol_lap_interval} {
+      patrold_up;
     };
   };
-};
+  #else {
+    #delay {$patrol_step_interval} {
+      patrold_up;
+    };
+  }}
 
 #alias {patrol_on} {
   #var {patrol} {1};
@@ -53,15 +48,3 @@
   toggle_patrol;
 }
 patrol_off;
-
-
-#alias {patrol} {
-  #var {patrol_next} {%3};
-  #action {%2} {
-    #if {1 == $patrol} {
-      #if {%2 == $patrol_next} {
-        #var {patrol_next} {%3};
-      };
-    };
-  };
-};

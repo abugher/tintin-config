@@ -1,22 +1,18 @@
 #nop Include this line in every file to set the command character.
 
 /* start daemons */
-#event {PROGRAM START} {
-  #if {1 != $lock_lock} {
-    #var {lock_lock} {1};
-    lockd;
-  };
-};
-#event {PROGRAM START} {
+#event {SESSION ACTIVATED} {
   #if {1 != $lock_wander} {
     #var {lock_wander} {1};
     wanderd;
   };
 };
-#event {PROGRAM START} {
-  #if {1 != $lock_patrol} {
-    #var {lock_patrol} {1};
-    patrold;
+
+#var {patrold_started} {0}
+#action {EXP to next} {
+  #if {1 != $patrold_started} {
+    #var {patrold_started} {1};
+    patrold_up;
   };
 };
 
