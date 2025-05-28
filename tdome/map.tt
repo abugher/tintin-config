@@ -32,8 +32,14 @@
  */
 
 #alias mapstart{} {
+  #map read               {config/tdome/maps/$map};
+
   #nop #map offset      <row>   <col>   <row>   <col>;
   #map offset           {1}     {92}    {-4}   {-4};
+
+  #map flag vtmap         on;
+  #map flag AsciiGraphics off;
+  #map flag unicode       on;
 
   #var {mapping} {1};
   #echo {mapping:  on};

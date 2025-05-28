@@ -22,17 +22,10 @@
   };
 }
 
-#alias {load_map} {
-  #map read               {config/tdome/maps/$map};
-
-  #map flag vtmap         on;
-  #map flag AsciiGraphics off;
-  #map flag unicode       on;
-};
 #event {PROGRAM START} {
   start_daemons;
-  load_map;
 };
+
 #event {SESSION CONNECTED} {
   #send $user;
   #send $pass[1];
@@ -78,7 +71,7 @@
  * become inconsistent.  For now, set this kind of high.  Later, make attack
  * operations acquire the movement lock, attempt to acquire it when attacked,
  * and prioritize that defensive lock. */
-#var {patrol_time}      {45};
+#var {patrol_time}      {15};
 
 #var {wander_time}      {5};
 
