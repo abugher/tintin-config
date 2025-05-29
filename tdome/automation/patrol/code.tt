@@ -1,33 +1,22 @@
 #nop Include this line in every file to set the command character.
 
-#alias {patrold_up} {
+#alias {patrold} {
+  #var {patrol_points_i} {%1};
+  #if {$patrol_points_i > &patrol_points[]} {
+    #var {patrol_points_i} {1};
+  };
   #if {1 == $patrol} {
     #send sneak;
-    #map run {$patrol_point_1} {$patrol_step_interval};
+    #map run {$patrol_points[$patrol_points_i]} {$patrol_step_interval};
     #send sneak;
+    #math {patrol_points_i} {$patrol_points_i + 1};
     #delay {$patrol_lap_interval} {
-      patrold_down;
+      patrold {$patrol_points_i};
     };
   };
   #else {
     #delay {$patrol_step_interval} {
-      patrold_down;
-    };
-  }
-};
-
-#alias {patrold_down} {
-  #if {1 == $patrol} {
-    #send sneak;
-    #map run {$patrol_point_2} {$patrol_step_interval};
-    #send sneak;
-    #delay {$patrol_lap_interval} {
-      patrold_up;
-    };
-  };
-  #else {
-    #delay {$patrol_step_interval} {
-      patrold_up;
+      patrold {$patrol_points_i};
     };
   };
 };
@@ -36,16 +25,16 @@
   #var {patrol} {1};
   #echo {Patrol:  on};
   #alias {toggle_patrol} {patrol_off};
-}
+};
 #alias {patrol_off} {
   #var {patrol} {0};
   #echo {Patrol:  off};
   #alias {toggle_patrol} {patrol_on};
-}
+};
 #alias {toggle_patrol} {
   patrol_on;
-}
+};
 #alias {p} {
   toggle_patrol;
-}
+};
 patrol_off;

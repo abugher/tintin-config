@@ -12,7 +12,7 @@
 #action {EXP to next} {
   #if {1 != $patrold_started} {
     #var {patrold_started} {1};
-    patrold_up;
+    patrold {1};
   };
 };
 

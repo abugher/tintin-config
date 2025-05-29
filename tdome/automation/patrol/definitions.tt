@@ -1,6 +1,10 @@
 #nop Include this line in every file to set the command character.
 
-/* Define exactly two patrol points. */
-
-#var {patrol_point_1}           {food_kiosk};
-#var {patrol_point_2}           {ta_subway};
+/*
+ * A flat list would make more sense, but it seems like only an associative
+ * array can be easily counted.  Start indexing at 1.
+ */
+#var {patrol_points} {
+  {1}{food_kiosk}
+  {2}{ta_subway}
+};
