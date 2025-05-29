@@ -12,28 +12,37 @@
 
 /*
  * Perhaps walking should not lock out fighting, only the opposite.
+ *
+ * Bug:  There is a delay after fighting is checked before walking occurs, worsening a race condition.
  */
 
 #alias {walk_path} {
   #delay {$patrol_step_duration} {
     #var {walking} {0};
-    #if {1 == $prey} {
-      #send {look};
-    };
     #path {get} {position} {path_position};
     #path {get} {length} {path_length};
-    #if {1 != $fighting} {
-      #if {$path_position <= $path_length} {
-        #delay {$patrol_step_delay} {
-          #var {walking} {1};
-          #send {sneak};
-          #path {walk};
-          walk_path;
+    #if {1 == $patrol} {
+      #if {1 != $fighting} {
+        #if {1 == $prey} {
+          #send {look};
+        };
+        #if {$path_position <= $path_length} {
+          #delay {$patrol_step_delay} {
+            #var {walking} {1};
+            #send {sneak};
+            #path {walk};
+            walk_path;
+          };
+        };
+        #else {
+          #math {patrol_points_i} {$patrol_points_i + 1};
+          #var {on_path} {0};
         };
       };
-      #else {
-        #math {patrol_points_i} {$patrol_points_i + 1};
-        #var {on_path} {0};
+      # else {
+        #delay {$patrol_step_delay} {
+          walk_path;
+        };
       };
     };
     # else {
