@@ -6,10 +6,12 @@
     #var {patrol_points_i} {1};
   };
   #if {1 == $patrol} {
-    #send sneak;
-    #map run {$patrol_points[$patrol_points_i]} {$patrol_step_interval};
-    #send sneak;
-    #math {patrol_points_i} {$patrol_points_i + 1};
+    #if {1 != $fighting} {
+      #send sneak;
+      #map run {$patrol_points[$patrol_points_i]} {$patrol_step_interval};
+      #send sneak;
+      #math {patrol_points_i} {$patrol_points_i + 1};
+    };
     #delay {$patrol_lap_interval} {
       patrold {$patrol_points_i};
     };

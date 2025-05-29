@@ -8,7 +8,8 @@
   };
 };
 
-#var {patrold_started} {0}
+#var {fighting} {0};
+#var {patrold_started} {0};
 #action {EXP to next} {
   #if {1 != $patrold_started} {
     #var {patrold_started} {1};
