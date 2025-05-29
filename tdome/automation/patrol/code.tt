@@ -1,16 +1,57 @@
 #nop Include this line in every file to set the command character.
 
+/* 
+ * #delay implies an execution fork.  Be careful.
+ */
+
+#alias {step_toward} {
+  #path destroy;
+  #map find {%1};
+  #path walk;
+};
+
+#alias {walk_path} {
+  #delay {$patrol_step_duration} {
+    #path {get} {position} {path_position};
+    #path {get} {length} {path_length};
+    #var {walking} {0};
+    #if {1 != $fighting} {
+      #if {$path_position <= $path_length} {
+        #delay {$patrol_step_interval} {
+          #var {walking} {1};
+          #send {sneak};
+          #path {walk};
+          walk_path;
+        };
+      };
+      #else {
+        #math {patrol_points_i} {$patrol_points_i + 1};
+        #var {on_path} {0};
+      };
+    };
+    # else {
+      #delay {$patrol_step_interval} {
+        walk_path;
+      };
+    };
+  };
+};
+
 #alias {patrold} {
   #var {patrol_points_i} {%1};
   #if {$patrol_points_i > &patrol_points[]} {
     #var {patrol_points_i} {1};
   };
   #if {1 == $patrol} {
-    #if {1 != $fighting} {
-      #send sneak;
-      #map run {$patrol_points[$patrol_points_i]} {$patrol_step_interval};
-      #send sneak;
-      #math {patrol_points_i} {$patrol_points_i + 1};
+    #if {1 != $fighting && 1 != $on_path} {
+      #path {destroy};
+      #map {find} {$patrol_points[$patrol_points_i]};
+      #path {get} {position} {path_position};
+      #path {get} {length} {path_length};
+      #var {on_path} {1};
+      #if {$path_position <= $path_length} {
+        walk_path;
+      };
     };
     #delay {$patrol_lap_interval} {
       patrold {$patrol_points_i};

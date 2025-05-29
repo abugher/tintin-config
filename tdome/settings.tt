@@ -35,11 +35,7 @@
 #var {step_time}                {1};
 
 #var {patrol_dark}              {1};
-/* Direction commands pile up during combat.  The "no go" messages can be very
- * delayed.  If the next map movement starts before they have resolved, things
- * become inconsistent.  For now, set this kind of high.  Later, make attack
- * operations acquire the movement lock, attempt to acquire it when attacked,
- * and prioritize that defensive lock. */
+#var {patrol_step_duration}     {1};
 #var {patrol_step_interval}     {5};
 #var {patrol_lap_interval}      {60};
 #var {wander_time}              {5};

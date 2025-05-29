@@ -18,24 +18,32 @@
 }
 prey_off;
 
+#alias {prey_upon} {
+  #if {1 == $prey} {
+    #if {0 == $walking} {
+      jump {%1};
+    };
+  };
+};
+
 #alias {prey} {
   #action {%3} {
-    #if {1 == $prey} {jump %1;};
+    prey_upon {%1};
   };
   #action {%2 arrives} {
-    #if {1 == $prey} {jump %1;};
+    prey_upon {%1};
   };
   #action {%2 into view} {
-    #if {1 == $prey} {jump %1;};
+    prey_upon {%1};
   };
   #action {%2 drags himself to his feet.} {
-    #if {1 == $prey} {jump %1;};
+    prey_upon {%1};
   };
   #action {%2 drags herself to her feet.} {
-    #if {1 == $prey} {jump %1;};
+    prey_upon {%1};
   };
   #action {%2 drags itself to its feet.} {
-    #if {1 == $prey} {jump %1;};
+    prey_upon {%1};
   };
 }
 
