@@ -10,9 +10,16 @@
   #path walk;
 };
 
+/*
+ * Perhaps walking should not lock out fighting, only the opposite.
+ */
+
 #alias {walk_path} {
   #delay {$patrol_step_duration} {
     #var {walking} {0};
+    #if {1 == $prey} {
+      #send {look};
+    };
     #path {get} {position} {path_position};
     #path {get} {length} {path_length};
     #if {1 != $fighting} {
