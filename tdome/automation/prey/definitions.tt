@@ -4,6 +4,18 @@
  *      Target by this name.            Notice this arrive.                                     Notice this description.
  */
 
+/* cryo center */
+prey    {tribble}                       {tribble}                                               {A tribble scurrys about.};
+
+/* fun house */
+prey    {fun thing}                     {fun thing}                                             {A Fun Thing wanders around.};
+prey    {fun dude}                      {fun dude}                                              {A Fun Dude smiles at you.};
+prey    {fun babe}                      {fun babe}                                              {A Fun Babe laughs hysterically.};
+prey    {kid}                           {little kid}                                            {A little kid is having fun.};
+prey    {clown}                         {little clown}                                          {A little clown is here.};
+prey    {monkey}                        {fun little monkey}                                     {A fun little monkey is here.};
+prey    {dwarf}                         {tiny dwarf}                                            {A tiny dwarf scowls up at you.};
+
 /* danger game */
 prey    {contestant}                    {contestant}                                            {A contestant runs by screaming at the top of his lungs.};
 prey    {blue robot}                    {blue robot}                                            {A little blue robot looks for things to zap with its tazer gun.};
@@ -23,6 +35,7 @@ prey    {boop}                          {Boop}                                  
 prey    {wrestlers}                     {Eight eleven-year-old backyard wrestlers}              {Eight eleven-year-old backyard wrestlers};
 
 /* tek angeles, easy prey */
+prey    {tail}                          {tail gater}                                            {A sneaky tail gater waits for someone to unlock a door.};
 prey    {dervish}                       {dervish}                                               {What does a dervish say?};
 prey    {politician}                    {politician}                                            {A shifty politician is here.};
 prey    {pickpocket}                    {pickpocket}                                            {A pickpocket gets looks for a mark};
@@ -32,6 +45,7 @@ prey    {urchin}                        {urchin}                                
 prey    {urchin}                        {little urchin}                                         {A little urchin hides behind casks and crates.};
 prey    {urchin}                        {street urchin}                                         {A dirty urchin runs up to you and grabs at your legs.};
 prey    {crook}                         {crook}                                                 {A crook sizes up your equipment.};
+prey    {fluffer}                       {porn fluffer}                                          {A porn fluffer idles about, waiting for her next scene prep.};
 
 /* subway? */
 prey    {pimp}                          {pimp}                                                  {pimp struts past you.};

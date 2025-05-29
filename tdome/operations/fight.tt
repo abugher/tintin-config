@@ -22,6 +22,12 @@
 
 /* stun -> backstab -> feign -> repeat */
 
+/* This is a mess compared to patrold. */
+/*   Incorporate dtrick.  */
+/*   Loop over feign, backstab, and maybe dtrick, while fighting. */
+/*   Detect fighting state by % in prompt. */
+/*   Stop trying to fight everything in the room at once. */
+
 #alias {F} {
   #if {1 == $mana} {
     #echo {Fight (with mana):  off};
