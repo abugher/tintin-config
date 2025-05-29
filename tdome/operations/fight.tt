@@ -1,21 +1,22 @@
 #nop Include this line in every file to set the command character.
 
 #alias {c} {
-  #send consider %1;
+  #send {consider %1};
 }
 #alias {jump} {
-  #send hide;
-  #send stun %1;
+  #var {fighting} {1};
+  #send {hide};
+  #send {stun %1};
+  bs %1;
 }
 #alias {j} {
   jump %1;
-  bs %1;
 }
 #alias {f} {
-  #send feign;
+  #send {feign};
 }
 #alias {bs} {
-  #send backstab %1;
+  #send {backstab %1};
 }
 
 
@@ -54,6 +55,16 @@
   #send {hide};
   #send {stun $target};
 };
+
+#action {You can't hit what isn't here.} {
+  #var {fighting} {0};
+}
+#action {Use Backstab on whom?} {
+  #var {fighting} {0};
+}
+#action {Whom do you want to stun?} {
+  #var {fighting} {0};
+}
 
 #action {You try to stun %1 but fail!} {
   #if {1 == mana} {
