@@ -35,9 +35,10 @@
 #var {step_time}                {1};
 
 #var {patrol_dark}              {1};
-#var {patrol_step_duration}     {1};
-#var {patrol_step_interval}     {5};
-#var {patrol_lap_interval}      {60};
+#var {patrol_step_duration}     {.5};
+#var {patrol_step_delay}        {3};
+#var {patrol_point_delay}       {10};
+#var {patrol_loop_delay}        {.1};
 #var {wander_time}              {5};
 #var {lockd_interval}           {1};
 #var {map}                      {world};

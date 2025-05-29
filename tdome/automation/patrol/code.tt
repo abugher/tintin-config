@@ -12,12 +12,12 @@
 
 #alias {walk_path} {
   #delay {$patrol_step_duration} {
+    #var {walking} {0};
     #path {get} {position} {path_position};
     #path {get} {length} {path_length};
-    #var {walking} {0};
     #if {1 != $fighting} {
       #if {$path_position <= $path_length} {
-        #delay {$patrol_step_interval} {
+        #delay {$patrol_step_delay} {
           #var {walking} {1};
           #send {sneak};
           #path {walk};
@@ -30,7 +30,7 @@
       };
     };
     # else {
-      #delay {$patrol_step_interval} {
+      #delay {$patrol_step_delay} {
         walk_path;
       };
     };
@@ -43,22 +43,27 @@
     #var {patrol_points_i} {1};
   };
   #if {1 == $patrol} {
-    #if {1 != $fighting && 1 != $on_path} {
+    #if {1 != $on_path} {
       #path {destroy};
       #map {find} {$patrol_points[$patrol_points_i]};
       #path {get} {position} {path_position};
       #path {get} {length} {path_length};
-      #var {on_path} {1};
       #if {$path_position <= $path_length} {
-        walk_path;
+        #var {on_path} {1};
+        #delay {0} {
+          walk_path;
+        };
+      };
+      #else {
+        #math {patrol_points_i} {$patrol_points_i + 1};
       };
     };
-    #delay {$patrol_lap_interval} {
+    #delay {$patrol_loop_delay} {
       patrold {$patrol_points_i};
     };
   };
   #else {
-    #delay {$patrol_step_interval} {
+    #delay {$patrol_loop_delay} {
       patrold {$patrol_points_i};
     };
   };
