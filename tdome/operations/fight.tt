@@ -4,16 +4,18 @@
   #send {consider %1};
 }
 #alias {jump} {
+  target {%1};
+  #echo {Jumping:  %1};
   #var {fighting} {1};
   #send {hide};
   #send {stun %1};
-  bs %1;
+  bs {%1};
 }
 #alias {j} {
   jump %1;
 }
 #alias {f} {
-  #send {dtrick mob};
+  #send {dtrick $target};
   #send {feign};
 }
 #alias {bs} {
@@ -21,13 +23,11 @@
 }
 
 
-/* stun -> backstab -> feign -> repeat */
+/* stun -> backstab -> dtrick -> feign -> repeat */
+/* Trace the cycle above.  Not sure it's holdin together. */
 
 /* This is a mess compared to patrold. */
-/*   Incorporate dtrick.  */
-/*   Loop over feign, backstab, and maybe dtrick, while fighting. */
 /*   Detect fighting state by % in prompt. */
-/*   Stop trying to fight everything in the room at once. */
 
 #alias {F} {
   #if {1 == $mana} {
@@ -58,6 +58,12 @@
   };
 };
 
+#action {acting is not very convincing} {
+  #if {1 == mana} {
+    f;
+  };
+}
+
 #action {You feign your own death!!! Heheheheheh.} {
   #send {hide};
   #send {stun $target};
@@ -65,13 +71,16 @@
 
 #action {You can't hit what isn't here.} {
   #var {fighting} {0};
-}
+};
 #action {Use Backstab on whom?} {
   #var {fighting} {0};
-}
+};
 #action {Whom do you want to stun?} {
   #var {fighting} {0};
-}
+};
+#action {You can't find anyone to target with your dirty trick.} {
+  #var {fighting} {0};
+};
 
 #action {You try to stun %1 but fail!} {
   #if {1 == mana} {
@@ -83,7 +92,17 @@
   };
 };
 
-#action {into its back} {
+#action {in its back} {
+  f;
+};
+#action {in his back} {
+  f;
+};
+#action {in her back} {
+  f;
+};
+
+#action {avoids your backstab} {
   f;
 };
 

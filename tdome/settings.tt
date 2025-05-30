@@ -31,6 +31,9 @@
 #var {food_place}               {mcdeath};
 #var {food_thing}               {hamburger};
 
+#var {map}                      {world};
+
+/* daemon settings */
 #var {sleep_time}               {15};
 #var {step_time}                {1};
 
@@ -39,6 +42,9 @@
 #var {patrol_step_delay}        {3};
 #var {patrol_point_delay}       {10};
 #var {patrol_loop_delay}        {.1};
+
+#var {prey_loop_delay}          {.1};
+
 #var {wander_time}              {5};
 #var {lockd_interval}           {1};
-#var {map}                      {world};
+

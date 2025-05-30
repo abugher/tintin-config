@@ -20,6 +20,7 @@ prey    {lion tamer}                    {lion tamer}                            
 prey    {rubber man}                    {rubber man}                                            {Rubber Man bounces around.};
 prey    {flame eater}                   {flame eater}                                           {The flame eater eats flames.};
 prey    {bearded lady}                  {bearded lady}                                          {A bearded lady is here.};
+prey    {flame eater}                   {flame eater}                                           {The flame eater eats flames.};
 prey    {ghost}                         {ghost}                                                 {A translucent figure of a ghost drifts eerily in the air.};
 prey    {cursed doll}                   {cursed doll}                                           {The doll's eyes seem to follow your every move.};
 prey    {shadowy apparition}            {shadowy apparition}                                    {The room grows darker as this insubstantial entity materializes before you.};

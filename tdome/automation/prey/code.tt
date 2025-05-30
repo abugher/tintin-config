@@ -18,12 +18,27 @@
 }
 prey_off;
 
-#alias {prey_upon} {
+
+#alias {preyd} {
   #if {1 == $prey} {
-    #if {0 == $walking} {
-      jump {%1};
+    #if {1 != $walking} {
+      #if {1 != $fighting} {
+        #if {1 == $prey_target_request} {
+          #var {prey_target_request} {0};
+          jump {$prey_target};
+        };
+      };
     };
   };
+  #delay {$prey_loop_delay} {
+    preyd;
+  };
+};
+
+
+#alias {prey_upon} {
+  #var {prey_target_request} {1};
+  #var {prey_target} {%1};
 };
 
 #alias {prey} {

@@ -15,15 +15,17 @@
  */
 
 #alias {walk_path} {
+  #var {walking} {0};
+  #if {1 == $prey} {
+    #if {1 != $fighting} {
+      #send {look};
+    };
+  };
   #delay {$patrol_step_delay} {
-    #var {walking} {0};
     #path {get} {position} {path_position};
     #path {get} {length} {path_length};
     #if {1 == $patrol} {
       #if {1 != $fighting} {
-        #if {1 == $prey} {
-          #send {look};
-        };
         #if {$path_position <= $path_length} {
           #var {walking} {1};
           #send {sneak};
