@@ -13,6 +13,7 @@
   jump %1;
 }
 #alias {f} {
+  #send {dtrick mob};
   #send {feign};
 }
 #alias {bs} {
@@ -47,13 +48,13 @@
   target_long_name {%1};
   #send {backstab $target};
   #if {1 == mana} {
-    #send {feign};
+    f;
   };
 };
 
 #action {acting isn't very good} {
   #if {1 == mana} {
-    #send {feign};
+    f;
   };
 };
 
@@ -74,7 +75,7 @@
 
 #action {You try to stun %1 but fail!} {
   #if {1 == mana} {
-    #send {feign};
+    f;
   };
   #else {
     target_long_name {%1};
@@ -83,7 +84,7 @@
 };
 
 #action {into its back} {
-  #send {feign};
+  f;
 };
 
 

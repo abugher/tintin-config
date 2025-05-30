@@ -15,6 +15,21 @@ prey    {kid}                           {little kid}                            
 prey    {clown}                         {little clown}                                          {A little clown is here.};
 prey    {monkey}                        {fun little monkey}                                     {A fun little monkey is here.};
 prey    {dwarf}                         {tiny dwarf}                                            {A tiny dwarf scowls up at you.};
+prey    {shyster}                       {shyster}                                               {A shyster is here.};
+prey    {lion tamer}                    {lion tamer}                                            {The lion tamer cracks her whip at you.};
+prey    {rubber man}                    {rubber man}                                            {Rubber Man bounces around.};
+prey    {flame eater}                   {flame eater}                                           {The flame eater eats flames.};
+prey    {bearded lady}                  {bearded lady}                                          {A bearded lady is here.};
+prey    {ghost}                         {ghost}                                                 {A translucent figure of a ghost drifts eerily in the air.};
+prey    {cursed doll}                   {cursed doll}                                           {The doll's eyes seem to follow your every move.};
+prey    {shadowy apparition}            {shadowy apparition}                                    {The room grows darker as this insubstantial entity materializes before you.};
+prey    {sinister clown}                {sinister clown}                                        {The clown's makeup is twisted into a grotesque grin.};
+prey    {eerie puppeteer}               {eerie puppeteer}                                       {This gaunt figure controls a collection of eerie puppets with skillful movements.};
+prey    {whispering spirit}             {whispering spirit}                                     {Faint echoes of long-forgotten conversations seem to emanate from this spectral figure.};
+prey    {creeping shadows}              {creeping shadows}                                      {These formless shadows slither across the floor, reaching out with ghostly tendrils.};
+prey    {curse mirror}                  {curse mirror}                                          {Your reflection in this mirror twists and contorts into monstrous forms.};
+prey    {spectral laughter}             {spectral laughter}                                     {The air resonates with eerie laughter that seems to come from all directions.};
+
 
 /* danger game */
 prey    {contestant}                    {contestant}                                            {A contestant runs by screaming at the top of his lungs.};
