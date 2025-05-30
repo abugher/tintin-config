@@ -1,33 +1,41 @@
 #nop Include this line in every file to set the command character.
 
+
+/* hide -> stun -> backstab -> dtrick -> feign -> repeat */
+
+/* Still need to handle incoming attacks. */
+
 #alias {c} {
   #send {consider %1};
 }
+
+/* preyd calls jump */
+/* hide, attempt stun */
 #alias {jump} {
   target {%1};
-  #echo {Jumping:  %1};
+  #echo {Jumping:  $target};
   #var {fighting} {1};
   #send {hide};
-  #send {stun %1};
-  bs {%1};
-}
+  #send {stun $target};
+};
 #alias {j} {
-  jump %1;
-}
-#alias {f} {
+  jump {%1};
+};
+
+#alias {rejump} {
   #send {dtrick $target};
+  #if {1 == $mana} {
+    #send {feign};
+  };
+};
+
+#alias {f} {
   #send {feign};
-}
+};
+
 #alias {bs} {
   #send {backstab %1};
-}
-
-
-/* stun -> backstab -> dtrick -> feign -> repeat */
-/* Trace the cycle above.  Not sure it's holdin together. */
-
-/* This is a mess compared to patrold. */
-/*   Detect fighting state by % in prompt. */
+};
 
 #alias {F} {
   #if {1 == $mana} {
@@ -44,29 +52,44 @@
   #var {target} {%1};
 };
 
+/* successful stun -> attempt backstab */
 #action {You stun %1!!!} {
-  target_long_name {%1};
   #send {backstab $target};
-  #if {1 == mana} {
-    f;
-  };
 };
 
-#action {acting isn't very good} {
-  #if {1 == mana} {
-    f;
-  };
+/* failed stun -> attempt dtrick, attempt feign */
+#action {You try to stun %1 but fail!} {
+  rejump;
 };
 
-#action {acting is not very convincing} {
-  #if {1 == mana} {
-    f;
-  };
-}
+/* successful backstab -> attempt dtrick, attempt feign */
+#action {in its back} {
+  rejump;
+};
+#action {in his back} {
+  rejump;
+};
+#action {in her back} {
+  rejump;
+};
 
+/* failed backstab -> attempt dtrick, attempt feign */
+#action {avoids your backstab} {
+  rejump;
+};
+
+/* successful feign -> attempt hide, attempt stun */
 #action {You feign your own death!!! Heheheheheh.} {
   #send {hide};
   #send {stun $target};
+};
+
+/* failed feign -> attempt dtrick, attempt feign */
+#action {acting isn't very good} {
+  rejump;
+};
+#action {acting is not very convincing} {
+  rejump;
 };
 
 #action {You can't hit what isn't here.} {
@@ -80,30 +103,6 @@
 };
 #action {You can't find anyone to target with your dirty trick.} {
   #var {fighting} {0};
-};
-
-#action {You try to stun %1 but fail!} {
-  #if {1 == mana} {
-    f;
-  };
-  #else {
-    target_long_name {%1};
-    #send {backstab $target};
-  };
-};
-
-#action {in its back} {
-  f;
-};
-#action {in his back} {
-  f;
-};
-#action {in her back} {
-  f;
-};
-
-#action {avoids your backstab} {
-  f;
 };
 
 
