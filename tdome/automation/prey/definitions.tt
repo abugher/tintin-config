@@ -30,6 +30,15 @@ prey    {whispering spirit}             {whispering spirit}                     
 prey    {creeping shadows}              {creeping shadows}                                      {These formless shadows slither across the floor, reaching out with ghostly tendrils.};
 prey    {curse mirror}                  {curse mirror}                                          {Your reflection in this mirror twists and contorts into monstrous forms.};
 prey    {spectral laughter}             {spectral laughter}                                     {The air resonates with eerie laughter that seems to come from all directions.};
+prey    {banshee}                       {banshee}                                               {A mournful wail fills the room as the banshee's ghostly form appears before you.};
+prey    {mutated monkey}                {mutated monkey}                                        {This monkey has undergone a twisted transformation.};
+prey    {undead dwarf}                  {undead dwarf}                                          {This dwarf's flesh is decayed and its eyes are empty sockets.};
+prey    {mutated tribble}               {mutated tribble}                                       {This tribble's fur is matted and its tiny teeth look sharper than ever.};
+prey    {bearded mutant}                {bearded mutant}                                        {This mutated bearded lady is a twisted sight, with gnarled limbs.};
+prey    {mimic}                         {mimic}                                                 { A treasure chest, brimming with loot is here.};
+prey    {zombie clown}                  {zombie clown}                                          {This clown's colorful attire is torn and its face is a grotesque mask of decay.};
+prey    {sinister jester}               {sinister jester}                                       {This jester wears a tattered outfit, its bells jingling with each unsettling movement.};
+prey    {ghastly specter}               {ghastly specter}                                       {This spectral figure drifts before you, its eyes hollow voids.};
 
 
 /* danger game */

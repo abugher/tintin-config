@@ -2,6 +2,8 @@
 
 
 /* hide -> stun -> backstab -> dtrick -> feign -> repeat */
+/* The cycle only repeats reliably if mana is available for feign. */
+/* dtrick takes energy, not mana. */
 
 /* Still need to handle incoming attacks. */
 
