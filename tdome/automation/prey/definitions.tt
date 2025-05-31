@@ -58,6 +58,8 @@ prey    {virtual snake}                 {virtual snake}                         
 prey    {virtual monster}               {virtual monster}                                       {A virtual monster};
 prey    {boop}                          {Boop}                                                  {An overtly sexually aggressive cyborg flirts at everything with a pulse, and 67.4 percent of everything else.};
 prey    {wrestlers}                     {Eight eleven-year-old backyard wrestlers}              {Eight eleven-year-old backyard wrestlers};
+prey    {mutant}                        {mutant}                                                {A nasty mutant raises hell.};
+prey    {aggressor}                     {aggressor}                                             {An aggressor looks really aggressive.};
 
 /* tek angeles, easy prey */
 prey    {tail}                          {tail gater}                                            {A sneaky tail gater waits for someone to unlock a door.};

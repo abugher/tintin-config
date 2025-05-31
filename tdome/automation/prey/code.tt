@@ -65,6 +65,8 @@ prey_off;
 /* After a kill, loot.  Then look for another victim. */
 #action {experience points} {
   #var {fighting} {0};
+  /* "mob" is a wildcard */
+  target {mob};
   loot_corpses;
   #send {look};
 };
