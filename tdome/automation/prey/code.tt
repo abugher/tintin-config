@@ -66,6 +66,6 @@ prey_off;
 #action {experience points} {
   #var {fighting} {0};
   loot_corpses;
-  look;
+  #send {look};
 };
 
