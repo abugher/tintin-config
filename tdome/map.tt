@@ -35,6 +35,7 @@
 
   #nop #map offset      <row>   <col>   <row>   <col>;
   #map offset           {1}     {92}    {-4}   {-4};
+  #map return;
 
   #var {mapping} {1};
   #echo {mapping:  on};
@@ -90,6 +91,9 @@
   blocked_action;
 };
 #action {need a boat to go} {
+  blocked_action;
+};
+#action {seem to be closed.} {
   blocked_action;
 };
 #action {seems to be closed.} {
