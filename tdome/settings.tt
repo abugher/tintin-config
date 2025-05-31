@@ -19,6 +19,11 @@
 /* Put map on the right. */
 #split 0 1 0 -90 1;
 
+/* initial values for toggles */
+#var {mana}                     {1};
+#var {prey}                     {0};
+#var {patrol}                   {0};
+
 /* personal settings */
 #var {user}                     {Mercevi};
 #script {pass}                  {bash -c 'pass show aaron/tdome.net/$user'};

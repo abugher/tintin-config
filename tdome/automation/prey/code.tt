@@ -16,7 +16,6 @@
 #alias {P} {
   toggle_prey;
 }
-prey_off;
 
 
 #alias {preyd} {

@@ -44,11 +44,11 @@
 
 #alias {F} {
   #if {1 == $mana} {
-    #echo {Fight (with mana):  off};
+    #echo {Fight with mana:  off};
     #var {mana} {0};
   };
   #else {
-    #echo {Fight (with mana):  on};
+    #echo {Fight with mana:  on};
     #var {mana} {1};
   };
 };

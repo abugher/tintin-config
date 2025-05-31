@@ -101,4 +101,3 @@
 #alias {p} {
   toggle_patrol;
 };
-patrol_off;
