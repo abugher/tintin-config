@@ -61,7 +61,7 @@ prey    {wrestlers}                     {Eight eleven-year-old backyard wrestler
 prey    {mutant}                        {mutant}                                                {A nasty mutant raises hell.};
 prey    {aggressor}                     {aggressor}                                             {An aggressor looks really aggressive.};
 
-/* tek angeles, easy prey */
+/* tek angeles */
 prey    {tail}                          {tail gater}                                            {A sneaky tail gater waits for someone to unlock a door.};
 prey    {dervish}                       {dervish}                                               {What does a dervish say?};
 prey    {politician}                    {politician}                                            {A shifty politician is here.};
@@ -73,6 +73,8 @@ prey    {urchin}                        {little urchin}                         
 prey    {urchin}                        {street urchin}                                         {A dirty urchin runs up to you and grabs at your legs.};
 prey    {crook}                         {crook}                                                 {A crook sizes up your equipment.};
 prey    {fluffer}                       {porn fluffer}                                          {A porn fluffer idles about, waiting for her next scene prep.};
+prey    {police officer}                {police officer}                                        {A police officer stuffs his face with donuts.};
+
 
 /* subway? */
 prey    {pimp}                          {pimp}                                                  {pimp struts past you.};
@@ -132,3 +134,14 @@ prey    {jerk}                          {jerk}                                  
 prey    {bum}                           {old bum}                                               {An old bum looks through some stock quotes.};
 prey    {pusher}                        {pusher}                                                {A sadistic creep waits to push you in front of the subway car.};
 prey    {wishful thinking}              {wishful thinking}                                      {Wishful Thinking says, 'I think I can beat Mike Tyson'.};
+
+/* sports complex */
+prey    {happy fan}                     {happy fan}                                             {A happy fan is ready to go start some riots.};
+prey    {fat woman}                     {fat woman}                                             {A fat woman hurries to see the game.};
+prey    {security guard}                {security guard}                                        {A security guard eyes you suspiciously.};
+prey    {Clark Kent}                    {Clark Kent}                                            {Clark Kent holds some season tickets in his hand.};
+prey    {brat}                          {brat}                                                  {A little brat kicks you in the leg as you walk by.};
+prey    {fan}                           {fan}                                                   {A fan stands here.};
+prey    {major uncool}                  {major uncool}                                          {Major Uncool is on leave from the Army};
+prey    {the juice}                     {the juice}                                             {The Juice is here, ranting and raving.};
+prey    {jack nicholson}                {jack nicholson}                                        {Jack Nicholson is here.};
