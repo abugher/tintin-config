@@ -1,9 +1,0 @@
-#nop Include this line in every file to set the command character.
-
-/* I'm not sure this is considered good behavior. */
-/*
-#action {up for sale, min bid 1 } {
-  #send bid 1;
-}
-*/
-

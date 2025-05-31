@@ -78,23 +78,7 @@
   #if {$mapping == 1} {
     #map undo;
   };
-  #if {1 == $wander} {
-    turn_right;
-    turn_right;
-  };
 };
-
-/* I kind of want to traverse doors and such while wandering (and map them), but if it turns out to be locked I'll get stuck in a loop. */
-#nop #alias {traverse} {
-#nop   #map move $direction;
-#nop   turn_right;
-#nop   turn_right;
-#nop   #map exit {$direction} command {open %1 $direction; $direction};
-#nop   turn_right;
-#nop   turn_right;
-#nop   #map exit {$direction} command {open %1 $direction; $direction};
-#nop   #send {open %1 $direction; $direction};
-#nop };
 
 #action {cannot move that way} {
   blocked_action;

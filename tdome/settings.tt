@@ -44,7 +44,3 @@
 #var {patrol_loop_delay}        {.1};
 
 #var {prey_loop_delay}          {.1};
-
-#var {wander_time}              {5};
-#var {lockd_interval}           {1};
-

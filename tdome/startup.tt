@@ -1,13 +1,7 @@
 #nop Include this line in every file to set the command character.
 
 /* start daemons */
-#event {SESSION ACTIVATED} {
-  #if {1 != $lock_wander} {
-    #var {lock_wander} {1};
-    wanderd;
-  };
-};
-
+/* Don't double-define event handlers. */
 #var {fighting} {0};
 #var {walking} {0};
 #var {on_path} {0};
