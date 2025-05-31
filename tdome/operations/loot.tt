@@ -9,10 +9,10 @@
   #send drop all.skin;
   #send drop all.placard;
   #send drop all.trash;
-}
+};
 #alias {ta} {
-  ga
-}
+  ga;
+};
 #alias {gc} {
   #send get all.credit from all.remains;
   #send get all.credits from all.remains;
@@ -20,14 +20,17 @@
   #send get all.credits from all.corpse;
   #send get all.credit;
   #send get all.credits;
-}
+};
 #alias {tc} {
-  gc
-}
-
-#action {credits lie} {
-  gc
-}
+  gc;
+};
+#alias {loot_corpses} {
+  #send {get all from all.remains};
+  #send {get all from all.corpse};
+};
+#alias {lc} {
+  loot_corpses;
+};
 
 #alias {multi} {
   #var {items} {%0};
@@ -52,12 +55,16 @@
 #alias {withdraw} {
   #send {withdraw %0};
   #send balance;
-}
+};
 
 #alias {deposit} {
   #send {deposit %0};
   #send balance;
-}
+};
+
+#action {credits lie} {
+  gc;
+};
 
 #gag {You don't seem to have any skins.};
 #gag {You don't seem to have any placards.};

@@ -65,7 +65,7 @@ prey_off;
 /* After a kill, loot.  Then look for another victim. */
 #action {experience points} {
   #var {fighting} {0};
-  ga;
+  loot_corpses;
   look;
 };
 
