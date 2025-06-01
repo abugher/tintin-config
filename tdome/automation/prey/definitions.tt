@@ -146,3 +146,8 @@ prey    {major uncool}                  {major uncool}                          
 prey    {the juice}                     {the juice}                                             {The Juice is here, ranting and raving.};
 prey    {jack nicholson}                {jack nicholson}                                        {Jack Nicholson is here.};
 prey    {canteen boy}                   {canteen boy}                                           {Canteen Boy stands here like a dope.};
+
+/* dump tunnels */
+prey    {mutant freak}                  {mutant freak}                                          {A large bug-eyed mutant jumps out at you.};
+prey    {muttering mutant}              {muttering mutant}                                      {A nasty-looking mutant mutters to herself.};
+/* prey    {large mutant}                  {large mutant}                                          { */

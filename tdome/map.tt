@@ -150,6 +150,12 @@
 /* Fix map upon startup. */
 #action {The Temple of Technology - } {
   #map goto tot;
+  #if {$mapping == 0} {
+    mapleave;
+  };
+  #else {
+    mapstart;
+  };
 }
 /* Fix map upon respawn. */
 #action {The Morgue -} {

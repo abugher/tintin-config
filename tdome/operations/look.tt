@@ -3,12 +3,22 @@
 #alias {lx} {
   #send look;
   #send exits;
-}
+};
 #alias {x} {
   #send exits;
-}
+};
 #alias {ie} {
   #send inventory;
   #send equipment;
-}
+};
 
+#alias {credits} {
+  #send {gold};
+};
+#alias {cred} {
+  credits;
+};
+#alias {cr} {
+  credits;
+};
+/* 'c' is for "consider" */
