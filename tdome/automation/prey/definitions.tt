@@ -151,3 +151,4 @@ prey    {canteen boy}                   {canteen boy}                           
 prey    {mutant freak}                  {mutant freak}                                          {A large bug-eyed mutant jumps out at you.};
 prey    {muttering mutant}              {muttering mutant}                                      {A nasty-looking mutant mutters to herself.};
 /* prey    {large mutant}                  {large mutant}                                          { */
+prey    {smelly mutant}                 {smelly mutant}                                         {A smelly mutant scurries up and claws at your clothing..};
