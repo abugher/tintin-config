@@ -39,12 +39,12 @@
 
   #var {mapping} {1};
   #echo {mapping:  on};
-}
+};
 #alias mapleave{} {
   #var {mapping} {0};
   #map leave;
   #echo {mapping:  off};
-}
+};
 #alias {M} {
   #if {$mapping == 1} {
     mapleave;
@@ -52,24 +52,24 @@
   #else {
     mapstart;
   };
-}
+};
 #alias {mapwrite} {
   #map write {config/tdome/maps/$map};
   #echo {map written};
-}
+};
 #alias {mw} {
   mapwrite;
-}
+};
 #alias mapnear{} {
   #map flag unicode on;
-}
+};
 #alias mapfar{} {
   #map flag unicode off;
-}
+};
 
 #alias runto{} {
   #map run {%1} {$step_time};
-}
+};
 
 /* Don't map imaginary rooms when walking into walls.
  * Dream rooms are still an issue.   shows up in
@@ -102,9 +102,10 @@
 #action {You are blocked} {
   blocked_action;
 }
-#action {blocks your way} {
+/* "blocks your way" appears in some room descriptions. */
+#action {and blocks your way} {
   blocked_action;
-}
+};
 #action {A strange force field prevents you from moving} {
   blocked_action;
 };
@@ -113,7 +114,7 @@
   #if {$mapping == 1} {
     #map undo;
   };
-}
+};
 
 
 /* These messages can occur for non-movement actions, which can cause overcorrection. */
@@ -156,11 +157,11 @@
   #else {
     mapstart;
   };
-}
+};
 /* Fix map upon respawn. */
 #action {The Morgue -} {
   #map goto morgue;
-}
+};
 /* Fix map upon bail out. */
 #action {Master Sin's School [ Inside ]} {
   #map goto sin;
@@ -168,7 +169,7 @@
 /* Fix map upon return after rent. */
 #action {Bag's Inn reception [ Inside ]} {
   #map goto bag;
-}
+};
 
 
 #alias {sin} {#map run {sin} {$step_time};};
