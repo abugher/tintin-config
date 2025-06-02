@@ -6,6 +6,7 @@
 
 /* cryo center */
 prey    {tribble}                       {tribble}                                               {A tribble scurrys about.};
+prey    {floor polishing robot}         {floor polishing robot}                                 {A floor polishing robot is dragging some chairs around.};
 
 /* fun house */
 prey    {fun thing}                     {fun thing}                                             {A Fun Thing wanders around.};
@@ -73,7 +74,8 @@ prey    {urchin}                        {little urchin}                         
 prey    {urchin}                        {street urchin}                                         {A dirty urchin runs up to you and grabs at your legs.};
 prey    {crook}                         {crook}                                                 {A crook sizes up your equipment.};
 prey    {fluffer}                       {porn fluffer}                                          {A porn fluffer idles about, waiting for her next scene prep.};
-prey    {police officer}                {police officer}                                        {A police officer stuffs his face with donuts.};
+prey    {police}                        {police officer}                                        {A police officer stuffs his face with donuts.};
+prey    {guy}                           {rough-looking guy}                                     {A rough-looking guy wanders by.};
 
 
 /* subway? */
@@ -83,6 +85,7 @@ prey    {worker}                        {MAT system worker}                     
 prey    {soldier}                       {soldier}                                               {soldier spits over his left shoulder.};
 prey    {soldier}                       {soldier}                                               {views you with contempt.};
 prey    {drunk}                         {smelly drunk}                                          {smelly drunk staggers past you.};
+prey    {drunk}                         {drunk}                                                 {A singing, happy drunk.};
 prey    {drunk}                         {sleeping drunk}                                        {Snores emanate from a sleeping drunk.}
 prey    {girl}                          {young girl}                                            {young girl avoids your gaze.};
 prey    {girl}                          {working girl}                                          {A working girl plies her trade.};
@@ -134,6 +137,11 @@ prey    {jerk}                          {jerk}                                  
 prey    {bum}                           {old bum}                                               {An old bum looks through some stock quotes.};
 prey    {pusher}                        {pusher}                                                {A sadistic creep waits to push you in front of the subway car.};
 prey    {wishful thinking}              {wishful thinking}                                      {Wishful Thinking says, 'I think I can beat Mike Tyson'.};
+prey    {blabbermouth}                  {blabbermouth}                                          {A blabbermouth talks your ear off.};
+prey    {student}                       {college student}                                       {A college student stands here like an idiot.};
+prey    {panhandler}                    {panhandler}                                            {A panhandler approaches you for a handout.};
+prey    {newbie}                        {clueless newbie}                                       {A clueless newbie stands here stupidly.};
+prey    {hooker}                        {scantily-clad hooker}                                  {A scantily-clad hooker mouths 'come over here boy' at you.};
 
 /* sports complex */
 prey    {happy fan}                     {happy fan}                                             {A happy fan is ready to go start some riots.};
@@ -142,9 +150,9 @@ prey    {security guard}                {security guard}                        
 prey    {Clark Kent}                    {Clark Kent}                                            {Clark Kent holds some season tickets in his hand.};
 prey    {brat}                          {brat}                                                  {A little brat kicks you in the leg as you walk by.};
 prey    {fan}                           {fan}                                                   {A fan stands here.};
-prey    {major uncool}                  {major uncool}                                          {Major Uncool is on leave from the Army};
-prey    {the juice}                     {the juice}                                             {The Juice is here, ranting and raving.};
-prey    {jack nicholson}                {jack nicholson}                                        {Jack Nicholson is here.};
+prey    {major}                         {major uncool}                                          {Major Uncool is on leave from the Army};
+prey    {juice}                         {the juice}                                             {The Juice is here, ranting and raving.};
+prey    {nicholson}                     {jack nicholson}                                        {Jack Nicholson is here.};
 prey    {canteen boy}                   {canteen boy}                                           {Canteen Boy stands here like a dope.};
 
 /* dump tunnels */

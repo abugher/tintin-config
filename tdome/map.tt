@@ -171,6 +171,26 @@
   #map goto bag;
 };
 
+/* Map while following. */
+#action {You follow %1 - [North].} {
+  #map move n;
+};
+#action {You follow %1 - [South].} {
+  #map move s;
+};
+#action {You follow %1 - [West].} {
+  #map move w;
+};
+#action {You follow %1 - [East].} {
+  #map move e;
+};
+#action {You follow %1 - [Down].} {
+  #map move d;
+};
+#action {You follow %1 - [Up].} {
+  #map move u;
+};
+
 
 #alias {sin} {#map run {sin} {$step_time};};
 #alias {tot} {#map run {tot} {$step_time};};
