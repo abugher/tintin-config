@@ -109,6 +109,10 @@
 #action {You can't find anyone to target with your dirty trick.} {
   #var {fighting} {0};
 };
+/* Stop fighting when YOU die. */
+#action {You are dead!  Sorry...} {
+  #var {fighting} {0};
+};
 
 
 #alias {target_long_name} {
