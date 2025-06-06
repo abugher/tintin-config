@@ -6,12 +6,12 @@
 
 /* cryo center */
 prey    {tribble}                       {tribble}                                               {A tribble scurrys about.};
-prey    {floor polishing robot}         {floor polishing robot}                                 {A floor polishing robot is dragging some chairs around.};
+prey    {robot}                         {floor polishing robot}                                 {A floor polishing robot is dragging some chairs around.};
 
 /* fun house */
-prey    {fun thing}                     {fun thing}                                             {A Fun Thing wanders around.};
-prey    {fun dude}                      {fun dude}                                              {A Fun Dude smiles at you.};
-prey    {fun babe}                      {fun babe}                                              {A Fun Babe laughs hysterically.};
+prey    {thing}                         {fun thing}                                             {A Fun Thing wanders around.};
+prey    {dude}                          {fun dude}                                              {A Fun Dude smiles at you.};
+prey    {babe}                          {fun babe}                                              {A Fun Babe laughs hysterically.};
 prey    {kid}                           {little kid}                                            {A little kid is having fun.};
 prey    {clown}                         {little clown}                                          {A little clown is here.};
 prey    {monkey}                        {fun little monkey}                                     {A fun little monkey is here.};
