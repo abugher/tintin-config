@@ -21,42 +21,43 @@ prey    {lion tamer}                    {lion tamer}                            
 prey    {rubber man}                    {rubber man}                                            {Rubber Man bounces around.};
 prey    {flame eater}                   {flame eater}                                           {The flame eater eats flames.};
 prey    {bearded lady}                  {bearded lady}                                          {A bearded lady is here.};
-prey    {flame eater}                   {flame eater}                                           {The flame eater eats flames.};
+prey    {flame}                         {flame eater}                                           {The flame eater eats flames.};
 prey    {ghost}                         {ghost}                                                 {A translucent figure of a ghost drifts eerily in the air.};
-prey    {cursed doll}                   {cursed doll}                                           {The doll's eyes seem to follow your every move.};
-prey    {shadowy apparition}            {shadowy apparition}                                    {The room grows darker as this insubstantial entity materializes before you.};
-prey    {sinister clown}                {sinister clown}                                        {The clown's makeup is twisted into a grotesque grin.};
-prey    {eerie puppeteer}               {eerie puppeteer}                                       {This gaunt figure controls a collection of eerie puppets with skillful movements.};
-prey    {whispering spirit}             {whispering spirit}                                     {Faint echoes of long-forgotten conversations seem to emanate from this spectral figure.};
-prey    {creeping shadows}              {creeping shadows}                                      {These formless shadows slither across the floor, reaching out with ghostly tendrils.};
-prey    {curse mirror}                  {curse mirror}                                          {Your reflection in this mirror twists and contorts into monstrous forms.};
-prey    {spectral laughter}             {spectral laughter}                                     {The air resonates with eerie laughter that seems to come from all directions.};
+prey    {cursed}                        {cursed doll}                                           {The doll's eyes seem to follow your every move.};
+prey    {shadowy}                       {shadowy apparition}                                    {The room grows darker as this insubstantial entity materializes before you.};
+prey    {sinister}                      {sinister clown}                                        {The clown's makeup is twisted into a grotesque grin.};
+prey    {eerie}                         {eerie puppeteer}                                       {This gaunt figure controls a collection of eerie puppets with skillful movements.};
+prey    {whispering}                    {whispering spirit}                                     {Faint echoes of long-forgotten conversations seem to emanate from this spectral figure.};
+prey    {creeping}                      {creeping shadows}                                      {These formless shadows slither across the floor, reaching out with ghostly tendrils.};
+/* cursed, maybe? */
+prey    {curse}                         {curse mirror}                                          {Your reflection in this mirror twists and contorts into monstrous forms.};
+prey    {spectral}                      {spectral laughter}                                     {The air resonates with eerie laughter that seems to come from all directions.};
 prey    {banshee}                       {banshee}                                               {A mournful wail fills the room as the banshee's ghostly form appears before you.};
-prey    {mutated monkey}                {mutated monkey}                                        {This monkey has undergone a twisted transformation.};
-prey    {undead dwarf}                  {undead dwarf}                                          {This dwarf's flesh is decayed and its eyes are empty sockets.};
-prey    {mutated tribble}               {mutated tribble}                                       {This tribble's fur is matted and its tiny teeth look sharper than ever.};
-prey    {bearded mutant}                {bearded mutant}                                        {This mutated bearded lady is a twisted sight, with gnarled limbs.};
+prey    {monkey}                        {mutated monkey}                                        {This monkey has undergone a twisted transformation.};
+prey    {dwarf}                         {undead dwarf}                                          {This dwarf's flesh is decayed and its eyes are empty sockets.};
+prey    {tribble}                       {mutated tribble}                                       {This tribble's fur is matted and its tiny teeth look sharper than ever.};
+prey    {bearded}                       {bearded mutant}                                        {This mutated bearded lady is a twisted sight, with gnarled limbs.};
 prey    {mimic}                         {mimic}                                                 { A treasure chest, brimming with loot is here.};
-prey    {zombie clown}                  {zombie clown}                                          {This clown's colorful attire is torn and its face is a grotesque mask of decay.};
-prey    {sinister jester}               {sinister jester}                                       {This jester wears a tattered outfit, its bells jingling with each unsettling movement.};
-prey    {ghastly specter}               {ghastly specter}                                       {This spectral figure drifts before you, its eyes hollow voids.};
+prey    {zombie}                        {zombie clown}                                          {This clown's colorful attire is torn and its face is a grotesque mask of decay.};
+prey    {jester}                        {sinister jester}                                       {This jester wears a tattered outfit, its bells jingling with each unsettling movement.};
+prey    {specter}                       {ghastly specter}                                       {This spectral figure drifts before you, its eyes hollow voids.};
 
 
 /* danger game */
 prey    {contestant}                    {contestant}                                            {A contestant runs by screaming at the top of his lungs.};
-prey    {blue robot}                    {blue robot}                                            {A little blue robot looks for things to zap with its tazer gun.};
-prey    {red robot}                     {red robot}                                             {A small red robot suddenly attacks you.};
-prey    {cleaning robot}                {cleaning robot}                                        {A cleaning robot scurries around.};
-prey    {maintenance droid}             {maintenance droid}                                     {A large maintenance droid is here, fixing things.};
-prey    {floating head}                 {floating head}                                         {A floating head, trailing it's crucified decapitated corpse, hovers here.};
+prey    {blue}                          {blue robot}                                            {A little blue robot looks for things to zap with its tazer gun.};
+prey    {red}                           {red robot}                                             {A small red robot suddenly attacks you.};
+prey    {cleaning}                      {cleaning robot}                                        {A cleaning robot scurries around.};
+prey    {maintenance}                   {maintenance droid}                                     {A large maintenance droid is here, fixing things.};
+prey    {head}                          {floating head}                                         {A floating head, trailing it's crucified decapitated corpse, hovers here.};
 prey    {charmer}                       {charmer}                                               {A wiry lock charmer is slyly looking for somewhere to apply his trade.};
 prey    {ranger}                        {ranger}                                                {A ranger sifts through some scat for treasure.};
 prey    {aggressor}                     {aggressor}                                             {An aggressor looks really aggressive.};
-prey    {virtual bear}                  {virtual bear}                                          {A virtual bear};
-prey    {virtual ape}                   {virtual ape}                                           {A virtual ape};
-prey    {virtual scorpion}              {virtual scorpion}                                      {A virtual scorpion};
-prey    {virtual snake}                 {virtual snake}                                         {A virtual snake};
-prey    {virtual monster}               {virtual monster}                                       {A virtual monster};
+prey    {bear}                          {virtual bear}                                          {A virtual bear};
+prey    {ape}                           {virtual ape}                                           {A virtual ape};
+prey    {scorpion}                      {virtual scorpion}                                      {A virtual scorpion};
+prey    {snake}                         {virtual snake}                                         {A virtual snake};
+prey    {monster}                       {virtual monster}                                       {A virtual monster};
 prey    {boop}                          {Boop}                                                  {An overtly sexually aggressive cyborg flirts at everything with a pulse, and 67.4 percent of everything else.};
 prey    {wrestlers}                     {Eight eleven-year-old backyard wrestlers}              {Eight eleven-year-old backyard wrestlers};
 prey    {mutant}                        {mutant}                                                {A nasty mutant raises hell.};
@@ -144,19 +145,19 @@ prey    {newbie}                        {clueless newbie}                       
 prey    {hooker}                        {scantily-clad hooker}                                  {A scantily-clad hooker mouths 'come over here boy' at you.};
 
 /* sports complex */
-prey    {happy fan}                     {happy fan}                                             {A happy fan is ready to go start some riots.};
-prey    {fat woman}                     {fat woman}                                             {A fat woman hurries to see the game.};
-prey    {security guard}                {security guard}                                        {A security guard eyes you suspiciously.};
-prey    {Clark Kent}                    {Clark Kent}                                            {Clark Kent holds some season tickets in his hand.};
+prey    {fan}                           {happy fan}                                             {A happy fan is ready to go start some riots.};
+prey    {woman}                         {fat woman}                                             {A fat woman hurries to see the game.};
+prey    {security}                      {security guard}                                        {A security guard eyes you suspiciously.};
+prey    {Clark}                         {Clark Kent}                                            {Clark Kent holds some season tickets in his hand.};
 prey    {brat}                          {brat}                                                  {A little brat kicks you in the leg as you walk by.};
 prey    {fan}                           {fan}                                                   {A fan stands here.};
 prey    {major}                         {major uncool}                                          {Major Uncool is on leave from the Army};
 prey    {juice}                         {the juice}                                             {The Juice is here, ranting and raving.};
 prey    {nicholson}                     {jack nicholson}                                        {Jack Nicholson is here.};
-prey    {canteen boy}                   {canteen boy}                                           {Canteen Boy stands here like a dope.};
+prey    {canteen}                       {canteen boy}                                           {Canteen Boy stands here like a dope.};
 
 /* dump tunnels */
-prey    {mutant freak}                  {mutant freak}                                          {A large bug-eyed mutant jumps out at you.};
-prey    {muttering mutant}              {muttering mutant}                                      {A nasty-looking mutant mutters to herself.};
+prey    {freak}                         {mutant freak}                                          {A large bug-eyed mutant jumps out at you.};
+prey    {muttering}                     {muttering mutant}                                      {A nasty-looking mutant mutters to herself.};
 /* prey    {large mutant}                  {large mutant}                                          { */
-prey    {smelly mutant}                 {smelly mutant}                                         {A smelly mutant scurries up and claws at your clothing..};
+prey    {smelly}                        {smelly mutant}                                         {A smelly mutant scurries up and claws at your clothing..};
