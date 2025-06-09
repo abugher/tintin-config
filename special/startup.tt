@@ -1,0 +1,4 @@
+#nop Include this line in every file to set the command character.
+
+/* Connect to server. */
+#session tdome $server $port;

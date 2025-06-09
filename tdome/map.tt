@@ -158,9 +158,21 @@
     mapstart;
   };
 };
+#action {Inside the Town Hall -} {
+  #map goto silicia_town_hall;
+  #if {$mapping == 0} {
+    mapleave;
+  };
+  #else {
+    mapstart;
+  };
+};
 /* Fix map upon respawn. */
 #action {The Morgue -} {
   #map goto morgue;
+};
+#action {The Mortician's Office -} {
+  #map goto silicia_mortician;
 };
 /* Fix map upon bail out. */
 #action {Master Sin's School [ Inside ]} {

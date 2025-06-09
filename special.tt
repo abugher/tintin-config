@@ -1,0 +1,5 @@
+#nop Include this line in every file to set the command character.
+
+#read {config/special/settings.tt};
+#read {config/special/server.tt};
+#read {config/special/startup.tt};

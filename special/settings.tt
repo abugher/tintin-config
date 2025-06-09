@@ -1,0 +1,5 @@
+#nop Include this line in every file to set the command character.
+
+/* personal settings */
+#var {user}                     {MerceviBuilder};
+#script {pass}                  {bash -c 'pass show aaron/tdome.net/$user'};
